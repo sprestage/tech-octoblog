@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Why I like VI - My Technical Blog</title>
+  <title>My personal Git command reference - My Technical Blog</title>
   <meta name="author" content="Susan Prestage">
 
   
@@ -16,7 +16,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://sprestage-tech-blog.herokuapp.com/blog/2013/12/06/why-i-like-vi">
+  <link rel="canonical" href="http://sprestage-tech-blog.herokuapp.com/blog/2013/12/02/my-personal-git-command-reference">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="My Technical Blog" type="application/atom+xml">
 
@@ -110,113 +110,254 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-06T13:08:54-08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-02T18:47:42-08:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2013</time>
         
       </p>
     
     
     <h1 class="entry-title">
-        Why I Like VI
+        My Personal Git Command Reference
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix"><h2>What is VI</h2>
+<div class="entry-content clearfix"><h1>Git Basics</h1>
 
-<p>VI is a powerful, but brutal, command line text editor available on all unix-based systems.</p>
+<h2>Setting up a new project</h2>
 
-<p>I discovered VI while at university studying for my computer engineering degree.  The joke at the time was that VI is &lsquo;user VIolent&rsquo;.  It is hard to deny this perspective, especially as I share it.  After my first couple of stumblings into inadvertant launchings of vi, my unix mentor sat down with me a first taught me how to get the heck out of there, and then taught me how to leverage it to my own benefit.</p>
+<h3>Set up the local repository</h3>
 
-<p>The biggest benefits to me are:
-1. The ease with which I can jump around my document by line/word/page.
-2. The ability to copy/paste/delete my chosen number of words or lines.</p>
-
-<p>For any quick little documents I need to write, I am usually happiest in vi.</p>
-
-<h2>Command mode vs Insert mode</h2>
-
-<p>Vi has two modes of operation.  Command mode and Insert mode.  Command mode takes commands which cause action to be taken on the file you are working on.  Insert mode is where entered text is inserted into the file.</p>
-
-<h4>Command mode</h4>
-
-<ul>
-<li>In the command mode, every character typed is a command that does something to the text file being edited; a character typed in the command mode may even cause the vi editor to enter the insert mode.</li>
-</ul>
-
-
-<h4>Insert mode</h4>
-
-<ul>
-<li>In the insert mode, every character typed is added to the text in the   file; pressing the &lt;Esc> (Escape) key turns off the Insert mode.</li>
-</ul>
-
-
-<h2>Commands</h2>
-
-<h4>Starting/exiting vi</h4>
-
-<p>How to get into vi in the first place.  From your command line:</p>
+<p>Brand new project.  Start in the project directory.  Then:</p>
 
 <pre>
-vi your_filename
+  $ git init
 </pre>
 
 
-<p>To exit vi and save changes:</p>
+<p>Ready to stage your commits?  Here is the long way:</p>
 
 <pre>
-:wq
+  $ git add .
+  $ git commit -m "Initial commit"
 </pre>
 
 
-<p>To exit vi without saving changes:</p>
+<p>Here is a useful short way:</p>
 
 <pre>
-:q!
+  $ git commit -am "Initial commit"
 </pre>
 
 
-<p>And most importantly, to enter vi command mode:</p>
+<h3>Set up remote repository</h3>
+
+<p>Point to a new repo on github.  Note: Must create this new repo on github first!</p>
 
 <pre>
-[esc]
+  $ git remote add origin https://github.com/<username>/demo_app.git
 </pre>
 
 
-<p>The commands can be broken into a several categories.</p>
+<p>Which remote repositories are being pointed to:</p>
 
-<h4>Cursor movement</h4>
-
-<h4>Screen movement</h4>
-
-<h4>Alter text</h4>
-
-<h6>Insert or add text</h6>
-
-<h6>Change text</h6>
-
-<h6>Delete text</h6>
-
-<h2>Search</h2>
-
-<h2>File input/output</h2>
-
-<h2>Miscellaneous</h2>
-
-<br>
+<pre>
+  $ git remote -v
+</pre>
 
 
-<hr />
+<p>List remote and local branches:</p>
 
-<h3>NOTE</h3>
+<pre>
+  $ git branch -a
+</pre>
 
-<p>Both UNIX and vi are case-sensitive. Be sure not to use a capital letter in place of a lowercase letter; the results will not be what you expect.</p>
+
+<p>Push to github:</p>
+
+<pre>
+  $ git push -u origin master
+</pre>
+
+
+<h3>Set up Heroku</h3>
+
+<p>First, go to Heroku and create a new repo.
+Next, push to heroku:</p>
+
+<pre>
+  $ heroku create
+  $ git push heroku master
+  $ heroku run rake db:migrate
+</pre>
+
+
+<p>Further pushes to heroku</p>
+
+<pre>
+  $ git push heroku master
+</pre>
+
+
+<h2>Frequent staging, commiting, and pushing</h2>
+
+<p>Even better is that if you are working offline, you can keep staging and committing.  Then push all to the remote repository at once when you have internet connectivity again.</p>
+
+<pre>
+  $ git add .
+  $ git commit -m "brief explanation of changes here"
+  $ git push
+</pre>
+
+
+<h3>What is the status of your files</h3>
+
+<p>How is git looking (you will find some useful guidance printed out with this command too):</p>
+
+<pre>
+  $ git status
+</pre>
+
+
+<h1>Branching, this scares me&hellip;</h1>
+
+<p>First, create the branch locally.  This automatically changes you to this branch locally.</p>
+
+<pre>
+  $ git checkout -b new_branch_name
+</pre>
+
+
+<p>To check this into github, do this and the new branch will automatically get created on github,
+then your code will get pushed into that branch.</p>
+
+<pre>
+  $ git push origin new_branch_name
+</pre>
+
+
+<p>Also very useful are these links:
+<a href="http://www.ndpsoftware.com/git-cheatsheet.html#loc=workspace;">http://www.ndpsoftware.com/git-cheatsheet.html#loc=workspace;</a>
+<a href="http://git-scm.com/book">http://git-scm.com/book</a></p>
+
+<p>Use this to confirm WHICH branch you are on.</p>
+
+<pre>
+  $ git branch
+  $ git add .
+  $ git commit -m "a good commit message"
+  $ git push origin new_branch_name  
+</pre>
+
+
+<p>Very important tips for switching between branches.  ALWAYS commit your changes to your current
+branch before changing branches.  I assumed the files would stay in the old branch as I switched
+to the new branch, but NO.  The changes will follow you around like a lost puppy until you commit
+them.</p>
+
+<p>Ok, I&rsquo;ve got this branch (or worse, several branches).  I&rsquo;m done working on them.  They are all checked in, as branches.  But now, I need to get the master branch back up to date.  How do I do this with FIVE branches.  Don&rsquo;t panic, we can do this thing.  First, make sure everything is up to date and checked in.  For me, everything is check in locally and remotely.</p>
+
+<pre>
+  $ git status
+</pre>
+
+
+<p>Then, get onto the master branch.</p>
+
+<pre>
+  $ git checkout master
+</pre>
+
+
+<p>Now we are going to merge each branch in, push it to github, and then delete the branch since we are done with them.  Skip the last step if you aren&rsquo;t quite done with the branch.</p>
+
+<pre>
+  $ git merge chapter_2
+  $ git push origin master    (also can just usually say 'git push' here)
+  $ git branch -d chapter_2
+  
+  $ git merge chapter_3
+  $ git push 
+  $ git branch -d chapter_3
+</pre>
+
+
+<p>Repeat until you&rsquo;ve merged in each branch.  Yeay!  This worked for me and I saw what I wanted on github.  I have both the branches I expect as well as each branch merge present as a commit on the master.  Excellent!  Git is starting to be a Very useful tool instead of an occasional impediment.  :)</p>
+
+<h1>Advanced</h1>
+
+<p>Show the last 3 commits:</p>
+
+<pre>
+  $ git log --oneline
+</pre>
+
+
+<p>Want to get the new stuff from master into your branch, but before your commited changes?  Do
+this.  First switch to the branch &lsquo;unicorns&rsquo;</p>
+
+<pre>
+  $ git checkout unicorns
+  
+  $ git rebase master
+</pre>
+
+
+<p>In the middle of some work on another branch and have to interrupt and get back to the master
+for some reason?  Do this.  First see what you are working on</p>
+
+<pre>
+  $ git diff
+</pre>
+
+
+<p>Save working directory and index state WIP on my_branch: b2bdead Add dogs.  And restores last
+commit.</p>
+
+<pre>
+  $ git stash save
+</pre>
+
+
+<p>Now these return nothing</p>
+
+<pre>
+  $ git diff
+  $ git status
+</pre>
+
+
+<p>Now get back to master and update:</p>
+
+<pre>
+  $ git checkout master
+  $ git pull
+</pre>
+
+
+<p>When done, get back to our stashed work:</p>
+
+<pre>
+  $ git checkout my_branch
+  $ git stash apply
+</pre>
+
+
+<p>Verify we are in the same place:</p>
+
+<pre>
+  $ git diff
+  
+  $ git stash list
+  $ git stash apply stash@{1}
+  $ git stash drop
+</pre>
+
 
 <h2>Fini</h2>
 
-<p>Thank you for reading.  I hope you found this useful.</p>
+<p>Thank you for reading.  I hope you found this useful.  I invite you to read my next post if you are interested in the unix commands that I find most useful.</p>
 </div>
 
 
@@ -240,7 +381,7 @@ vi your_filename
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-06T13:08:54-08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-02T18:47:42-08:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2013</time>
           
 
 
@@ -248,7 +389,7 @@ vi your_filename
         
           <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://sprestage-tech-blog.herokuapp.com/blog/2013/12/06/why-i-like-vi/" data-via="SusanPrestage" data-counturl="http://sprestage-tech-blog.herokuapp.com/blog/2013/12/06/why-i-like-vi/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://sprestage-tech-blog.herokuapp.com/blog/2013/12/02/my-personal-git-command-reference/" data-via="SusanPrestage" data-counturl="http://sprestage-tech-blog.herokuapp.com/blog/2013/12/02/my-personal-git-command-reference/" >Tweet</a>
   
   
   
@@ -258,8 +399,10 @@ vi your_filename
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/2013/12/04/unix-alias-file/" title="Previous Post: How the unix .alias file can make your command line life better">&laquo; How the unix .alias file can make your command line life better</a></li>
+            <li class="previous"><a href="/blog/2013/12/01/overcoming-my-fear-of-git-through-knowledge/" title="Previous Post: Overcoming my fear of Git through knowledge">&laquo; Overcoming my fear of Git through knowledge</a></li>
             
+            
+            <li class="next"><a href="/blog/2013/12/03/my-favorite-unix-commands/" title="Next Post: My favorite unix commands">My favorite unix commands &raquo;</a></li>
             
           </ul>
         
@@ -278,13 +421,13 @@ vi your_filename
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item active" href="/blog/2013/12/06/why-i-like-vi/">Why I Like VI</a>
+    <a class="list-group-item " href="/blog/2013/12/06/why-i-like-vi/">Why I Like VI</a>
     
     <a class="list-group-item " href="/blog/2013/12/04/unix-alias-file/">How the Unix .alias File Can Make Your Command Line Life Better</a>
     
     <a class="list-group-item " href="/blog/2013/12/03/my-favorite-unix-commands/">My Favorite Unix Commands</a>
     
-    <a class="list-group-item " href="/blog/2013/12/02/my-personal-git-command-reference/">My Personal Git Command Reference</a>
+    <a class="list-group-item active" href="/blog/2013/12/02/my-personal-git-command-reference/">My Personal Git Command Reference</a>
     
     <a class="list-group-item " href="/blog/2013/12/01/overcoming-my-fear-of-git-through-knowledge/">Overcoming My Fear of Git Through Knowledge</a>
     

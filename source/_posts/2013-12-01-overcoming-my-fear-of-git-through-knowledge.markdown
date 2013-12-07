@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Overcoming my fear of Git through knowledge"
-date: 2013-12-06 18:59:42 -0800
+date: 2013-12-01 18:59:42 -0800
 comments: true
 categories: 
 ---
@@ -22,6 +22,8 @@ Most operations you perform with Git will be local. The entire history of your r
 ###### 1. The Working Directory
 ###### 2. The Staging Area
 ###### 3. The Git Repository
+<a target="_blank" href="#blog"><img class="img-portfolio img-responsive" src="https://s3-us-west-2.amazonaws.com/technicalblog/three_states_of_git.png" width="340" height="284"></a>
+
 Git has three main states that your files can reside in: commited, modified, and staged.  Commited means that the data is safely stored in your local repository.  Modified means that you have changed the file, but not yet commited it to your local repository.  Staged means that you have marked a modified file to go into your next commit snapshot.
 
 * Check out the project to bring the files from the git repository into your working directory.
@@ -44,3 +46,10 @@ To install and setup Git, go here and follow the very good instructions.
 
 I highly recommend the entire http://git-scm.com/documentation site
 And for a more thorough explanation of Git, what it is, and how it works, I particularly recomment this chapter http://git-scm.com/book/en/Getting-Started-Git-Basics.
+
+## Final notes on Git
+I have found that it is important to stage and commit your files often.  In small increments.  Any time you have a change that makes sense as its own commit, do so.  If what you are working on is so big that you think you ought to wait to commit, then I strongly recommend branching and then again you should be able to break down your commits.  You really want to be able to track what you did later, both for yourself and for others trying to maintain your code.
+
+## Fini
+
+Thank you for reading.  I hope you found this useful.  I invite you to read my next post if you are interested in the Git commands that I find most useful.

@@ -74,3 +74,7 @@ The commands can be broken into a several categories.
 ---
 ### NOTE
 Both UNIX and vi are case-sensitive. Be sure not to use a capital letter in place of a lowercase letter; the results will not be what you expect.
+
+## Fini
+
+Thank you for reading.  I hope you found this useful.  

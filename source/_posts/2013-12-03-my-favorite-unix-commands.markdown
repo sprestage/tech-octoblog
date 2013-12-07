@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My favorite unix commands"
-date: 2013-12-06 16:03:22 -0800
+date: 2013-12-03 16:03:22 -0800
 comments: true
 categories: 
 ---
@@ -50,3 +50,6 @@ print working directory
 pwd 
 </pre>
 
+## Fini
+
+Thank you for reading.  I hope you found this useful.  I invite you to read my next post if you are interested in learning how to use the unix .alias file to make your command line experience more pleasurable.

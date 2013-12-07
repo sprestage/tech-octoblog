@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How the unix .alias file can make your command line life better"
-date: 2013-12-06 12:50:52 -0800
+date: 2013-12-04 12:50:52 -0800
 comments: true
 categories: 
 ---
@@ -30,3 +30,7 @@ Command aliases in unix.
 	- also a good way of noting down commands you just learned and want to use much more, and want to get the syntax down before you forget
 	
 ## Protect from unfortunate commands
+
+## Fini
+
+Thank you for reading.  I hope you found this useful.  I invite you to read my next post if you are interested in learning about vi and why I like it so much.

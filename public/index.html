@@ -114,361 +114,6 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-06T18:59:42-08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/06/overcoming-my-fear-of-git-through-knowledge/">Overcoming My Fear of Git Through Knowledge</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix"><h2>Getting past my fear of Git</h2>
-
-<p>Git kept scaring me.  Mostly, this fear is based on how wonderfully powerful a tool that Git (and github) can be and my lack of easy comfort with the commands.  So, I&rsquo;ve made a list of my most used commands and any notes I need for use.  This goes a bit long, since as I learned more and more commands, I added more that I was starting to use.  Good luck!</p>
-
-<h2>What is Git</h2>
-
-<h4>Basics</h4>
-
-<p>Git is a version control system, VCS.  Don&rsquo;t think too carefully about the other VCSs you know, like Perforce or Subversion.  Git is much different and trying to compare will likely cause confusion.</p>
-
-<h4>Snapshots, instead of differences</h4>
-
-<p>Most other systems tend to store data as changes to a base version of each file.  Git doesn&rsquo;t think of it&rsquo;s data that way.  Instead, Git thinks of its data more like a set of ssnapshots of a minifilesystem.  And, to be efficient, Git only takes a snapshot of the files that have changed, simply linking to all the other files that have not changed.</p>
-
-<h4>Local</h4>
-
-<p>Most operations you perform with Git will be local. The entire history of your repository will be right there on your machine, which means that diffs and browsing the history of your project is very quick.  This also means that working offline is not a problem.  You simply commit all you like while offline, then push your work up to the remote repository server when you get back to a network connection.</p>
-
-<h4>The Three States of Git</h4>
-
-<h6>1. The Working Directory</h6>
-
-<h6>2. The Staging Area</h6>
-
-<h6>3. The Git Repository</h6>
-
-<p>Git has three main states that your files can reside in: commited, modified, and staged.  Commited means that the data is safely stored in your local repository.  Modified means that you have changed the file, but not yet commited it to your local repository.  Staged means that you have marked a modified file to go into your next commit snapshot.</p>
-
-<ul>
-<li><p>Check out the project to bring the files from the git repository into your working directory.</p></li>
-<li><p>Stage your files to bring those changes from your working directory to the staging area.</p></li>
-<li><p>Commit your files to bring the changes from the staging area to the git repository.</p></li>
-</ul>
-
-
-<p>Your workflow will be something like this:</p>
-
-<ol>
-<li>Modify files in your working directory.</li>
-<li>Stage the files.  This adds snapshots of them to the staging area.</li>
-<li>Commit your changes.  This takes the files as they are in the staging area and stores that snapshot in your git repository.</li>
-</ol>
-
-
-<h2>Getting started with Git</h2>
-
-<p>To install and setup Git, go here and follow the very good instructions.</p>
-
-<ul>
-<li><a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">http://git-scm.com/book/en/Getting-Started-Installing-Git</a></li>
-<li><a href="http://git-scm.com/book/en/Getting-Started-First-Time-Git-Setup">http://git-scm.com/book/en/Getting-Started-First-Time-Git-Setup</a></li>
-</ul>
-
-
-<p>I highly recommend the entire <a href="http://git-scm.com/documentation">http://git-scm.com/documentation</a> site
-And for a more thorough explanation of Git, what it is, and how it works, I particularly recomment this chapter <a href="http://git-scm.com/book/en/Getting-Started-Git-Basics.">http://git-scm.com/book/en/Getting-Started-Git-Basics.</a></p>
-</div>
-  
-  
-
-
-        </article>
-      
-      
-        <article class="post">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-06T18:47:42-08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/06/my-personal-git-command-reference/">My Personal Git Command Reference</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix"><h2>Set up the repository for your new project</h2>
-
-<p>Brand new project.  Start in the project directory.  Then:</p>
-
-<pre>
-  $ git init
-</pre>
-
-
-<p>How is git looking (you will find some useful guidance printed out with this command too):
-  $ git status</p>
-
-<p>Ready to stage your commits?  Here is the long way:
-  $ git add .
-  $ git commit -m &ldquo;Initial commit&rdquo;</p>
-
-<p>Here is a useful short way:
-  $ git commit -am &ldquo;Initial commit&rdquo;</p>
-
-<p>Point to a new repo on github.  Note: Must create this new repo on github first!
-  $ git remote add origin <a href="https://github.com/">https://github.com/</a><username>/demo_app.git</p>
-
-<p>Which remote repositories are being pointed to:
-  $ git remote -v</p>
-
-<p>List remote and local branches:
-  $ git branch -a</p>
-
-<p>Push to github:
-  $ git push -u origin master</p>
-
-<p>First push to heroku:
-  $ heroku create
-  $ git push heroku master
-  $ heroku run rake db:migrate</p>
-
-<p>Further pushes to heroku
-  $ git push heroku master</p>
-
-<h2>create a new local repo</h2>
-
-<h2>create a new github repo</h2>
-
-<h2>checking in (locally)</h2>
-
-<h2>pushing to github</h2>
-
-<h2>pulling, when and why</h2>
-
-<h2>branching</h2>
-
-<h2>merging</h2>
-
-<h1>Advanced</h1>
-
-<p>Show the last 3 commits:
-  $ git log &mdash;oneline</p>
-
-<p>Want to get the new stuff from master into your branch, but before your commited changes?  Do
-this.  First switch to the branch &lsquo;unicorns&rsquo;
-  $ git checkout unicorns</p>
-
-<p>  $ git rebase master</p>
-
-<p>In the middle of some work on another branch and have to interrupt and get back to the master
-for some reason?  Do this.  First see what you are working on
-  $ git diff</p>
-
-<p>Save working directory and index state WIP on my_branch: b2bdead Add dogs.  And restores last
-commit.
-  $ git stash save</p>
-
-<p>Now these return nothing
-  $ git diff
-  $ git status</p>
-
-<p>Now get back to master and update:
-  $ git checkout master
-  $ git pull</p>
-
-<p>When done, get back to our stashed work:
-  $ git checkout my_branch
-  $ git stash apply</p>
-
-<p>Verify we are in the same place:
-  $ git diff</p>
-
-<p>  $ git stash list
-  $ git stash apply stash@{1}
-  $ git stash drop</p>
-
-<h1>Branching, this scares me&hellip;</h1>
-
-<p>First, create the branch locally.  This automatically changes you to this branch locally.
-  $ git checkout -b new_branch_name</p>
-
-<p>To check this into github, do this and the new branch will automatically get created on github,
-then your code will get pushed into that branch.
-  $ git push origin new_branch_name</p>
-
-<p>Also very useful are these links:
-<a href="http://www.ndpsoftware.com/git-cheatsheet.html#loc=workspace;">http://www.ndpsoftware.com/git-cheatsheet.html#loc=workspace;</a>
-<a href="http://git-scm.com/book">http://git-scm.com/book</a></p>
-
-<p>Use this to confirm WHICH branch you are on.
-  $ git branch
-  $ git add .
-  $ git commit -m &ldquo;a good commit message&rdquo;
-  $ git push origin new_branch_name</p>
-
-<p>Very important tips for switching between branches.  ALWAYS commit your changes to your current
-branch before changing branches.  I assumed the files would stay in the old branch as I switched
-to the new branch, but NO.  The changes will follow you around like a lost puppy until you commit
-them.</p>
-
-<p>Ok, I&rsquo;ve got this branch (or worse, several branches).  I&rsquo;m done working on them.  They are all checked in, as branches.  But now, I need to get the master branch back up to date.  How do I do this with FIVE branches.  Don&rsquo;t panic, we can do this thing.  First, make sure everything is up to date and checked in.  For me, everything is check in locally and remotely.
-  $ git status</p>
-
-<p>Then, get onto the master branch.
-  $ git checkout master</p>
-
-<p>Now we are going to merge each branch in, push it to github, and then delete the branch since we are done with them.  Skip the last step if you aren&rsquo;t quite done with the branch.
-  $ git merge chapter_2
-  $ git push origin master    (also can just usually say &lsquo;git push&rsquo; here)
-  $ git branch -d chapter_2</p>
-
-<p>  $ git merge chapter_3
-  $ git push
-  $ git branch -d chapter_3
-Repeat until you&rsquo;ve merged in each branch.  Yeay!  This worked for me and I saw what I wanted on github.  I have both the branches I expect as well as each branch merge present as a commit on the master.  Excellent!  Git is starting to be a Very useful tool instead of an occasional impediment.  :)</p>
-</div>
-  
-  
-
-
-        </article>
-      
-      
-        <article class="post">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-06T16:03:22-08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/06/my-favorite-unix-commands/">My Favorite Unix Commands</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix"><pre>
-type (for when where doesn't tell me what I want)
-
-tree
-</pre>
-
-
-<p>erase line</p>
-
-<pre>
-[ctrl] + u
-</pre>
-
-
-<p>stop program</p>
-
-<pre>
-[ctrl] + c
-</pre>
-
-
-<p>no really, stop the danged program</p>
-
-<pre>
-[ctrl] + d
-</pre>
-
-
-
-
-<pre>
-ps
-ps -ef
-ps -x
-ps -a
-</pre>
-
-
-<p>different for different systems, I&rsquo;ve found over the years of using different unix systems.</p>
-
-<pre>
-kill _process_id_
-
-</pre>
-
-
-<pre>
-~ for my own directory
-. for here
-.. for one directory above
-</pre>
-
-
-<p>print working directory</p>
-
-<pre>
-pwd 
-</pre>
-
-
-
-</div>
-  
-  
-
-
-        </article>
-      
-      
-        <article class="post">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-06T13:08:54-08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time>
         
       </p>
@@ -569,6 +214,10 @@ vi your_filename
 <h3>NOTE</h3>
 
 <p>Both UNIX and vi are case-sensitive. Be sure not to use a capital letter in place of a lowercase letter; the results will not be what you expect.</p>
+
+<h2>Fini</h2>
+
+<p>Thank you for reading.  I hope you found this useful.</p>
 </div>
   
   
@@ -595,12 +244,12 @@ vi your_filename
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-06T12:50:52-08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-04T12:50:52-08:00" pubdate data-updated="true">Dec 4<span>th</span>, 2013</time>
         
       </p>
     
     
-      <h1 class="entry-title"><a href="/blog/2013/12/06/unix-alias-file/">How the Unix .alias File Can Make Your Command Line Life Better</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/12/04/unix-alias-file/">How the Unix .alias File Can Make Your Command Line Life Better</a></h1>
     
   </header>
 
@@ -644,6 +293,482 @@ vi your_filename
 </code></pre>
 
 <h2>Protect from unfortunate commands</h2>
+
+<h2>Fini</h2>
+
+<p>Thank you for reading.  I hope you found this useful.  I invite you to read my next post if you are interested in learning about vi and why I like it so much.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-03T16:03:22-08:00" pubdate data-updated="true">Dec 3<span>rd</span>, 2013</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/03/my-favorite-unix-commands/">My Favorite Unix Commands</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix"><pre>
+type (for when where doesn't tell me what I want)
+
+tree
+</pre>
+
+
+<p>erase line</p>
+
+<pre>
+[ctrl] + u
+</pre>
+
+
+<p>stop program</p>
+
+<pre>
+[ctrl] + c
+</pre>
+
+
+<p>no really, stop the danged program</p>
+
+<pre>
+[ctrl] + d
+</pre>
+
+
+
+
+<pre>
+ps
+ps -ef
+ps -x
+ps -a
+</pre>
+
+
+<p>different for different systems, I&rsquo;ve found over the years of using different unix systems.</p>
+
+<pre>
+kill _process_id_
+
+</pre>
+
+
+<pre>
+~ for my own directory
+. for here
+.. for one directory above
+</pre>
+
+
+<p>print working directory</p>
+
+<pre>
+pwd 
+</pre>
+
+
+<h2>Fini</h2>
+
+<p>Thank you for reading.  I hope you found this useful.  I invite you to read my next post if you are interested in learning how to use the unix .alias file to make your command line experience more pleasurable.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-02T18:47:42-08:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2013</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/02/my-personal-git-command-reference/">My Personal Git Command Reference</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix"><h1>Git Basics</h1>
+
+<h2>Setting up a new project</h2>
+
+<h3>Set up the local repository</h3>
+
+<p>Brand new project.  Start in the project directory.  Then:</p>
+
+<pre>
+  $ git init
+</pre>
+
+
+<p>Ready to stage your commits?  Here is the long way:</p>
+
+<pre>
+  $ git add .
+  $ git commit -m "Initial commit"
+</pre>
+
+
+<p>Here is a useful short way:</p>
+
+<pre>
+  $ git commit -am "Initial commit"
+</pre>
+
+
+<h3>Set up remote repository</h3>
+
+<p>Point to a new repo on github.  Note: Must create this new repo on github first!</p>
+
+<pre>
+  $ git remote add origin https://github.com/<username>/demo_app.git
+</pre>
+
+
+<p>Which remote repositories are being pointed to:</p>
+
+<pre>
+  $ git remote -v
+</pre>
+
+
+<p>List remote and local branches:</p>
+
+<pre>
+  $ git branch -a
+</pre>
+
+
+<p>Push to github:</p>
+
+<pre>
+  $ git push -u origin master
+</pre>
+
+
+<h3>Set up Heroku</h3>
+
+<p>First, go to Heroku and create a new repo.
+Next, push to heroku:</p>
+
+<pre>
+  $ heroku create
+  $ git push heroku master
+  $ heroku run rake db:migrate
+</pre>
+
+
+<p>Further pushes to heroku</p>
+
+<pre>
+  $ git push heroku master
+</pre>
+
+
+<h2>Frequent staging, commiting, and pushing</h2>
+
+<p>Even better is that if you are working offline, you can keep staging and committing.  Then push all to the remote repository at once when you have internet connectivity again.</p>
+
+<pre>
+  $ git add .
+  $ git commit -m "brief explanation of changes here"
+  $ git push
+</pre>
+
+
+<h3>What is the status of your files</h3>
+
+<p>How is git looking (you will find some useful guidance printed out with this command too):</p>
+
+<pre>
+  $ git status
+</pre>
+
+
+<h1>Branching, this scares me&hellip;</h1>
+
+<p>First, create the branch locally.  This automatically changes you to this branch locally.</p>
+
+<pre>
+  $ git checkout -b new_branch_name
+</pre>
+
+
+<p>To check this into github, do this and the new branch will automatically get created on github,
+then your code will get pushed into that branch.</p>
+
+<pre>
+  $ git push origin new_branch_name
+</pre>
+
+
+<p>Also very useful are these links:
+<a href="http://www.ndpsoftware.com/git-cheatsheet.html#loc=workspace;">http://www.ndpsoftware.com/git-cheatsheet.html#loc=workspace;</a>
+<a href="http://git-scm.com/book">http://git-scm.com/book</a></p>
+
+<p>Use this to confirm WHICH branch you are on.</p>
+
+<pre>
+  $ git branch
+  $ git add .
+  $ git commit -m "a good commit message"
+  $ git push origin new_branch_name  
+</pre>
+
+
+<p>Very important tips for switching between branches.  ALWAYS commit your changes to your current
+branch before changing branches.  I assumed the files would stay in the old branch as I switched
+to the new branch, but NO.  The changes will follow you around like a lost puppy until you commit
+them.</p>
+
+<p>Ok, I&rsquo;ve got this branch (or worse, several branches).  I&rsquo;m done working on them.  They are all checked in, as branches.  But now, I need to get the master branch back up to date.  How do I do this with FIVE branches.  Don&rsquo;t panic, we can do this thing.  First, make sure everything is up to date and checked in.  For me, everything is check in locally and remotely.</p>
+
+<pre>
+  $ git status
+</pre>
+
+
+<p>Then, get onto the master branch.</p>
+
+<pre>
+  $ git checkout master
+</pre>
+
+
+<p>Now we are going to merge each branch in, push it to github, and then delete the branch since we are done with them.  Skip the last step if you aren&rsquo;t quite done with the branch.</p>
+
+<pre>
+  $ git merge chapter_2
+  $ git push origin master    (also can just usually say 'git push' here)
+  $ git branch -d chapter_2
+  
+  $ git merge chapter_3
+  $ git push 
+  $ git branch -d chapter_3
+</pre>
+
+
+<p>Repeat until you&rsquo;ve merged in each branch.  Yeay!  This worked for me and I saw what I wanted on github.  I have both the branches I expect as well as each branch merge present as a commit on the master.  Excellent!  Git is starting to be a Very useful tool instead of an occasional impediment.  :)</p>
+
+<h1>Advanced</h1>
+
+<p>Show the last 3 commits:</p>
+
+<pre>
+  $ git log --oneline
+</pre>
+
+
+<p>Want to get the new stuff from master into your branch, but before your commited changes?  Do
+this.  First switch to the branch &lsquo;unicorns&rsquo;</p>
+
+<pre>
+  $ git checkout unicorns
+  
+  $ git rebase master
+</pre>
+
+
+<p>In the middle of some work on another branch and have to interrupt and get back to the master
+for some reason?  Do this.  First see what you are working on</p>
+
+<pre>
+  $ git diff
+</pre>
+
+
+<p>Save working directory and index state WIP on my_branch: b2bdead Add dogs.  And restores last
+commit.</p>
+
+<pre>
+  $ git stash save
+</pre>
+
+
+<p>Now these return nothing</p>
+
+<pre>
+  $ git diff
+  $ git status
+</pre>
+
+
+<p>Now get back to master and update:</p>
+
+<pre>
+  $ git checkout master
+  $ git pull
+</pre>
+
+
+<p>When done, get back to our stashed work:</p>
+
+<pre>
+  $ git checkout my_branch
+  $ git stash apply
+</pre>
+
+
+<p>Verify we are in the same place:</p>
+
+<pre>
+  $ git diff
+  
+  $ git stash list
+  $ git stash apply stash@{1}
+  $ git stash drop
+</pre>
+
+
+<h2>Fini</h2>
+
+<p>Thank you for reading.  I hope you found this useful.  I invite you to read my next post if you are interested in the unix commands that I find most useful.</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-01T18:59:42-08:00" pubdate data-updated="true">Dec 1<span>st</span>, 2013</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/01/overcoming-my-fear-of-git-through-knowledge/">Overcoming My Fear of Git Through Knowledge</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix"><h2>Getting past my fear of Git</h2>
+
+<p>Git kept scaring me.  Mostly, this fear is based on how wonderfully powerful a tool that Git (and github) can be and my lack of easy comfort with the commands.  So, I&rsquo;ve made a list of my most used commands and any notes I need for use.  This goes a bit long, since as I learned more and more commands, I added more that I was starting to use.  Good luck!</p>
+
+<h2>What is Git</h2>
+
+<h4>Basics</h4>
+
+<p>Git is a version control system, VCS.  Don&rsquo;t think too carefully about the other VCSs you know, like Perforce or Subversion.  Git is much different and trying to compare will likely cause confusion.</p>
+
+<h4>Snapshots, instead of differences</h4>
+
+<p>Most other systems tend to store data as changes to a base version of each file.  Git doesn&rsquo;t think of it&rsquo;s data that way.  Instead, Git thinks of its data more like a set of ssnapshots of a minifilesystem.  And, to be efficient, Git only takes a snapshot of the files that have changed, simply linking to all the other files that have not changed.</p>
+
+<h4>Local</h4>
+
+<p>Most operations you perform with Git will be local. The entire history of your repository will be right there on your machine, which means that diffs and browsing the history of your project is very quick.  This also means that working offline is not a problem.  You simply commit all you like while offline, then push your work up to the remote repository server when you get back to a network connection.</p>
+
+<h4>The Three States of Git</h4>
+
+<h6>1. The Working Directory</h6>
+
+<h6>2. The Staging Area</h6>
+
+<h6>3. The Git Repository</h6>
+
+<p><a target="_blank" href="#blog"><img class="img-portfolio img-responsive" src="https://s3-us-west-2.amazonaws.com/technicalblog/three_states_of_git.png" width="340" height="284"></a></p>
+
+<p>Git has three main states that your files can reside in: commited, modified, and staged.  Commited means that the data is safely stored in your local repository.  Modified means that you have changed the file, but not yet commited it to your local repository.  Staged means that you have marked a modified file to go into your next commit snapshot.</p>
+
+<ul>
+<li><p>Check out the project to bring the files from the git repository into your working directory.</p></li>
+<li><p>Stage your files to bring those changes from your working directory to the staging area.</p></li>
+<li><p>Commit your files to bring the changes from the staging area to the git repository.</p></li>
+</ul>
+
+
+<p>Your workflow will be something like this:</p>
+
+<ol>
+<li>Modify files in your working directory.</li>
+<li>Stage the files.  This adds snapshots of them to the staging area.</li>
+<li>Commit your changes.  This takes the files as they are in the staging area and stores that snapshot in your git repository.</li>
+</ol>
+
+
+<h2>Getting started with Git</h2>
+
+<p>To install and setup Git, go here and follow the very good instructions.</p>
+
+<ul>
+<li><a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">http://git-scm.com/book/en/Getting-Started-Installing-Git</a></li>
+<li><a href="http://git-scm.com/book/en/Getting-Started-First-Time-Git-Setup">http://git-scm.com/book/en/Getting-Started-First-Time-Git-Setup</a></li>
+</ul>
+
+
+<p>I highly recommend the entire <a href="http://git-scm.com/documentation">http://git-scm.com/documentation</a> site
+And for a more thorough explanation of Git, what it is, and how it works, I particularly recomment this chapter <a href="http://git-scm.com/book/en/Getting-Started-Git-Basics.">http://git-scm.com/book/en/Getting-Started-Git-Basics.</a></p>
+
+<h2>Final notes on Git</h2>
+
+<p>I have found that it is important to stage and commit your files often.  In small increments.  Any time you have a change that makes sense as its own commit, do so.  If what you are working on is so big that you think you ought to wait to commit, then I strongly recommend branching and then again you should be able to break down your commits.  You really want to be able to track what you did later, both for yourself and for others trying to maintain your code.</p>
+
+<h2>Fini</h2>
+
+<p>Thank you for reading.  I hope you found this useful.  I invite you to read my next post if you are interested in the Git commands that I find most useful.</p>
 </div>
   
   
@@ -674,15 +799,15 @@ vi your_filename
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/2013/12/06/overcoming-my-fear-of-git-through-knowledge/">Overcoming My Fear of Git Through Knowledge</a>
-    
-    <a class="list-group-item " href="/blog/2013/12/06/my-personal-git-command-reference/">My Personal Git Command Reference</a>
-    
-    <a class="list-group-item " href="/blog/2013/12/06/my-favorite-unix-commands/">My Favorite Unix Commands</a>
-    
     <a class="list-group-item " href="/blog/2013/12/06/why-i-like-vi/">Why I Like VI</a>
     
-    <a class="list-group-item " href="/blog/2013/12/06/unix-alias-file/">How the Unix .alias File Can Make Your Command Line Life Better</a>
+    <a class="list-group-item " href="/blog/2013/12/04/unix-alias-file/">How the Unix .alias File Can Make Your Command Line Life Better</a>
+    
+    <a class="list-group-item " href="/blog/2013/12/03/my-favorite-unix-commands/">My Favorite Unix Commands</a>
+    
+    <a class="list-group-item " href="/blog/2013/12/02/my-personal-git-command-reference/">My Personal Git Command Reference</a>
+    
+    <a class="list-group-item " href="/blog/2013/12/01/overcoming-my-fear-of-git-through-knowledge/">Overcoming My Fear of Git Through Knowledge</a>
     
   </div>
 </section>
