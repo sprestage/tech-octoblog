@@ -4,7 +4,7 @@
   <title><![CDATA[My Technical Blog]]></title>
   <link href="http://sprestage-tech-blog.herokuapp.com/atom.xml" rel="self"/>
   <link href="http://sprestage-tech-blog.herokuapp.com/"/>
-  <updated>2013-12-07T15:32:38-08:00</updated>
+  <updated>2013-12-07T15:34:02-08:00</updated>
   <id>http://sprestage-tech-blog.herokuapp.com/</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -122,28 +122,40 @@ models.</p>
 
 <h2>Create 2nd resource scaffold</h2>
 
-<p>Time to implement Patients:
-  $ rails g scaffold Patient name:string &mdash;no-test-framework &mdash;no-assets &mdash;no-stylesheets &mdash;no-scss</p>
+<p>Time to implement Patients:</p>
+
+<pre>
+  $ rails g scaffold Patient name:string --no-test-framework --no-assets --no-stylesheets --no-scss
+</pre>
+
 
 <h2>Create tests for 2nd resource</h2>
 
-<p>Then create the Patient tests:
-  $ rails g mini_test:feature PatientShowIndex</p>
+<p>Then create the Patient tests:</p>
 
-<p>  $ rails g mini_test:feature PatientShow</p>
+<pre>
+  $ rails g mini_test:feature PatientShowIndex
 
-<p>  $ rails g mini_test:feature PatientCreate</p>
+  $ rails g mini_test:feature PatientShow
 
-<p>  $ rails g mini_test:feature ItemUpdate</p>
+  $ rails g mini_test:feature PatientCreate
 
-<p>  $ rails g mini_test:feature ItemDelete</p>
+  $ rails g mini_test:feature ItemUpdate
+
+  $ rails g mini_test:feature ItemDelete
+</pre>
+
 
 <p>Add /test/patients/ folder.  Move patient tests.</p>
 
 <h2>Migrate DB for 2nd resource</h2>
 
-<p>Add Patients to the DB:
-  $ rake db:migrate</p>
+<p>Add Patients to the DB:</p>
+
+<pre>
+  $ rake db:migrate
+</pre>
+
 
 <h2>Modify views for 2nd resource</h2>
 
