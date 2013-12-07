@@ -1,3 +1,13 @@
+# Intro
+Hi folks.  There isn't a lot to see here.  I'm storing my blog on github so I can easily add and edit my technical blog as well as using Git as my CVS so I can conveniently store everything on Github.
+<br>
+<br>
+
+
+---
+#Octopress credits
+I'm leaving everything below intact, in order to give Octopress appropriate credit for providing such an awesome free blogging platform to the world.  Thank you Octopress!
+
 ## What is Octopress?
 
 Octopress is [Jekyll](https://github.com/mojombo/jekyll) blogging at its finest.
