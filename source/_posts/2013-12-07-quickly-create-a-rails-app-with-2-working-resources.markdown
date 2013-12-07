@@ -94,10 +94,13 @@ Make sure all Doctor stuff works.
 
 ## Create 2nd resource scaffold
 Time to implement Patients:
+<pre>
   $ rails g scaffold Patient name:string --no-test-framework --no-assets --no-stylesheets --no-scss
+</pre>
 
 ## Create tests for 2nd resource
 Then create the Patient tests:
+<pre>
   $ rails g mini_test:feature PatientShowIndex
 
   $ rails g mini_test:feature PatientShow
@@ -107,12 +110,15 @@ Then create the Patient tests:
   $ rails g mini_test:feature ItemUpdate
 
   $ rails g mini_test:feature ItemDelete
+</pre>
 
 Add /test/patients/ folder.  Move patient tests.
 
 ## Migrate DB for 2nd resource
 Add Patients to the DB:
+<pre>
   $ rake db:migrate
+</pre>
 
 ## Modify views for 2nd resource
 Add Patient name to display on /patients/new page
