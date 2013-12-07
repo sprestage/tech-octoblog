@@ -24,7 +24,13 @@
     </url>
     <url>
         <loc>http://sprestage-tech-blog.herokuapp.com/blog/2013/12/06/why-i-like-vi/</loc>
-        <lastmod>2013-12-07T09:33:36-08:00</lastmod>
+        <lastmod>2013-12-07T15:09:42-08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://sprestage-tech-blog.herokuapp.com/blog/2013/12/07/quickly-create-a-rails-app-with-2-working-resources/
+        </loc>
+        <lastmod>2013-12-07T15:09:42-08:00</lastmod>
     </url>
     <url>
         <loc>http://sprestage-tech-blog.herokuapp.com/about.html</loc>
@@ -56,7 +62,7 @@
     </url>
     <url>
         <loc>http://sprestage-tech-blog.herokuapp.com/assets/bootstrap/</loc>
-        <lastmod>2013-12-07T12:57:06-08:00</lastmod>
+        <lastmod>2013-12-07T15:09:42-08:00</lastmod>
     </url>
     <url>
         <loc>http://sprestage-tech-blog.herokuapp.com/assets/bootstrap/javascript.html</loc>
@@ -64,11 +70,11 @@
     </url>
     <url>
         <loc>http://sprestage-tech-blog.herokuapp.com/blog/archives/</loc>
-        <lastmod>2013-12-07T12:57:06-08:00</lastmod>
+        <lastmod>2013-12-07T15:09:42-08:00</lastmod>
     </url>
     <url>
         <loc>http://sprestage-tech-blog.herokuapp.com/</loc>
-        <lastmod>2013-12-07T12:57:06-08:00</lastmod>
+        <lastmod>2013-12-07T15:09:42-08:00</lastmod>
     </url>
     <url>
         <loc>http://sprestage-tech-blog.herokuapp.com/robots.txt</loc>

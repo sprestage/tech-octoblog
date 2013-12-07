@@ -77,4 +77,4 @@ Both UNIX and vi are case-sensitive. Be sure not to use a capital letter in plac
 
 ## Fini
 
-Thank you for reading.  I hope you found this useful.  
+Thank you for reading.  I hope you found this useful.  I invite you to read my next post if you are interested in learning how to create a basic rails application with two resources, some minitests, a bit of security lockdown, and some useful views for the app.
