@@ -19,3 +19,12 @@ group :development do
 end
 
 gem 'sinatra'
+
+group :production do
+  gem 'newrelic_rpm'
+end
+
+group :development, :test do
+# Figaro for removing secret keys from github
+  gem 'figaro'
+end
