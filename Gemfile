@@ -3,7 +3,7 @@ ruby '2.0.0'
 
 group :development do
   gem 'rake'
-  gem 'jekyll'
+  gem 'jekyll', '0.12'
   gem 'rdiscount'
   gem 'pygments.rb'
   gem 'RedCloth'
