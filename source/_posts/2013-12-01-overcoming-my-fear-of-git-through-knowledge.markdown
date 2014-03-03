@@ -13,7 +13,7 @@ Git kept scaring me.  Mostly, this fear is based on how wonderfully powerful a t
 Git is a version control system, VCS.  Don't think too carefully about the other VCSs you know, like Perforce or Subversion.  Git is much different and trying to compare will likely cause confusion.
 
 #### Snapshots, instead of differences
-Most other systems tend to store data as changes to a base version of each file.  Git doesn't think of it's data that way.  Instead, Git thinks of its data more like a set of ssnapshots of a minifilesystem.  And, to be efficient, Git only takes a snapshot of the files that have changed, simply linking to all the other files that have not changed.
+Most other systems tend to store data as changes to a base version of each file.  Git doesn't think of it's data that way.  Instead, Git thinks of its data more like a set of snapshots of a mini-filesystem.  And, to be efficient, Git only takes a snapshot of the files that have changed, simply linking to all the other files that have not changed.
 
 #### Local
 Most operations you perform with Git will be local. The entire history of your repository will be right there on your machine, which means that diffs and browsing the history of your project is very quick.  This also means that working offline is not a problem.  You simply commit all you like while offline, then push your work up to the remote repository server when you get back to a network connection. 
@@ -44,11 +44,10 @@ To install and setup Git, go here and follow the very good instructions.
 * http://git-scm.com/book/en/Getting-Started-Installing-Git 
 * http://git-scm.com/book/en/Getting-Started-First-Time-Git-Setup
 
-I highly recommend the entire http://git-scm.com/documentation site
-And for a more thorough explanation of Git, what it is, and how it works, I particularly recomment this chapter http://git-scm.com/book/en/Getting-Started-Git-Basics.
+I highly recommend the entire http://git-scm.com/documentation site.  For a more thorough explanation of Git, what it is, and how it works, I particularly recomment this chapter http://git-scm.com/book/en/Getting-Started-Git-Basics.
 
 ## Final notes on Git
-I have found that it is important to stage and commit your files often.  In small increments.  Any time you have a change that makes sense as its own commit, do so.  If what you are working on is so big that you think you ought to wait to commit, then I strongly recommend branching and then again you should be able to break down your commits.  You really want to be able to track what you did later, both for yourself and for others trying to maintain your code.
+I have found that it is important to stage and commit your files often and in small increments.  Any time you have a change that makes sense as its own commit, do so.  If what you are working on is so big that you think you ought to wait to commit, then I strongly recommend branching and then again you should be able to break down your commits within that branch.  You really want to be able to track what you did later, both for yourself and for others trying to maintain your code.
 
 ## Fini
 
