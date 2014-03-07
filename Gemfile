@@ -13,12 +13,12 @@ group :development do
   gem 'sass-globbing'
   gem 'rubypants'
   gem 'rb-fsevent'
-  gem 'stringex'
   gem 'liquid'
   gem 'directory_watcher'
 end
 
 gem 'sinatra', '~> 1.4.2'
+gem 'stringex', '~> 1.4.0'
 
 group :production do
   gem 'newrelic_rpm'
