@@ -28,12 +28,12 @@ Here is a useful short way to do both of the above commands at once:
 </pre>
 
 ### Set up remote repository 
-Point to a new repo on github.  Note: Must create this new repo on github first!
+Point to a new repo on github.  Note: must create this new repo on github first!
 <pre>
-  $ git remote add origin https://github.com/\<username\>/demo_app.git
+  $ git remote add origin https://github.com/&lt<i>username</i>>/&lt<i>your_new_app_name</i>>.git
 </pre>
  
-Check to see which remote repositories are being pointed to:
+Show the remote repositories that are being pointed to:
 <pre>
   $ git remote -v
 </pre>

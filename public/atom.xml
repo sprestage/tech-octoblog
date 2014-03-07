@@ -4,7 +4,7 @@
   <title><![CDATA[My Technical Blog]]></title>
   <link href="http://sprestage-tech-blog.herokuapp.com/atom.xml" rel="self"/>
   <link href="http://sprestage-tech-blog.herokuapp.com/"/>
-  <updated>2014-03-06T16:01:30-08:00</updated>
+  <updated>2014-03-06T16:42:44-08:00</updated>
   <id>http://sprestage-tech-blog.herokuapp.com/</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -439,14 +439,14 @@ pwd
 
 <h3>Set up remote repository</h3>
 
-<p>Point to a new repo on github.  Note: Must create this new repo on github first!</p>
+<p>Point to a new repo on github.  Note: must create this new repo on github first!</p>
 
 <pre>
-  $ git remote add origin https://github.com/\<username\>/demo_app.git
+  $ git remote add origin https://github.com/&lt<i>username</i>>/&lt<i>your_new_app_name</i>>.git
 </pre>
 
 
-<p>Check to see which remote repositories are being pointed to:</p>
+<p>Show the remote repositories that are being pointed to:</p>
 
 <pre>
   $ git remote -v
