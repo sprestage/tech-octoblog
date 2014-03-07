@@ -30,7 +30,7 @@ Here is a useful short way to do both of the above commands at once:
 ### Set up remote repository 
 Point to a new repo on github.  Note: must create this new repo on github first!
 <pre>
-  $ git remote add origin https://github.com/&lt<i>username</i>>/&lt<i>your_new_app_name</i>>.git
+  $ git remote add origin https://github.com/&ltusername>/&ltyour_new_app_name>.git
 </pre>
  
 Show the remote repositories that are being pointed to:
@@ -190,6 +190,52 @@ Verify we are in the same place:
   $ git stash apply stash@{1}
   $ git stash drop
 </pre>
+
+
+## Whoops!
+To check out a particular commit, use
+<pre>
+  $ git checkout &ltsha1>
+</pre>
+
+To revert changes made to your working copy, do this
+<pre>
+  $ git checkout .
+</pre>
+
+This will create three separate revert commits:
+
+<pre>
+  $ git revert 0766c053 25eee4ca a867b4af
+</pre>
+
+It also takes ranges. This will revert the last two commits:
+
+<pre>
+  $ git revert HEAD~2..HEAD
+</pre>
+
+To get just one, you could use `rebase -i` to squash them afterwards  Or, you could do it manually (be sure to do this at top level of the repo) get your index and work tree into the desired state, without changing HEAD:
+
+<pre>
+  $ git checkout 0d1d7fc32 .
+</pre>
+
+and then commit
+
+<pre>
+  $ git commit    # be sure and write a good message describing what you just did  
+</pre>
+
+
+
+
+I don't like my past several commits.  I want to go back to a particular commit.  Reset may be a BAD, BAD way of doing things, so look out!
+<pre>
+  $ git reset --hard HEAD~5
+</pre>
+Ok, now I want to go restore those several commits, can I?
+
  
  
 ## Fini

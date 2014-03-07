@@ -156,7 +156,7 @@
 <p>Point to a new repo on github.  Note: must create this new repo on github first!</p>
 
 <pre>
-  $ git remote add origin https://github.com/&lt<i>username</i>>/&lt<i>your_new_app_name</i>>.git
+  $ git remote add origin https://github.com/&ltusername>/&ltyour_new_app_name>.git
 </pre>
 
 
@@ -361,6 +361,59 @@ commit.</p>
   $ git stash drop
 </pre>
 
+
+<h2>Whoops!</h2>
+
+<p>To check out a particular commit, use</p>
+
+<pre>
+  $ git checkout &ltsha1>
+</pre>
+
+
+<p>To revert changes made to your working copy, do this</p>
+
+<pre>
+  $ git checkout .
+</pre>
+
+
+<p>This will create three separate revert commits:</p>
+
+<pre>
+  $ git revert 0766c053 25eee4ca a867b4af
+</pre>
+
+
+<p>It also takes ranges. This will revert the last two commits:</p>
+
+<pre>
+  $ git revert HEAD~2..HEAD
+</pre>
+
+
+<p>To get just one, you could use <code>rebase -i</code> to squash them afterwards  Or, you could do it manually (be sure to do this at top level of the repo) get your index and work tree into the desired state, without changing HEAD:</p>
+
+<pre>
+  $ git checkout 0d1d7fc32 .
+</pre>
+
+
+<p>and then commit</p>
+
+<pre>
+  $ git commit    # be sure and write a good message describing what you just did  
+</pre>
+
+
+<p>I don&rsquo;t like my past several commits.  I want to go back to a particular commit.  Reset may be a BAD, BAD way of doing things, so look out!</p>
+
+<pre>
+  $ git reset --hard HEAD~5
+</pre>
+
+
+<p>Ok, now I want to go restore those several commits, can I?</p>
 
 <h2>Fini</h2>
 
