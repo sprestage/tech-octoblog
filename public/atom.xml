@@ -4,7 +4,7 @@
   <title><![CDATA[My Technical Blog]]></title>
   <link href="http://sprestage-tech-blog.herokuapp.com/atom.xml" rel="self"/>
   <link href="http://sprestage-tech-blog.herokuapp.com/"/>
-  <updated>2013-12-07T18:30:44-08:00</updated>
+  <updated>2014-03-06T16:01:30-08:00</updated>
   <id>http://sprestage-tech-blog.herokuapp.com/</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -212,7 +212,7 @@ models.</p>
 <h4>Insert mode</h4>
 
 <ul>
-<li>In the insert mode, every character typed is added to the text in the   file; pressing the &lt;Esc> (Escape) key turns off the Insert mode.</li>
+<li>In the insert mode, every character typed is added to the text in the   file; pressing the \<Esc> (Escape) key turns off the Insert mode.</li>
 </ul>
 
 
@@ -268,8 +268,7 @@ vi your_filename
 
 <h2>Miscellaneous</h2>
 
-<br>
-
+<p><br></p>
 
 <hr />
 
@@ -431,7 +430,7 @@ pwd
 </pre>
 
 
-<p>Here is a useful short way:</p>
+<p>Here is a useful short way to do both of the above commands at once:</p>
 
 <pre>
   $ git commit -am "Initial commit"
@@ -443,11 +442,11 @@ pwd
 <p>Point to a new repo on github.  Note: Must create this new repo on github first!</p>
 
 <pre>
-  $ git remote add origin https://github.com/<username>/demo_app.git
+  $ git remote add origin https://github.com/\<username\>/demo_app.git
 </pre>
 
 
-<p>Which remote repositories are being pointed to:</p>
+<p>Check to see which remote repositories are being pointed to:</p>
 
 <pre>
   $ git remote -v
@@ -665,7 +664,7 @@ commit.</p>
 
 <h4>Snapshots, instead of differences</h4>
 
-<p>Most other systems tend to store data as changes to a base version of each file.  Git doesn&rsquo;t think of it&rsquo;s data that way.  Instead, Git thinks of its data more like a set of ssnapshots of a minifilesystem.  And, to be efficient, Git only takes a snapshot of the files that have changed, simply linking to all the other files that have not changed.</p>
+<p>Most other systems tend to store data as changes to a base version of each file.  Git doesn&rsquo;t think of it&rsquo;s data that way.  Instead, Git thinks of its data more like a set of snapshots of a mini-filesystem.  And, to be efficient, Git only takes a snapshot of the files that have changed, simply linking to all the other files that have not changed.</p>
 
 <h4>Local</h4>
 
@@ -709,12 +708,11 @@ commit.</p>
 </ul>
 
 
-<p>I highly recommend the entire <a href="http://git-scm.com/documentation">http://git-scm.com/documentation</a> site
-And for a more thorough explanation of Git, what it is, and how it works, I particularly recomment this chapter <a href="http://git-scm.com/book/en/Getting-Started-Git-Basics.">http://git-scm.com/book/en/Getting-Started-Git-Basics.</a></p>
+<p>I highly recommend the entire <a href="http://git-scm.com/documentation">http://git-scm.com/documentation</a> site.  For a more thorough explanation of Git, what it is and how it works, I particularly recommend this chapter <a href="http://git-scm.com/book/en/Getting-Started-Git-Basics.">http://git-scm.com/book/en/Getting-Started-Git-Basics.</a></p>
 
 <h2>Final notes on Git</h2>
 
-<p>I have found that it is important to stage and commit your files often.  In small increments.  Any time you have a change that makes sense as its own commit, do so.  If what you are working on is so big that you think you ought to wait to commit, then I strongly recommend branching and then again you should be able to break down your commits.  You really want to be able to track what you did later, both for yourself and for others trying to maintain your code.</p>
+<p>I have found that it is important to stage and commit your files often and in small increments.  Any time you have a change that makes sense as its own commit, do so.  If what you are working on is so big that you think you ought to wait to commit, then I strongly recommend branching and then again you should be able to break down your commits within that branch.  You really want to be able to track what you did later, both for yourself and for others trying to maintain your code.</p>
 
 <h2>Fini</h2>
 

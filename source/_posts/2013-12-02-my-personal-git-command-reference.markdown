@@ -22,7 +22,7 @@ Ready to stage your commits?  Here is the long way:
   $ git commit -m "Initial commit"
 </pre>
  
-Here is a useful short way: 
+Here is a useful short way to do both of the above commands at once: 
 <pre>
   $ git commit -am "Initial commit"
 </pre>
@@ -30,10 +30,10 @@ Here is a useful short way:
 ### Set up remote repository 
 Point to a new repo on github.  Note: Must create this new repo on github first!
 <pre>
-  $ git remote add origin https://github.com/<username>/demo_app.git
+  $ git remote add origin https://github.com/\<username\>/demo_app.git
 </pre>
  
-Which remote repositories are being pointed to:
+Check to see which remote repositories are being pointed to:
 <pre>
   $ git remote -v
 </pre>

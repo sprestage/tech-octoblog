@@ -28,7 +28,7 @@ Git has three main states that your files can reside in: commited, modified, and
 
 * Check out the project to bring the files from the git repository into your working directory.
 
-* Stage your files to bring those changes from your working directory to the staging area.
+* Stage your files to bring those changes from your working directory to the staging area. 
 
 * Commit your files to bring the changes from the staging area to the git repository.
 
@@ -44,11 +44,11 @@ To install and setup Git, go here and follow the very good instructions.
 * http://git-scm.com/book/en/Getting-Started-Installing-Git 
 * http://git-scm.com/book/en/Getting-Started-First-Time-Git-Setup
 
-I highly recommend the entire http://git-scm.com/documentation site.  For a more thorough explanation of Git, what it is, and how it works, I particularly recomment this chapter http://git-scm.com/book/en/Getting-Started-Git-Basics.
+I highly recommend the entire http://git-scm.com/documentation site.  For a more thorough explanation of Git, what it is and how it works, I particularly recommend this chapter http://git-scm.com/book/en/Getting-Started-Git-Basics.  
 
 ## Final notes on Git
 I have found that it is important to stage and commit your files often and in small increments.  Any time you have a change that makes sense as its own commit, do so.  If what you are working on is so big that you think you ought to wait to commit, then I strongly recommend branching and then again you should be able to break down your commits within that branch.  You really want to be able to track what you did later, both for yourself and for others trying to maintain your code.
-
+ 
 ## Fini
 
 Thank you for reading.  I hope you found this useful.  I invite you to read my next post if you are interested in the Git commands that I find most useful.
