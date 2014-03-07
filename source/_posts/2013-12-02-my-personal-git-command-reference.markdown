@@ -62,6 +62,11 @@ Further pushes to heroku
   $ git push heroku master
 </pre>
 
+If you encounter problems, this will show you the logs on Heroku for diagnostics
+<pre>
+  $ heroku logs
+</pre>
+
 ## Frequent staging, commiting, and pushing
 Even better is that if you are working offline, you can keep staging and committing.  Then push all to the remote repository at once when you have internet connectivity again.
 <pre>

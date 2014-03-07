@@ -4,7 +4,7 @@
   <title><![CDATA[My Technical Blog]]></title>
   <link href="http://sprestage-tech-blog.herokuapp.com/atom.xml" rel="self"/>
   <link href="http://sprestage-tech-blog.herokuapp.com/"/>
-  <updated>2014-03-06T16:42:44-08:00</updated>
+  <updated>2014-03-06T16:55:43-08:00</updated>
   <id>http://sprestage-tech-blog.herokuapp.com/</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -483,6 +483,13 @@ Next, push to heroku:</p>
 
 <pre>
   $ git push heroku master
+</pre>
+
+
+<p>If you encounter problems, this will show you the logs on Heroku for diagnostics</p>
+
+<pre>
+  $ heroku logs
 </pre>
 
 
