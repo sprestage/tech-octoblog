@@ -18,11 +18,10 @@ group :development do
   gem 'directory_watcher'
 end
 
-gem 'sinatra'
+gem 'sinatra', '~> 1.4.2'
 
 group :production do
   gem 'newrelic_rpm'
-  gem 'rails_12factor'
 end
 
 group :development, :test do
