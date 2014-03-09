@@ -1,5 +1,11 @@
 language: ruby
 rvm:
-  - 2.0.0
-  - 1.9.3
-script: bundle exec rake install; bundle exec rake generate
+- 2.0.0
+script: bundle exec rake generate
+deploy:
+  provider: heroku
+  api_key:
+    secure: UVEq6fYgE5VLj+dP69Rc0RcfGqBADQsWC1irldkX8KzfM3oyS+hndrH4SKHFyLf8JNcwPinLgd3oJEhZ4VaPHIYCof9xYViQs/p/e5+0WJ7EGRO/9JJls057MWKbmv3Z7iHoFPsGkJ5DhJo+4BEllHgraDmW0cotY7zCIa8Muxk=
+  app: sprestage-technical-blog
+  on:
+    repo: sprestage/tech-octoblog
