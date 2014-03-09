@@ -22,5 +22,5 @@ group :production do
   gem 'newrelic_rpm'
 end
 
-gem 'sinatra', '~> 1.4.2'
+gem 'sinatra'
 
