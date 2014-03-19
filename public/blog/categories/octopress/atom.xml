@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Octopress | My Technical Blog]]></title>
+  <link href="http://sprestage-tech-blog.herokuapp.com/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://sprestage-tech-blog.herokuapp.com/"/>
+  <updated>2014-03-19T12:51:33-07:00</updated>
+  <id>http://sprestage-tech-blog.herokuapp.com/</id>
+  <author>
+    <name><![CDATA[Susan Prestage]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[What were those Octopress commands again?]]></title>
+    <link href="http://sprestage-tech-blog.herokuapp.com/blog/2014/03/19/what-were-those-octopress-commands-again/"/>
+    <updated>2014-03-19T12:30:59-07:00</updated>
+    <id>http://sprestage-tech-blog.herokuapp.com/blog/2014/03/19/what-were-those-octopress-commands-again</id>
+    <content type="html"><![CDATA[<p>Create a new post:</p>
+
+<pre>
+    $ rake new_post["What were those Octopress commands again?"]
+</pre>
+
+
+<p>Incorporate that post into your site:</p>
+
+<pre>
+    $ rake generate
+</pre>
+
+
+<p>Now commit your code and push to the livesite.</p>
+
+<h1>Thanks</h1>
+
+<p>Thank you to the Octopress docs site for well written and easy to follow documentation.  This is my most frequently refered to page, now that my site is up and running, <a href="http://octopress.org/docs/blogging/">http://octopress.org/docs/blogging/</a></p>
+]]></content>
+  </entry>
+  
+</feed>

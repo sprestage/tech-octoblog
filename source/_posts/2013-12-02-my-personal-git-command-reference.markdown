@@ -4,6 +4,10 @@ title: "My personal Git command reference"
 date: 2013-12-02 18:47:42 -0800
 comments: true
 categories: 
+- git
+- github
+- heroku
+- command line
 ---
 
 Git Basics
@@ -144,22 +148,19 @@ Show the last 3 commits:
   $ git log --oneline
 </pre>
   
-Want to get the new stuff from master into your branch, but before your commited changes?  Do 
-this.  First switch to the branch 'unicorns'
+Want to get the new stuff from master into your branch, but before your commited changes?  Do this.  First switch to the branch 'foo'
 <pre>
-  $ git checkout unicorns
+  $ git checkout foo
   
   $ git rebase master
 </pre>
   
-In the middle of some work on another branch and have to interrupt and get back to the master 
-for some reason?  Do this.  First see what you are working on
+In the middle of some work on another branch and have to interrupt and get back to the master for some reason?  Do this.  First see what you are working on
 <pre>
   $ git diff
 </pre>
   
-Save working directory and index state WIP on my_branch: b2bdead Add dogs.  And restores last 
-commit.
+Save working directory and index state WIP on my_branch and restores last commit.
 <pre>
   $ git stash save
 </pre>
@@ -192,7 +193,7 @@ Verify we are in the same place:
 </pre>
 
 
-## Whoops!
+## Whoops!  Now what do I do?
 To check out a particular commit, use
 <pre>
   $ git checkout &ltsha1>

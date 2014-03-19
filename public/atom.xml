@@ -4,7 +4,7 @@
   <title><![CDATA[My Technical Blog]]></title>
   <link href="http://sprestage-tech-blog.herokuapp.com/atom.xml" rel="self"/>
   <link href="http://sprestage-tech-blog.herokuapp.com/"/>
-  <updated>2014-03-08T21:06:08-08:00</updated>
+  <updated>2014-03-19T12:51:33-07:00</updated>
   <id>http://sprestage-tech-blog.herokuapp.com/</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[What were those Octopress commands again?]]></title>
+    <link href="http://sprestage-tech-blog.herokuapp.com/blog/2014/03/19/what-were-those-octopress-commands-again/"/>
+    <updated>2014-03-19T12:30:59-07:00</updated>
+    <id>http://sprestage-tech-blog.herokuapp.com/blog/2014/03/19/what-were-those-octopress-commands-again</id>
+    <content type="html"><![CDATA[<p>Create a new post:</p>
+
+<pre>
+    $ rake new_post["What were those Octopress commands again?"]
+</pre>
+
+
+<p>Incorporate that post into your site:</p>
+
+<pre>
+    $ rake generate
+</pre>
+
+
+<p>Now commit your code and push to the livesite.</p>
+
+<h1>Thanks</h1>
+
+<p>Thank you to the Octopress docs site for well written and easy to follow documentation.  This is my most frequently refered to page, now that my site is up and running, <a href="http://octopress.org/docs/blogging/">http://octopress.org/docs/blogging/</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Quickly create a rails app with 2 working resources]]></title>
@@ -587,26 +614,23 @@ them.</p>
 </pre>
 
 
-<p>Want to get the new stuff from master into your branch, but before your commited changes?  Do
-this.  First switch to the branch &lsquo;unicorns&rsquo;</p>
+<p>Want to get the new stuff from master into your branch, but before your commited changes?  Do this.  First switch to the branch &lsquo;foo&rsquo;</p>
 
 <pre>
-  $ git checkout unicorns
+  $ git checkout foo
   
   $ git rebase master
 </pre>
 
 
-<p>In the middle of some work on another branch and have to interrupt and get back to the master
-for some reason?  Do this.  First see what you are working on</p>
+<p>In the middle of some work on another branch and have to interrupt and get back to the master for some reason?  Do this.  First see what you are working on</p>
 
 <pre>
   $ git diff
 </pre>
 
 
-<p>Save working directory and index state WIP on my_branch: b2bdead Add dogs.  And restores last
-commit.</p>
+<p>Save working directory and index state WIP on my_branch and restores last commit.</p>
 
 <pre>
   $ git stash save
@@ -648,7 +672,7 @@ commit.</p>
 </pre>
 
 
-<h2>Whoops!</h2>
+<h2>Whoops!  Now what do I do?</h2>
 
 <p>To check out a particular commit, use</p>
 

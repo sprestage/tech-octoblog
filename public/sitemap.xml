@@ -10,7 +10,7 @@
         <loc>
             http://sprestage-tech-blog.herokuapp.com/blog/2013/12/02/my-personal-git-command-reference/
         </loc>
-        <lastmod>2014-03-07T15:38:35-08:00</lastmod>
+        <lastmod>2014-03-19T12:48:52-07:00</lastmod>
     </url>
     <url>
         <loc>
@@ -31,6 +31,12 @@
             http://sprestage-tech-blog.herokuapp.com/blog/2013/12/07/quickly-create-a-rails-app-with-2-working-resources/
         </loc>
         <lastmod>2013-12-07T15:34:01-08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://sprestage-tech-blog.herokuapp.com/blog/2014/03/19/what-were-those-octopress-commands-again/
+        </loc>
+        <lastmod>2014-03-19T12:48:55-07:00</lastmod>
     </url>
     <url>
         <loc>http://sprestage-tech-blog.herokuapp.com/about.html</loc>
@@ -62,7 +68,7 @@
     </url>
     <url>
         <loc>http://sprestage-tech-blog.herokuapp.com/assets/bootstrap/</loc>
-        <lastmod>2014-03-07T15:38:35-08:00</lastmod>
+        <lastmod>2014-03-19T12:48:55-07:00</lastmod>
     </url>
     <url>
         <loc>http://sprestage-tech-blog.herokuapp.com/assets/bootstrap/javascript.html</loc>
@@ -70,11 +76,11 @@
     </url>
     <url>
         <loc>http://sprestage-tech-blog.herokuapp.com/blog/archives/</loc>
-        <lastmod>2014-03-07T15:38:35-08:00</lastmod>
+        <lastmod>2014-03-19T12:48:55-07:00</lastmod>
     </url>
     <url>
         <loc>http://sprestage-tech-blog.herokuapp.com/</loc>
-        <lastmod>2014-03-07T15:38:35-08:00</lastmod>
+        <lastmod>2014-03-19T12:48:55-07:00</lastmod>
     </url>
     <url>
         <loc>http://sprestage-tech-blog.herokuapp.com/robots.txt</loc>

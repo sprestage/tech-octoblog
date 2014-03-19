@@ -304,26 +304,23 @@ them.</p>
 </pre>
 
 
-<p>Want to get the new stuff from master into your branch, but before your commited changes?  Do
-this.  First switch to the branch &lsquo;unicorns&rsquo;</p>
+<p>Want to get the new stuff from master into your branch, but before your commited changes?  Do this.  First switch to the branch &lsquo;foo&rsquo;</p>
 
 <pre>
-  $ git checkout unicorns
+  $ git checkout foo
   
   $ git rebase master
 </pre>
 
 
-<p>In the middle of some work on another branch and have to interrupt and get back to the master
-for some reason?  Do this.  First see what you are working on</p>
+<p>In the middle of some work on another branch and have to interrupt and get back to the master for some reason?  Do this.  First see what you are working on</p>
 
 <pre>
   $ git diff
 </pre>
 
 
-<p>Save working directory and index state WIP on my_branch: b2bdead Add dogs.  And restores last
-commit.</p>
+<p>Save working directory and index state WIP on my_branch and restores last commit.</p>
 
 <pre>
   $ git stash save
@@ -365,7 +362,7 @@ commit.</p>
 </pre>
 
 
-<h2>Whoops!</h2>
+<h2>Whoops!  Now what do I do?</h2>
 
 <p>To check out a particular commit, use</p>
 
@@ -447,6 +444,13 @@ commit.</p>
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-02T18:47:42-08:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2013</time>
           
 
+<span class="glyphicon glyphicon-tags"></span>&nbsp;
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/command-line/'>command line</a>, <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/github/'>github</a>, <a class='category' href='/blog/categories/heroku/'>heroku</a>
+  
+</span>
+
 
         </p>
         
@@ -495,6 +499,8 @@ commit.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/2014/03/19/what-were-those-octopress-commands-again/">What Were Those Octopress Commands Again?</a>
+    
     <a class="list-group-item " href="/blog/2013/12/07/quickly-create-a-rails-app-with-2-working-resources/">Quickly Create a Rails App With 2 Working Resources</a>
     
     <a class="list-group-item " href="/blog/2013/12/06/why-i-like-vi/">Why I Like VI</a>
@@ -502,8 +508,6 @@ commit.</p>
     <a class="list-group-item " href="/blog/2013/12/04/unix-alias-file/">How the Unix .alias File Can Make Your Command Line Life Better</a>
     
     <a class="list-group-item " href="/blog/2013/12/03/my-favorite-unix-commands/">My Favorite Unix Commands</a>
-    
-    <a class="list-group-item active" href="/blog/2013/12/02/my-personal-git-command-reference/">My Personal Git Command Reference</a>
     
   </div>
 </section>
