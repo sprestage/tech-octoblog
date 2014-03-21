@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: strings | My Technical Blog]]></title>
+  <link href="http://sprestage-tech-blog.herokuapp.com/blog/categories/strings/atom.xml" rel="self"/>
+  <link href="http://sprestage-tech-blog.herokuapp.com/"/>
+  <updated>2014-03-21T12:16:04-07:00</updated>
+  <id>http://sprestage-tech-blog.herokuapp.com/</id>
+  <author>
+    <name><![CDATA[Susan Prestage]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[String manipulation in Ruby]]></title>
+    <link href="http://sprestage-tech-blog.herokuapp.com/blog/2014/03/21/string-manipulation-in-ruby/"/>
+    <updated>2014-03-21T12:12:17-07:00</updated>
+    <id>http://sprestage-tech-blog.herokuapp.com/blog/2014/03/21/string-manipulation-in-ruby</id>
+    <content type="html"><![CDATA[<h1>Set vs concantenate</h1>
+
+<p>Set equal to this string.  No initialization needed.</p>
+
+<pre>
+> farewell = "Good"  
+</pre>
+
+
+
+
+<pre>
+> puts farewell
+</pre>
+
+
+<p>will return</p>
+
+<pre>
+  => Good
+</pre>
+
+
+<p>Concantenation requires the variable to be initialized.  This only works because the variable was initialized above.</p>
+
+<pre>
+> farewell << "bye!"  
+</pre>
+
+
+
+
+<pre>
+> puts farewell
+</pre>
+
+
+<p></p>
+
+<p>will return</p>
+
+<pre>
+  => Goodbye!
+</pre>
+
+
+<h1>String operations</h1>
+
+<p>Find where a substring is within the source string using index.</p>
+
+<pre>
+"hello".index('e')             #=> 1
+"hello".index('lo')            #=> 3
+"hello".index('a')             #=> nil
+"hello".index(?e)              #=> 1
+"hello".index(/[aeiou]/, -3)   #=> 4
+</pre>
+
+
+<p>Take input from the user:</p>
+
+<pre>
+puts "Please input some text: "
+foo = gets.chomp
+puts foo
+</pre>
+
+
+<p>If you are using ARGV to bring in command line arguments when you launch your app, you will run into conflict when using gets.  You can work around this two ways.  First is to use perform whatever tasks you need to on ARGV, then:</p>
+
+<pre>
+ARGV.clear
+foo = gets.chomp
+</pre>
+
+
+<p>Otherwise, everytime you call gets, you will need to specify that it is from IO, not Kernal:</p>
+
+<pre>
+foo = $stdin.gets.chomp
+</pre>
+
+
+<p>Replace the first instance of the sub_string, &ldquo;replace_me&rdquo;, with the contents of foo.</p>
+
+<pre>
+bar = bar.sub("replace_me", foo)
+</pre>
+
+
+<p>Globally replace the sub_string, &ldquo;replace_me&rdquo;, with the contents of foo.</p>
+
+<pre>
+bar = bar.<b>g</b>sub("replace_me", foo)
+</pre>
+
+
+<p>Find the first example of substring, &ldquo;find_me&rdquo;.  This is most often used with regex in place of the &ldquo;find_me&rdquo; string.  Returns a string.</p>
+
+<pre>
+bing = bar.match("find_me")
+</pre>
+
+
+<p>Find the every example of substring, &ldquo;find_me&rdquo;.  This is most often used with regex in place of the &ldquo;find_me&rdquo; string.  Returns an array of strings.</p>
+
+<pre>
+bing = bar.scan("find_me")
+</pre>
+
+]]></content>
+  </entry>
+  
+</feed>

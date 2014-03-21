@@ -117,6 +117,152 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-03-21T12:12:17-07:00" pubdate data-updated="true">Mar 21<span>st</span>, 2014</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/blog/2014/03/21/string-manipulation-in-ruby/">String Manipulation in Ruby</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix"><h1>Set vs concantenate</h1>
+
+<p>Set equal to this string.  No initialization needed.</p>
+
+<pre>
+> farewell = "Good"  
+</pre>
+
+
+
+
+<pre>
+> puts farewell
+</pre>
+
+
+<p>will return</p>
+
+<pre>
+  => Good
+</pre>
+
+
+<p>Concantenation requires the variable to be initialized.  This only works because the variable was initialized above.</p>
+
+<pre>
+> farewell << "bye!"  
+</pre>
+
+
+
+
+<pre>
+> puts farewell
+</pre>
+
+
+<p></p>
+
+<p>will return</p>
+
+<pre>
+  => Goodbye!
+</pre>
+
+
+<h1>String operations</h1>
+
+<p>Find where a substring is within the source string using index.</p>
+
+<pre>
+"hello".index('e')             #=> 1
+"hello".index('lo')            #=> 3
+"hello".index('a')             #=> nil
+"hello".index(?e)              #=> 1
+"hello".index(/[aeiou]/, -3)   #=> 4
+</pre>
+
+
+<p>Take input from the user:</p>
+
+<pre>
+puts "Please input some text: "
+foo = gets.chomp
+puts foo
+</pre>
+
+
+<p>If you are using ARGV to bring in command line arguments when you launch your app, you will run into conflict when using gets.  You can work around this two ways.  First is to use perform whatever tasks you need to on ARGV, then:</p>
+
+<pre>
+ARGV.clear
+foo = gets.chomp
+</pre>
+
+
+<p>Otherwise, everytime you call gets, you will need to specify that it is from IO, not Kernal:</p>
+
+<pre>
+foo = $stdin.gets.chomp
+</pre>
+
+
+<p>Replace the first instance of the sub_string, &ldquo;replace_me&rdquo;, with the contents of foo.</p>
+
+<pre>
+bar = bar.sub("replace_me", foo)
+</pre>
+
+
+<p>Globally replace the sub_string, &ldquo;replace_me&rdquo;, with the contents of foo.</p>
+
+<pre>
+bar = bar.<b>g</b>sub("replace_me", foo)
+</pre>
+
+
+<p>Find the first example of substring, &ldquo;find_me&rdquo;.  This is most often used with regex in place of the &ldquo;find_me&rdquo; string.  Returns a string.</p>
+
+<pre>
+bing = bar.match("find_me")
+</pre>
+
+
+<p>Find the every example of substring, &ldquo;find_me&rdquo;.  This is most often used with regex in place of the &ldquo;find_me&rdquo; string.  Returns an array of strings.</p>
+
+<pre>
+bing = bar.scan("find_me")
+</pre>
+
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-03-19T12:30:59-07:00" pubdate data-updated="true">Mar 19<span>th</span>, 2014</time>
         
       </p>
@@ -1119,6 +1265,8 @@ them.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/2014/03/21/string-manipulation-in-ruby/">String Manipulation in Ruby</a>
+    
     <a class="list-group-item " href="/blog/2014/03/19/what-were-those-octopress-commands-again/">What Were Those Octopress Commands Again?</a>
     
     <a class="list-group-item " href="/blog/2013/12/07/quickly-create-a-rails-app-with-2-working-resources/">Quickly Create a Rails App With 2 Working Resources</a>
@@ -1126,8 +1274,6 @@ them.</p>
     <a class="list-group-item " href="/blog/2013/12/06/why-i-like-vi/">Why I Like VI</a>
     
     <a class="list-group-item " href="/blog/2013/12/04/unix-alias-file/">How the Unix .alias File Can Make Your Command Line Life Better</a>
-    
-    <a class="list-group-item " href="/blog/2013/12/03/my-favorite-unix-commands/">My Favorite Unix Commands</a>
     
   </div>
 </section>
