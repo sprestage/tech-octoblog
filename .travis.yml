@@ -5,7 +5,7 @@ script: bundle exec rake generate
 deploy:
   provider: heroku
   api_key:
-    secure: UVEq6fYgE5VLj+dP69Rc0RcfGqBADQsWC1irldkX8KzfM3oyS+hndrH4SKHFyLf8JNcwPinLgd3oJEhZ4VaPHIYCof9xYViQs/p/e5+0WJ7EGRO/9JJls057MWKbmv3Z7iHoFPsGkJ5DhJo+4BEllHgraDmW0cotY7zCIa8Muxk=
+    secure: cMZdZnAduBOAvNwmTcPSjNlz1BSI1a4HwsMQJTQ2T5zhobg68kHbfmeq9L575EHujcIguBh+WfRLV5I6q9rwmqfvJhe7l8eEaWU9+igQFlEqcVJ6vq1CuCnZbSmrpRjI/w3viWN1L5+E0XkIebKRQtFLjhigDubU2vaYEWHu+34=
   app: sprestage-technical-blog
   on:
     repo: sprestage/tech-octoblog
