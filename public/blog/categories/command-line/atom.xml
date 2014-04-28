@@ -4,7 +4,7 @@
   <title><![CDATA[Category: command line | My Technical Blog]]></title>
   <link href="http://sprestage-tech-blog.herokuapp.com/blog/categories/command-line/atom.xml" rel="self"/>
   <link href="http://sprestage-tech-blog.herokuapp.com/"/>
-  <updated>2014-03-21T12:16:04-07:00</updated>
+  <updated>2014-04-28T01:22:33-07:00</updated>
   <id>http://sprestage-tech-blog.herokuapp.com/</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -32,7 +32,29 @@
 </pre>
 
 
-<p>Now commit your code and push to the livesite.</p>
+<p>If POW is setup, you can just run:</p>
+
+<pre>
+    $ rake watch
+</pre>
+
+
+<p>Load the following in your browser to see how things look.</p>
+
+<pre>
+http://octopress.dev
+</pre>
+
+
+<p>Happy with how everything looks?  Commit your code and push to the livesite.</p>
+
+<p>If you are working on two different blogs, you will need to switch back and forth in POW the directory that is being looked at:</p>
+
+<pre>
+    $ cd ~/.pow
+    $ ln -s /path/to/octopress octopress
+</pre>
+
 
 <h1>Thanks</h1>
 
