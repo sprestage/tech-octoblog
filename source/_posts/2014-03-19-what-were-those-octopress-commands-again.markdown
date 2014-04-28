@@ -7,6 +7,7 @@ categories:
 - Octopress
 - rake commands
 - command line
+- blogging
 ---
 Create a new post:
 <pre>
@@ -18,7 +19,23 @@ Incorporate that post into your site:
 	$ rake generate
 </pre>
 
-Now commit your code and push to the livesite.  
+If POW is setup, you can just run:
+<pre>
+	$ rake watch
+</pre>
+
+Load the following in your browser to see how things look.
+<pre>
+http://octopress.dev
+</pre>
+
+Happy with how everything looks?  Commit your code and push to the livesite.  
+
+If you are working on two different blogs, you will need to switch back and forth in POW the directory that is being looked at:
+<pre>
+	$ cd ~/.pow
+	$ ln -s /path/to/octopress octopress
+</pre>
 
 Thanks
 =======
