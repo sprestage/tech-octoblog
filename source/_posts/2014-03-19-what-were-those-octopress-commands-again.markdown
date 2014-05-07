@@ -37,6 +37,11 @@ If you are working on two different blogs, you will need to switch back and fort
 	$ ln -s /path/to/octopress octopress
 </pre>
 
+On that rare occasion that you change your _config.yml, you will need to run a special command, since rake generate doesn't do what is needed.
+<pre>
+	$ rake update_source
+</pre>
+
 Thanks
 =======
 Thank you to the Octopress docs site for well written and easy to follow documentation.  This is my most frequently refered to page, now that my site is up and running, [http://octopress.org/docs/blogging/](http://octopress.org/docs/blogging/)
