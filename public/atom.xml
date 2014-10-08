@@ -4,7 +4,7 @@
   <title><![CDATA[My Technical Blog]]></title>
   <link href="http://sprestage-tech-blog.herokuapp.com/atom.xml" rel="self"/>
   <link href="http://sprestage-tech-blog.herokuapp.com/"/>
-  <updated>2014-04-28T01:22:33-07:00</updated>
+  <updated>2014-10-08T16:25:50-07:00</updated>
   <id>http://sprestage-tech-blog.herokuapp.com/</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -171,6 +171,13 @@ http://octopress.dev
 <pre>
     $ cd ~/.pow
     $ ln -s /path/to/octopress octopress
+</pre>
+
+
+<p>On that rare occasion that you change your _config.yml, you will need to run a special command, since rake generate doesn&rsquo;t do what is needed.  Look out though, if you&rsquo;ve customized your blog such as with Octostrap3, this will undo your changes, so use with caution.</p>
+
+<pre>
+    $ rake update_source
 </pre>
 
 
@@ -707,7 +714,7 @@ then your code will get pushed into that branch.</p>
   $ git branch
   $ git add .
   $ git commit -m "a good commit message"
-  $ git push origin new_branch_name  
+  $ git push origin new_branch_name
 </pre>
 
 
@@ -736,9 +743,9 @@ them.</p>
   $ git merge chapter_2
   $ git push origin master    (also can just usually say 'git push' here)
   $ git branch -d chapter_2
-  
+
   $ git merge chapter_3
-  $ git push 
+  $ git push
   $ git branch -d chapter_3
 </pre>
 
@@ -758,7 +765,7 @@ them.</p>
 
 <pre>
   $ git checkout foo
-  
+
   $ git rebase master
 </pre>
 
@@ -805,7 +812,7 @@ them.</p>
 
 <pre>
   $ git diff
-  
+
   $ git stash list
   $ git stash apply stash@{1}
   $ git stash drop
@@ -852,7 +859,7 @@ them.</p>
 <p>and then commit</p>
 
 <pre>
-  $ git commit    # be sure and write a good message describing what you just did  
+  $ git commit    # be sure and write a good message describing what you just did
 </pre>
 
 
@@ -863,7 +870,117 @@ them.</p>
 </pre>
 
 
-<p>Ok, now I want to go restore those several commits, can I?</p>
+<h2>Powerful commands</h2>
+
+<p>Stuff I&rsquo;m using regularly these days</p>
+
+<h3>Unstage</h3>
+
+<p>Reset the staging area to match the most recent commit, but leave the working directory unchanged. This unstages all files without overwriting any changes, giving you the opportunity to re-build the staged snapshot from scratch.</p>
+
+<pre>
+  $ git reset
+</pre>
+
+
+<p>Reset the staging area and the working directory to match the most recent commit. In addition to unstaging changes, the &ndash;hard flag tells Git to overwrite all changes in the working directory, too. Put another way: this obliterates all uncommitted changes, so make sure you really want to throw away your local developments before using it.</p>
+
+<pre>
+  $ git reset --hard
+</pre>
+
+
+<h3>Merge</h3>
+
+<p>How to merge the master branch into the feature branch? Easy:</p>
+
+<pre>
+  $ git checkout feature1
+  $ git merge master
+</pre>
+
+
+<p>Merge branch back into master</p>
+
+<pre>
+  $ git checkout master
+  $ git merge my_branch
+</pre>
+
+
+<h3>Merge conflict</h3>
+
+<p>When there is a conflict during a merge, you have to finish the merge commit manually. It sounds like you&rsquo;ve done the first two steps, to edit the files that conflicted and then run</p>
+
+<pre>
+  $ git add
+</pre>
+
+
+<p>on them to mark them as resolved.</p>
+
+<p>Finally, you need to actually commit the merge with</p>
+
+<pre>
+  $ git commit
+</pre>
+
+
+<p>after which you will be able to switch branches again.</p>
+
+<h3>Have I forgotten to push?</h3>
+
+<p>How do I tell if my commited changes have been pushed to github?</p>
+
+<pre>
+  $ git log origin/master..HEAD
+</pre>
+
+
+<p>You can also view the diff using the same syntax</p>
+
+<pre>
+  $ git diff origin/master..HEAD
+</pre>
+
+
+<h3>Duplicate a branch</h3>
+
+<p>Copy old_branch into a new_branch.  (Useful for trying out a merge you are worried about.)</p>
+
+<pre>
+  $ git checkout old_branch
+  $ git branch new_branch
+  $ git checkout new_branch
+</pre>
+
+
+<h3>Destroy local branch</h3>
+
+<p>Get rid of a branch and everything in it changed or not.  (Useful after you&rsquo;ve tried out a merge on a temporary branch.)</p>
+
+<p>First, you have to get rid of the changes:</p>
+
+<pre>
+  $ git reset --hard HEAD
+</pre>
+
+
+<p>Next, change to a different, good branch</p>
+
+<pre>
+  $ git checkout master
+</pre>
+
+
+<p>Lastly, delete the branch</p>
+
+<pre>
+  $ git branch -d temporary_branch
+</pre>
+
+
+<p>you may need to use a -D option to force this.  BE CAREFUL not to delete something you care about.  Really!</p>
 
 <h2>Fini</h2>
 

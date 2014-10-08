@@ -3,7 +3,7 @@ layout: post
 title: "What were those Octopress commands again?"
 date: 2014-03-19 12:30:59 -0700
 comments: true
-categories: 
+categories:
 - Octopress
 - rake commands
 - command line
@@ -29,7 +29,7 @@ Load the following in your browser to see how things look.
 http://octopress.dev
 </pre>
 
-Happy with how everything looks?  Commit your code and push to the livesite.  
+Happy with how everything looks?  Commit your code and push to the livesite.
 
 If you are working on two different blogs, you will need to switch back and forth in POW the directory that is being looked at:
 <pre>
@@ -37,7 +37,7 @@ If you are working on two different blogs, you will need to switch back and fort
 	$ ln -s /path/to/octopress octopress
 </pre>
 
-On that rare occasion that you change your _config.yml, you will need to run a special command, since rake generate doesn't do what is needed.
+On that rare occasion that you change your _config.yml, you will need to run a special command, since rake generate doesn't do what is needed.  Look out though, if you've customized your blog such as with Octostrap3, this will undo your changes, so use with caution.
 <pre>
 	$ rake update_source
 </pre>
