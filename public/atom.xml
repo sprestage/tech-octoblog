@@ -4,7 +4,7 @@
   <title><![CDATA[My Technical Blog]]></title>
   <link href="http://sprestage-tech-blog.herokuapp.com/atom.xml" rel="self"/>
   <link href="http://sprestage-tech-blog.herokuapp.com/"/>
-  <updated>2014-10-08T16:25:50-07:00</updated>
+  <updated>2014-10-13T12:12:57-07:00</updated>
   <id>http://sprestage-tech-blog.herokuapp.com/</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to do database stuff from within Rails]]></title>
+    <link href="http://sprestage-tech-blog.herokuapp.com/blog/2014/10/13/how-to-do-database-stuff-from-within-rails/"/>
+    <updated>2014-10-13T11:52:35-07:00</updated>
+    <id>http://sprestage-tech-blog.herokuapp.com/blog/2014/10/13/how-to-do-database-stuff-from-within-rails</id>
+    <content type="html"><![CDATA[<h3>Rails Console</h3>
+
+<p>The rails console is one of the most powerful debug and development tools.  Most particularly, for database manipulation.</p>
+
+<p>Here are some of my most frequently used commands:</p>
+
+<p>Here are some of my much less frequently used, but very powerful and sometimes necessary.  As a rule, I try to only examine what is in my database from the console.  Creating and deleting records from the command line really isn&rsquo;t the way you want to manipulate your database.  That said, sometimes to have to:</p>
+
+<h4>Create</h4>
+
+<blockquote><p>u = User.create password: &ldquo;mypasswd&rdquo;, first_name: &ldquo;test&rdquo;, last_name: &ldquo;testovich&rdquo;</p></blockquote>
+
+<h4>Update</h4>
+
+<blockquote><p>u = User.find(30)
+u.update_attributes(roles_mask: 3)</p></blockquote>
+
+<h4>Destroy</h4>
+
+<blockquote><p>User.find(30).destroy</p></blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[String manipulation in Ruby]]></title>

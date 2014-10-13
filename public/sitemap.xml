@@ -45,6 +45,12 @@
         <lastmod>2014-03-21T12:14:48-07:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://sprestage-tech-blog.herokuapp.com/blog/2014/10/13/how-to-do-database-stuff-from-within-rails/
+        </loc>
+        <lastmod>2014-10-13T12:07:35-07:00</lastmod>
+    </url>
+    <url>
         <loc>http://sprestage-tech-blog.herokuapp.com/about.html</loc>
         <lastmod>2013-12-06T12:58:35-08:00</lastmod>
     </url>
@@ -74,7 +80,7 @@
     </url>
     <url>
         <loc>http://sprestage-tech-blog.herokuapp.com/assets/bootstrap/</loc>
-        <lastmod>2014-10-08T12:48:28-07:00</lastmod>
+        <lastmod>2014-10-13T12:07:35-07:00</lastmod>
     </url>
     <url>
         <loc>http://sprestage-tech-blog.herokuapp.com/assets/bootstrap/javascript.html</loc>
@@ -82,11 +88,11 @@
     </url>
     <url>
         <loc>http://sprestage-tech-blog.herokuapp.com/blog/archives/</loc>
-        <lastmod>2014-10-08T12:48:28-07:00</lastmod>
+        <lastmod>2014-10-13T12:07:35-07:00</lastmod>
     </url>
     <url>
         <loc>http://sprestage-tech-blog.herokuapp.com/</loc>
-        <lastmod>2014-10-08T12:48:28-07:00</lastmod>
+        <lastmod>2014-10-13T12:07:35-07:00</lastmod>
     </url>
     <url>
         <loc>http://sprestage-tech-blog.herokuapp.com/robots.txt</loc>

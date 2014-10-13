@@ -117,6 +117,62 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-10-13T11:52:35-07:00" pubdate data-updated="true">Oct 13<span>th</span>, 2014</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/blog/2014/10/13/how-to-do-database-stuff-from-within-rails/">How to Do Database Stuff From Within Rails</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix"><h3>Rails Console</h3>
+
+<p>The rails console is one of the most powerful debug and development tools.  Most particularly, for database manipulation.</p>
+
+<p>Here are some of my most frequently used commands:</p>
+
+<p>Here are some of my much less frequently used, but very powerful and sometimes necessary.  As a rule, I try to only examine what is in my database from the console.  Creating and deleting records from the command line really isn&rsquo;t the way you want to manipulate your database.  That said, sometimes to have to:</p>
+
+<h4>Create</h4>
+
+<blockquote><p>u = User.create password: &ldquo;mypasswd&rdquo;, first_name: &ldquo;test&rdquo;, last_name: &ldquo;testovich&rdquo;</p></blockquote>
+
+<h4>Update</h4>
+
+<blockquote><p>u = User.find(30)
+u.update_attributes(roles_mask: 3)</p></blockquote>
+
+<h4>Destroy</h4>
+
+<blockquote><p>User.find(30).destroy</p></blockquote>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-03-21T12:12:17-07:00" pubdate data-updated="true">Mar 21<span>st</span>, 2014</time>
         
       </p>
@@ -1404,6 +1460,8 @@ them.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/2014/10/13/how-to-do-database-stuff-from-within-rails/">How to Do Database Stuff From Within Rails</a>
+    
     <a class="list-group-item " href="/blog/2014/03/21/string-manipulation-in-ruby/">String Manipulation in Ruby</a>
     
     <a class="list-group-item " href="/blog/2014/03/19/what-were-those-octopress-commands-again/">What Were Those Octopress Commands Again?</a>
@@ -1411,8 +1469,6 @@ them.</p>
     <a class="list-group-item " href="/blog/2013/12/07/quickly-create-a-rails-app-with-2-working-resources/">Quickly Create a Rails App With 2 Working Resources</a>
     
     <a class="list-group-item " href="/blog/2013/12/06/why-i-like-vi/">Why I Like VI</a>
-    
-    <a class="list-group-item " href="/blog/2013/12/04/unix-alias-file/">How the Unix .alias File Can Make Your Command Line Life Better</a>
     
   </div>
 </section>
