@@ -1331,6 +1331,22 @@ them.</p>
 
 <p>you may need to use a -D option to force this.  BE CAREFUL not to delete something you care about.  Really!</p>
 
+<h3>Tidy up leftovers</h3>
+
+<p>Once you delete the branch from the remote, you can prune to get rid of remote tracking branches with:</p>
+
+<pre>
+  $ git branch -r -d origin/newfeaturebranch
+</pre>
+
+
+<p>This will prune All of your old references to already-deleted-on-github branches.</p>
+
+<pre>
+  $ git remote prune origin
+</pre>
+
+
 <h2>Fini</h2>
 
 <p>Thank you for reading.  I hope you found this useful.  I invite you to read my next post if you are interested in the unix commands that I find most useful.</p>

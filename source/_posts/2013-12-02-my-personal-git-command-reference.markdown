@@ -314,8 +314,16 @@ Lastly, delete the branch
 </pre>
 you may need to use a -D option to force this.  BE CAREFUL not to delete something you care about.  Really!
 
+###Tidy up leftovers
+Once you delete the branch from the remote, you can prune to get rid of remote tracking branches with:
+<pre>
+  $ git branch -r -d origin/newfeaturebranch
+</pre>
 
-
+This will prune All of your old references to already-deleted-on-github branches.
+<pre>
+  $ git remote prune origin
+</pre>
 
 ## Fini
 
