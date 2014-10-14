@@ -8,6 +8,9 @@ categories:
 - github
 - heroku
 - command line
+- prune
+- branch
+- stash
 ---
 
 Git Basics
@@ -86,7 +89,7 @@ How is git looking (you will find some useful guidance printed out with this com
 </pre>
 
 
-Branching, this scares me...
+Branching
 =======
 
 First, create the branch locally.  This automatically changes you to this branch locally.
@@ -112,10 +115,7 @@ Use this to confirm WHICH branch you are on.
   $ git push origin new_branch_name
 </pre>
 
-Very important tips for switching between branches.  ALWAYS commit your changes to your current
-branch before changing branches.  I assumed the files would stay in the old branch as I switched
-to the new branch, but NO.  The changes will follow you around like a lost puppy until you commit
-them.
+Very important tips for switching between branches.  ALWAYS commit your changes to your current branch before changing branches.  I assumed the files would stay in the old branch as I switched to the new branch, but NO.  The changes will follow you around like a lost puppy until you commit them.
 
 Ok, I've got this branch (or worse, several branches).  I'm done working on them.  They are all checked in, as branches.  But now, I need to get the master branch back up to date.  How do I do this with FIVE branches.  Don't panic, we can do this thing.  First, make sure everything is up to date and checked in.  For me, everything is check in locally and remotely.
 <pre>
@@ -140,13 +140,8 @@ Now we are going to merge each branch in, push it to github, and then delete the
 Repeat until you've merged in each branch.  Yeay!  This worked for me and I saw what I wanted on github.  I have both the branches I expect as well as each branch merge present as a commit on the master.  Excellent!  Git is starting to be a Very useful tool instead of an occasional impediment.  :)
 
 
-Advanced
+Stashing
 =======
-
-Show the last 3 commits:
-<pre>
-  $ git log --oneline
-</pre>
 
 Want to get the new stuff from master into your branch, but before your commited changes?  Do this.  First switch to the branch 'foo'
 <pre>

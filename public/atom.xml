@@ -4,7 +4,7 @@
   <title><![CDATA[My Technical Blog]]></title>
   <link href="http://sprestage-tech-blog.herokuapp.com/atom.xml" rel="self"/>
   <link href="http://sprestage-tech-blog.herokuapp.com/"/>
-  <updated>2014-10-14T11:13:24-07:00</updated>
+  <updated>2014-10-14T11:24:32-07:00</updated>
   <id>http://sprestage-tech-blog.herokuapp.com/</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -731,7 +731,7 @@ Next, push to heroku:</p>
 </pre>
 
 
-<h1>Branching, this scares me&hellip;</h1>
+<h1>Branching</h1>
 
 <p>First, create the branch locally.  This automatically changes you to this branch locally.</p>
 
@@ -762,10 +762,7 @@ then your code will get pushed into that branch.</p>
 </pre>
 
 
-<p>Very important tips for switching between branches.  ALWAYS commit your changes to your current
-branch before changing branches.  I assumed the files would stay in the old branch as I switched
-to the new branch, but NO.  The changes will follow you around like a lost puppy until you commit
-them.</p>
+<p>Very important tips for switching between branches.  ALWAYS commit your changes to your current branch before changing branches.  I assumed the files would stay in the old branch as I switched to the new branch, but NO.  The changes will follow you around like a lost puppy until you commit them.</p>
 
 <p>Ok, I&rsquo;ve got this branch (or worse, several branches).  I&rsquo;m done working on them.  They are all checked in, as branches.  But now, I need to get the master branch back up to date.  How do I do this with FIVE branches.  Don&rsquo;t panic, we can do this thing.  First, make sure everything is up to date and checked in.  For me, everything is check in locally and remotely.</p>
 
@@ -796,14 +793,7 @@ them.</p>
 
 <p>Repeat until you&rsquo;ve merged in each branch.  Yeay!  This worked for me and I saw what I wanted on github.  I have both the branches I expect as well as each branch merge present as a commit on the master.  Excellent!  Git is starting to be a Very useful tool instead of an occasional impediment.  :)</p>
 
-<h1>Advanced</h1>
-
-<p>Show the last 3 commits:</p>
-
-<pre>
-  $ git log --oneline
-</pre>
-
+<h1>Stashing</h1>
 
 <p>Want to get the new stuff from master into your branch, but before your commited changes?  Do this.  First switch to the branch &lsquo;foo&rsquo;</p>
 
