@@ -4,7 +4,7 @@
   <title><![CDATA[My Technical Blog]]></title>
   <link href="http://sprestage-tech-blog.herokuapp.com/atom.xml" rel="self"/>
   <link href="http://sprestage-tech-blog.herokuapp.com/"/>
-  <updated>2014-10-13T12:12:57-07:00</updated>
+  <updated>2014-10-13T22:15:52-07:00</updated>
   <id>http://sprestage-tech-blog.herokuapp.com/</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -28,16 +28,32 @@
 
 <h4>Create</h4>
 
-<blockquote><p>u = User.create password: &ldquo;mypasswd&rdquo;, first_name: &ldquo;test&rdquo;, last_name: &ldquo;testovich&rdquo;</p></blockquote>
+<pre>
+  > u = User.create password: "mypasswd", first_name: "test", last_name: "testovich"
+</pre>
+
 
 <h4>Update</h4>
 
-<blockquote><p>u = User.find(30)
-u.update_attributes(roles_mask: 3)</p></blockquote>
+<pre>
+  > u = User.find(30)
+  > u.update_attributes(roles_mask: 3)
+</pre>
+
+
+<p>If the above doesn&rsquo;t work, this may:</p>
+
+<pre>
+  > User.where(id: 27)[0].update(age: 42, next_birthday: "2014-10-14")
+</pre>
+
 
 <h4>Destroy</h4>
 
-<blockquote><p>User.find(30).destroy</p></blockquote>
+<pre>
+  > User.find(30).destroy
+</pre>
+
 ]]></content>
   </entry>
   
