@@ -92,13 +92,15 @@ How is git looking (you will find some useful guidance printed out with this com
 Branching
 =======
 
-###New branches on github
+###New branch exists on remote
+####New branches on github
 So, your teammate has been working on a new branch they just created and then commited to github.  You now want to start working locally on that new branch.
 <pre>
-  $ git checkout -b test origin/test
+  $ git fetch origin bug-request-id
+  $ git checkout bug-request-id
 </pre>
 
-###Several new branches on github
+####Several new branches on github
 You've been heads down on your work on a branch and your team has created several new branches remotely on github and now you need to start contributing to those branches.  To get look at what the remote branches are,
 <pre>
   $ git fetch
@@ -109,14 +111,20 @@ Now you will see everything on the remote when you want to list your local and r
   $ git branch -a
 </pre>
 
+Finally, to bring the remote branch code down to your local, once you fetched:
+<pre>
+  $ git checkout bug-request-id
+</pre>
 
-###Starting the new branch locally
+
+###Create new branch locally
+####Starting the new branch locally
 First, create the branch locally.  This automatically changes you to this branch locally.
 <pre>
   $ git checkout -b new_branch_name
 </pre>
 
-###Pushing the new branch to github
+####Pushing the new branch to github
 To check this into github, do this and the new branch will automatically get created on github,
 then your code will get pushed into that branch.
 <pre>
@@ -130,6 +138,7 @@ http://git-scm.com/book
 http://techblog.susanprestage.com/blog/2013/12/02/my-personal-git-command-reference/
 
 
+###Working with a branch
 Use this to confirm WHICH branch you are on.
 <pre>
   $ git branch
@@ -140,6 +149,7 @@ Use this to confirm WHICH branch you are on.
 
 Very important tips for switching between branches.  ALWAYS commit your changes to your current branch before changing branches.  I assumed the files would stay in the old branch as I switched to the new branch, but NO.  The changes will follow you around like a lost puppy until you commit them.
 
+###Merging your branch(es)
 Ok, I've got this branch (or worse, several branches).  I'm done working on them.  They are all checked in, as branches.  But now, I need to get the master branch back up to date.  How do I do this with FIVE branches.  Don't panic, we can do this thing.  First, make sure everything is up to date and checked in.
 <pre>
   $ git status

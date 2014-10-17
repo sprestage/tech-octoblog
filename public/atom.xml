@@ -4,7 +4,7 @@
   <title><![CDATA[My Technical Blog]]></title>
   <link href="http://sprestage-tech-blog.herokuapp.com/atom.xml" rel="self"/>
   <link href="http://sprestage-tech-blog.herokuapp.com/"/>
-  <updated>2014-10-16T22:05:14-07:00</updated>
+  <updated>2014-10-16T22:16:59-07:00</updated>
   <id>http://sprestage-tech-blog.herokuapp.com/</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -733,16 +733,19 @@ Next, push to heroku:</p>
 
 <h1>Branching</h1>
 
-<h3>New branches on github</h3>
+<h3>New branch exists on remote</h3>
+
+<h4>New branches on github</h4>
 
 <p>So, your teammate has been working on a new branch they just created and then commited to github.  You now want to start working locally on that new branch.</p>
 
 <pre>
-  $ git checkout -b test origin/test
+  $ git fetch origin bug-request-id
+  $ git checkout bug-request-id
 </pre>
 
 
-<h3>Several new branches on github</h3>
+<h4>Several new branches on github</h4>
 
 <p>You&rsquo;ve been heads down on your work on a branch and your team has created several new branches remotely on github and now you need to start contributing to those branches.  To get look at what the remote branches are,</p>
 
@@ -758,7 +761,16 @@ Next, push to heroku:</p>
 </pre>
 
 
-<h3>Starting the new branch locally</h3>
+<p>Finally, to bring the remote branch code down to your local, once you fetched:</p>
+
+<pre>
+  $ git checkout bug-request-id
+</pre>
+
+
+<h3>Create new branch locally</h3>
+
+<h4>Starting the new branch locally</h4>
 
 <p>First, create the branch locally.  This automatically changes you to this branch locally.</p>
 
@@ -767,7 +779,7 @@ Next, push to heroku:</p>
 </pre>
 
 
-<h3>Pushing the new branch to github</h3>
+<h4>Pushing the new branch to github</h4>
 
 <p>To check this into github, do this and the new branch will automatically get created on github,
 then your code will get pushed into that branch.</p>
@@ -784,6 +796,8 @@ then your code will get pushed into that branch.</p>
 <a href="http://git-scm.com/book">http://git-scm.com/book</a>
 <a href="http://techblog.susanprestage.com/blog/2013/12/02/my-personal-git-command-reference/">http://techblog.susanprestage.com/blog/2013/12/02/my-personal-git-command-reference/</a></p>
 
+<h3>Working with a branch</h3>
+
 <p>Use this to confirm WHICH branch you are on.</p>
 
 <pre>
@@ -795,6 +809,8 @@ then your code will get pushed into that branch.</p>
 
 
 <p>Very important tips for switching between branches.  ALWAYS commit your changes to your current branch before changing branches.  I assumed the files would stay in the old branch as I switched to the new branch, but NO.  The changes will follow you around like a lost puppy until you commit them.</p>
+
+<h3>Merging your branch(es)</h3>
 
 <p>Ok, I&rsquo;ve got this branch (or worse, several branches).  I&rsquo;m done working on them.  They are all checked in, as branches.  But now, I need to get the master branch back up to date.  How do I do this with FIVE branches.  Don&rsquo;t panic, we can do this thing.  First, make sure everything is up to date and checked in.</p>
 
