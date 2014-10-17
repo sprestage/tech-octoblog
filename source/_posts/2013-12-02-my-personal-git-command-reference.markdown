@@ -92,20 +92,43 @@ How is git looking (you will find some useful guidance printed out with this com
 Branching
 =======
 
+###New branches on github
+So, your teammate has been working on a new branch they just created and then commited to github.  You now want to start working locally on that new branch.
+<pre>
+  $ git checkout -b test origin/test
+</pre>
+
+###Several new branches on github
+You've been heads down on your work on a branch and your team has created several new branches remotely on github and now you need to start contributing to those branches.  To get look at what the remote branches are,
+<pre>
+  $ git fetch
+</pre>
+
+Now you will see everything on the remote when you want to list your local and remote branches with this command:
+<pre>
+  $ git branch -a
+</pre>
+
+
+###Starting the new branch locally
 First, create the branch locally.  This automatically changes you to this branch locally.
 <pre>
   $ git checkout -b new_branch_name
 </pre>
 
+###Pushing the new branch to github
 To check this into github, do this and the new branch will automatically get created on github,
 then your code will get pushed into that branch.
 <pre>
   $ git push origin new_branch_name
 </pre>
 
+###Good git references
 Also very useful are these links:
 http://www.ndpsoftware.com/git-cheatsheet.html#loc=workspace;
 http://git-scm.com/book
+http://techblog.susanprestage.com/blog/2013/12/02/my-personal-git-command-reference/
+
 
 Use this to confirm WHICH branch you are on.
 <pre>
@@ -117,7 +140,7 @@ Use this to confirm WHICH branch you are on.
 
 Very important tips for switching between branches.  ALWAYS commit your changes to your current branch before changing branches.  I assumed the files would stay in the old branch as I switched to the new branch, but NO.  The changes will follow you around like a lost puppy until you commit them.
 
-Ok, I've got this branch (or worse, several branches).  I'm done working on them.  They are all checked in, as branches.  But now, I need to get the master branch back up to date.  How do I do this with FIVE branches.  Don't panic, we can do this thing.  First, make sure everything is up to date and checked in.  For me, everything is check in locally and remotely.
+Ok, I've got this branch (or worse, several branches).  I'm done working on them.  They are all checked in, as branches.  But now, I need to get the master branch back up to date.  How do I do this with FIVE branches.  Don't panic, we can do this thing.  First, make sure everything is up to date and checked in.
 <pre>
   $ git status
 </pre>
@@ -142,13 +165,6 @@ Repeat until you've merged in each branch.  Yeay!  This worked for me and I saw 
 
 Stashing
 =======
-
-Want to get the new stuff from master into your branch, but before your commited changes?  Do this.  First switch to the branch 'foo'
-<pre>
-  $ git checkout foo
-
-  $ git rebase master
-</pre>
 
 In the middle of some work on another branch and have to interrupt and get back to the master for some reason?  Do this.  First see what you are working on
 <pre>
@@ -222,9 +238,6 @@ and then commit
 <pre>
   $ git commit    # be sure and write a good message describing what you just did
 </pre>
-
-
-
 
 I don't like my past several commits.  I want to go back to a particular commit.  Reset may be a BAD, BAD way of doing things, so look out!
 <pre>
