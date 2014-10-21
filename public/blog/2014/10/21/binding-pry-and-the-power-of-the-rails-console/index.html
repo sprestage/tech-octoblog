@@ -4,10 +4,10 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: blogging - My Technical Blog</title>
+  <title>Binding pry and the power of the rails console - My Technical Blog</title>
   <meta name="author" content="Susan Prestage">
 
-  <meta name="description" content="Category: blogging">
+  
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -16,7 +16,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://sprestage-tech-blog.herokuapp.comblog/categories/blogging">
+  <link rel="canonical" href="http://sprestage-tech-blog.herokuapp.com/blog/2014/10/21/binding-pry-and-the-power-of-the-rails-console">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="My Technical Blog" type="application/atom+xml">
 
@@ -61,10 +61,10 @@
                 <li >
                     <a href="/about">About</a>
                 </li>
-                <li >
+                <li class="active">
                     <a href="/">Blog</a>
                 </li>
-                <li class="active">
+                <li >
                     <a href="/blog/archives">Archives</a>
                 </li>
             </ul>
@@ -95,31 +95,12 @@
         <div id="content">
           <div class="row">
   <div class="page-content col-md-9">
-    <article role="article">
+    <article class="hentry" role="article">
       
-        <header class="page-header">
-          
-          
-            <h1 class="entry-title">
-              Category: Blogging
-              
-            </h1>
-          
-        </header>
-      
-      <div class="entry-content">
-        <div id="blog-archives" class="category">
-
-
-
-  
-  <h2>2014</h2>
-
-<article class="page-header">
-  
-<h1><a href="/blog/2014/03/19/what-were-those-octopress-commands-again/">What were those Octopress commands again?</a></h1>
-<p class="meta text-muted">
-  
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
 
 
 
@@ -132,33 +113,129 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-03-19T12:30:59-07:00" pubdate data-updated="true">Mar 19<span>th</span>, 2014</time>
-  
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-10-21T13:13:17-07:00" pubdate data-updated="true">Oct 21<span>st</span>, 2014</time>
+        
+      </p>
+    
+    
+    <h1 class="entry-title">
+        Binding Pry and the Power of the Rails Console
+        
+    </h1>
+    
+  </header>
 
-<span class="glyphicon glyphicon-tags"></span>&nbsp;
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/blog/categories/blogging/'>blogging</a>, <a class='category' href='/blog/categories/command-line/'>command line</a>, <a class='category' href='/blog/categories/rake-commands/'>rake commands</a>
-  
-</span>
+
+<div class="entry-content clearfix"><p>The most powerful tool I use on a daily basis is the gem, binding.pry.  Put the pry-rails gem into your Gemfile for dev and test.</p>
+
+<h6>Gemfile</h6>
+
+<pre>
+group :test, :development do
+  gem 'pry-rails'
+end
+</pre>
 
 
-</p>
+<p>You will now need to run</p>
 
-</article>
+<pre>
+  $ bundle install
+</pre>
+
+
+<p>at the command line.</p>
+
+<p>Put the phrase &lsquo;binding.pry&rsquo; without the quotes into a piece of your code that you want to investigate and binding.pry will open up a rails console at your command line.  This even works in test files.  If you need this in the middle of a haml file, be sure to obey the tabbing convention required by haml, and also put a &lsquo;-&rsquo; dash in front of the binding.pry, like so:</p>
+
+<pre>
+  -binding.pry
+</pre>
+
+
+<p>Remember, you will need to type exit out of the rails console and to return your server to  whatever it was doing before it hit the binding.pry.</p>
+
+<p>This is particularly useful to see the current scope of variables and also to look at what is in the database.</p>
+
+<pre>
+  > Company.find(7).users.find(24)
+
+  > Company.find(7).team_memberships
+
+  > Company.find(7).users.find(26)
+
+  > Company.find(7).users
+
+  > Company.all
+
+  > c = Company.find(7)
+
+  > c.users
+
+  > User.where(id: 45)
+
+  > User.where(email: "susan@example.com")
+
+  > User.where(id: 73).pluck(:first_name, :last_name)
+</pre>
 
 </div>
 
-      </div>
-      
+
+      <footer>
+        <p class="meta text-muted">
+          
+  
+
+<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard">Posted by <span class="fn">Susan Prestage</span></span>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-10-21T13:13:17-07:00" pubdate data-updated="true">Oct 21<span>st</span>, 2014</time>
+          
+
+
+        </p>
+        
+          <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://sprestage-tech-blog.herokuapp.com/blog/2014/10/21/binding-pry-and-the-power-of-the-rails-console/" data-via="SusanPrestage" data-counturl="http://sprestage-tech-blog.herokuapp.com/blog/2014/10/21/binding-pry-and-the-power-of-the-rails-console/" >Tweet</a>
+  
+  
+  
+</div>
+
+        
+        
+          <ul class="meta text-muted pager">
+            
+            <li class="previous"><a href="/blog/2014/10/13/how-to-do-database-stuff-from-within-rails/" title="Previous Post: How to do database stuff from within Rails">&laquo; How to do database stuff from within Rails</a></li>
+            
+            
+            <li class="next"><a href="/blog/2014/10/21/mastering-date-and-time-manipulation-in-rails/" title="Next Post: Mastering date and time manipulation in rails.">Mastering date and time manipulation in rails. &raquo;</a></li>
+            
+          </ul>
+        
+      </footer>
     </article>
     
   </div>
 
   
-    <aside class="sidebar col-md-3">
-      
-        <section>
+  <aside class="sidebar col-md-3">
+    
+      <section>
   <CENTER>
     <h2>Share my journey through technology</h2>
     <IMG src="https://s3-us-west-2.amazonaws.com/technicalblog/SusanProfilePhoto2.jpg" alt="picture of Susan Prestage" width="200" height="200">
@@ -178,7 +255,7 @@
     
     <a class="list-group-item " href="/blog/2014/10/21/mastering-date-and-time-manipulation-in-rails/">Mastering Date and Time Manipulation in Rails.</a>
     
-    <a class="list-group-item " href="/blog/2014/10/21/binding-pry-and-the-power-of-the-rails-console/">Binding Pry and the Power of the Rails Console</a>
+    <a class="list-group-item active" href="/blog/2014/10/21/binding-pry-and-the-power-of-the-rails-console/">Binding Pry and the Power of the Rails Console</a>
     
     <a class="list-group-item " href="/blog/2014/10/13/how-to-do-database-stuff-from-within-rails/">How to Do Database Stuff From Within Rails</a>
     
@@ -227,8 +304,8 @@
 
 
 
-      
-    </aside>
+    
+  </aside>
   
 </div>
 

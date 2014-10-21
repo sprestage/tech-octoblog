@@ -1,0 +1,52 @@
+---
+layout: post
+title: "Binding pry and the power of the rails console"
+date: 2014-10-21 13:13:17 -0700
+comments: true
+categories:
+---
+The most powerful tool I use on a daily basis is the gem, binding.pry.  Put the pry-rails gem into your Gemfile for dev and test.
+######Gemfile
+<pre>
+group :test, :development do
+  gem 'pry-rails'
+end
+</pre>
+
+You will now need to run
+<pre>
+  $ bundle install
+</pre>
+at the command line.
+
+
+Put the phrase 'binding.pry' without the quotes into a piece of your code that you want to investigate and binding.pry will open up a rails console at your command line.  This even works in test files.  If you need this in the middle of a haml file, be sure to obey the tabbing convention required by haml, and also put a '-' dash in front of the binding.pry, like so:
+
+<pre>
+  -binding.pry
+</pre>
+
+Remember, you will need to type exit out of the rails console and to return your server to  whatever it was doing before it hit the binding.pry.
+
+This is particularly useful to see the current scope of variables and also to look at what is in the database.
+<pre>
+  > Company.find(7).users.find(24)
+
+  > Company.find(7).team_memberships
+
+  > Company.find(7).users.find(26)
+
+  > Company.find(7).users
+
+  > Company.all
+
+  > c = Company.find(7)
+
+  > c.users
+
+  > User.where(id: 45)
+
+  > User.where(email: "susan@example.com")
+
+  > User.where(id: 73).pluck(:first_name, :last_name)
+</pre>
