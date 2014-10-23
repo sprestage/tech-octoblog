@@ -126,7 +126,11 @@
   </header>
 
 
-<div class="entry-content clearfix"><p>The most powerful tool I use on a daily basis is the gem, binding.pry.  Put the pry-rails gem into your Gemfile for dev and test.</p>
+<div class="entry-content clearfix"><p>The most powerful tool I use on a daily basis is the gem, binding.pry.</p>
+
+<h2>Setup</h2>
+
+<p>Put the pry-rails gem into your Gemfile for dev and test.</p>
 
 <h6>Gemfile</h6>
 
@@ -146,10 +150,21 @@ end
 
 <p>at the command line.</p>
 
+<h2>How to use</h2>
+
 <p>Put the phrase &lsquo;binding.pry&rsquo; without the quotes into a piece of your code that you want to investigate and binding.pry will open up a rails console at your command line.  This even works in test files.  If you need this in the middle of a haml file, be sure to obey the tabbing convention required by haml, and also put a &lsquo;-&rsquo; dash in front of the binding.pry, like so:</p>
 
+<h6>Ruby file syntax</h6>
+
 <pre>
-  -binding.pry
+  binding.pry
+</pre>
+
+
+<h6>Haml file syntax</h6>
+
+<pre>
+  - binding.pry
 </pre>
 
 

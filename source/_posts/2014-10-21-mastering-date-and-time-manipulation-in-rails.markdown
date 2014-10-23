@@ -23,6 +23,7 @@ Rails gives built-in ways to add days (which will suit for weeks as well) and al
 </pre>
 
 ###By week
+<pre>
   > DateTime.now
 => Tue, 21 Oct 2014 15:00:17 -0700
 
@@ -31,6 +32,7 @@ Rails gives built-in ways to add days (which will suit for weeks as well) and al
 
   > DateTime.now - (1 * 7)
 => Tue, 14 Oct 2014 15:04:16 -0700
+</pre>
 
 
 ##Past
@@ -46,4 +48,13 @@ Rails gives built-in ways to add days (which will suit for weeks as well) and al
 
   > 2.months.ago
 => Thu, 21 Aug 2014 20:20:41 UTC +00:00
+</pre>
+
+##Date only
+<pre>
+  > Date.today
+=> Wed, 22 Oct 2014
+
+  > Date.today+2
+=> Fri, 24 Oct 2014
 </pre>

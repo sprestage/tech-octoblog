@@ -4,7 +4,7 @@
   <title><![CDATA[My Technical Blog]]></title>
   <link href="http://sprestage-tech-blog.herokuapp.com/atom.xml" rel="self"/>
   <link href="http://sprestage-tech-blog.herokuapp.com/"/>
-  <updated>2014-10-21T15:56:44-07:00</updated>
+  <updated>2014-10-23T13:49:54-07:00</updated>
   <id>http://sprestage-tech-blog.herokuapp.com/</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -40,14 +40,17 @@
 
 <h3>By week</h3>
 
-<blockquote><p>DateTime.now
-=> Tue, 21 Oct 2014 15:00:17 -0700</p>
+<pre>
+  > DateTime.now
+=> Tue, 21 Oct 2014 15:00:17 -0700
 
-<p>DateTime.now + (2 * 7)
-=> Tue, 04 Nov 2014 15:00:52 -0700</p>
+  > DateTime.now + (2 * 7)
+=> Tue, 04 Nov 2014 15:00:52 -0700
 
-<p>DateTime.now - (1 * 7)
-=> Tue, 14 Oct 2014 15:04:16 -0700</p></blockquote>
+  > DateTime.now - (1 * 7)
+=> Tue, 14 Oct 2014 15:04:16 -0700
+</pre>
+
 
 <h2>Past</h2>
 
@@ -65,6 +68,17 @@
 => Thu, 21 Aug 2014 20:20:41 UTC +00:00
 </pre>
 
+
+<h2>Date only</h2>
+
+<pre>
+  > Date.today
+=> Wed, 22 Oct 2014
+
+  > Date.today+2
+=> Fri, 24 Oct 2014
+</pre>
+
 ]]></content>
   </entry>
   
@@ -73,7 +87,11 @@
     <link href="http://sprestage-tech-blog.herokuapp.com/blog/2014/10/21/binding-pry-and-the-power-of-the-rails-console/"/>
     <updated>2014-10-21T13:13:17-07:00</updated>
     <id>http://sprestage-tech-blog.herokuapp.com/blog/2014/10/21/binding-pry-and-the-power-of-the-rails-console</id>
-    <content type="html"><![CDATA[<p>The most powerful tool I use on a daily basis is the gem, binding.pry.  Put the pry-rails gem into your Gemfile for dev and test.</p>
+    <content type="html"><![CDATA[<p>The most powerful tool I use on a daily basis is the gem, binding.pry.</p>
+
+<h2>Setup</h2>
+
+<p>Put the pry-rails gem into your Gemfile for dev and test.</p>
 
 <h6>Gemfile</h6>
 
@@ -93,10 +111,21 @@ end
 
 <p>at the command line.</p>
 
+<h2>How to use</h2>
+
 <p>Put the phrase &lsquo;binding.pry&rsquo; without the quotes into a piece of your code that you want to investigate and binding.pry will open up a rails console at your command line.  This even works in test files.  If you need this in the middle of a haml file, be sure to obey the tabbing convention required by haml, and also put a &lsquo;-&rsquo; dash in front of the binding.pry, like so:</p>
 
+<h6>Ruby file syntax</h6>
+
 <pre>
-  -binding.pry
+  binding.pry
+</pre>
+
+
+<h6>Haml file syntax</h6>
+
+<pre>
+  - binding.pry
 </pre>
 
 

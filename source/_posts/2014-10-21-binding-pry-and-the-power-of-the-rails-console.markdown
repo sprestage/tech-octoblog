@@ -5,7 +5,11 @@ date: 2014-10-21 13:13:17 -0700
 comments: true
 categories:
 ---
-The most powerful tool I use on a daily basis is the gem, binding.pry.  Put the pry-rails gem into your Gemfile for dev and test.
+The most powerful tool I use on a daily basis is the gem, binding.pry.
+
+##Setup
+Put the pry-rails gem into your Gemfile for dev and test.
+
 ######Gemfile
 <pre>
 group :test, :development do
@@ -19,11 +23,17 @@ You will now need to run
 </pre>
 at the command line.
 
+##How to use
 
 Put the phrase 'binding.pry' without the quotes into a piece of your code that you want to investigate and binding.pry will open up a rails console at your command line.  This even works in test files.  If you need this in the middle of a haml file, be sure to obey the tabbing convention required by haml, and also put a '-' dash in front of the binding.pry, like so:
-
+######Ruby file syntax
 <pre>
-  -binding.pry
+  binding.pry
+</pre>
+
+######Haml file syntax
+<pre>
+  - binding.pry
 </pre>
 
 Remember, you will need to type exit out of the rails console and to return your server to  whatever it was doing before it hit the binding.pry.
