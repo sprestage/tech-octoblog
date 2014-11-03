@@ -4,7 +4,7 @@
   <title><![CDATA[Category: heroku | My Technical Blog]]></title>
   <link href="http://sprestage-tech-blog.herokuapp.com/blog/categories/heroku/atom.xml" rel="self"/>
   <link href="http://sprestage-tech-blog.herokuapp.com/"/>
-  <updated>2014-11-03T12:48:31-08:00</updated>
+  <updated>2014-11-03T12:58:23-08:00</updated>
   <id>http://sprestage-tech-blog.herokuapp.com/</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -377,6 +377,26 @@ then your code will get pushed into that branch.</p>
 <pre>
   $ git reset --hard <old-commit-id>
   $ git push -f
+</pre>
+
+
+<h3>Switch to specific commit</h3>
+
+<p>Temporarily switch to a different commit</p>
+
+<p>If you want to temporarily go back to it, fool around, then come back to where you are, all you have to do is check out the desired commit:</p>
+
+<pre>
+  # This will detach your HEAD, that is, leave you with no branch checked out:
+
+  $ git checkout 0d1d7fc32
+</pre>
+
+
+<p>Or if you want to make commits while you&rsquo;re there, go ahead and make a new branch while you&rsquo;re at it:</p>
+
+<pre>
+  git checkout -b old-state 0d1d7fc32
 </pre>
 
 

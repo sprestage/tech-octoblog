@@ -291,6 +291,23 @@ If you REALLY want to rewrite history.  Think very, very carefully about this BE
   $ git push -f
 </pre>
 
+### Switch to specific commit
+Temporarily switch to a different commit
+
+If you want to temporarily go back to it, fool around, then come back to where you are, all you have to do is check out the desired commit:
+
+<pre>
+  # This will detach your HEAD, that is, leave you with no branch checked out:
+
+  $ git checkout 0d1d7fc32
+</pre>
+
+Or if you want to make commits while you're there, go ahead and make a new branch while you're at it:
+
+<pre>
+  git checkout -b old-state 0d1d7fc32
+</pre>
+
 ### Merge
 How to merge the master branch into the feature branch? Easy:
 <pre>

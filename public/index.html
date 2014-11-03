@@ -1534,6 +1534,26 @@ then your code will get pushed into that branch.</p>
 </pre>
 
 
+<h3>Switch to specific commit</h3>
+
+<p>Temporarily switch to a different commit</p>
+
+<p>If you want to temporarily go back to it, fool around, then come back to where you are, all you have to do is check out the desired commit:</p>
+
+<pre>
+  # This will detach your HEAD, that is, leave you with no branch checked out:
+
+  $ git checkout 0d1d7fc32
+</pre>
+
+
+<p>Or if you want to make commits while you&rsquo;re there, go ahead and make a new branch while you&rsquo;re at it:</p>
+
+<pre>
+  git checkout -b old-state 0d1d7fc32
+</pre>
+
+
 <h3>Merge</h3>
 
 <p>How to merge the master branch into the feature branch? Easy:</p>
