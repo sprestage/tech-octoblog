@@ -31,3 +31,32 @@ If the above doesn't work, this may:
 <pre>
   > User.find(30).destroy
 </pre>
+
+
+###Backup & Restore
+<pre>
+  $ pg_dump -U featherlight featherlight_development -Fc > backup.dump
+</pre>
+
+The first command seems to be the one that works
+<pre>
+  $ pg_restore -c -C -F c -v -U postgres backup.dump
+  $ pg_restore -U featherlight -d featherlight_development backup.dump
+</pre>
+
+
+###Creating a database and user
+<pre>
+  $ createuser portfolio
+  Shall the new role be a superuser? (y/n) n
+  Shall the new role be allowed to create databases? (y/n) n
+  Shall the new role be allowed to create more new roles? (y/n) n
+  CREATE ROLE
+  $
+</pre>
+
+<pre>
+  $ createdb portfolio_test -O portfolio
+</pre>
+* -O owner name is the option in the command line.
+

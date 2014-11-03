@@ -162,6 +162,45 @@
   > User.find(30).destroy
 </pre>
 
+
+<h3>Backup &amp; Restore</h3>
+
+<pre>
+  $ pg_dump -U featherlight featherlight_development -Fc > backup.dump
+</pre>
+
+
+<p>The first command seems to be the one that works</p>
+
+<pre>
+  $ pg_restore -c -C -F c -v -U postgres backup.dump
+  $ pg_restore -U featherlight -d featherlight_development backup.dump
+</pre>
+
+
+<h3>Creating a database and user</h3>
+
+<pre>
+  $ createuser portfolio
+  Shall the new role be a superuser? (y/n) n
+  Shall the new role be allowed to create databases? (y/n) n
+  Shall the new role be allowed to create more new roles? (y/n) n
+  CREATE ROLE
+  $
+</pre>
+
+
+
+
+<pre>
+  $ createdb portfolio_test -O portfolio
+</pre>
+
+
+<ul>
+<li>-O owner name is the option in the command line.</li>
+</ul>
+
 </div>
 
 

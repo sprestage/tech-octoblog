@@ -4,7 +4,7 @@
   <title><![CDATA[My Technical Blog]]></title>
   <link href="http://sprestage-tech-blog.herokuapp.com/atom.xml" rel="self"/>
   <link href="http://sprestage-tech-blog.herokuapp.com/"/>
-  <updated>2014-10-23T13:49:54-07:00</updated>
+  <updated>2014-11-03T12:48:31-08:00</updated>
   <id>http://sprestage-tech-blog.herokuapp.com/</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -198,6 +198,45 @@ end
 <pre>
   > User.find(30).destroy
 </pre>
+
+
+<h3>Backup &amp; Restore</h3>
+
+<pre>
+  $ pg_dump -U featherlight featherlight_development -Fc > backup.dump
+</pre>
+
+
+<p>The first command seems to be the one that works</p>
+
+<pre>
+  $ pg_restore -c -C -F c -v -U postgres backup.dump
+  $ pg_restore -U featherlight -d featherlight_development backup.dump
+</pre>
+
+
+<h3>Creating a database and user</h3>
+
+<pre>
+  $ createuser portfolio
+  Shall the new role be a superuser? (y/n) n
+  Shall the new role be allowed to create databases? (y/n) n
+  Shall the new role be allowed to create more new roles? (y/n) n
+  CREATE ROLE
+  $
+</pre>
+
+
+
+
+<pre>
+  $ createdb portfolio_test -O portfolio
+</pre>
+
+
+<ul>
+<li>-O owner name is the option in the command line.</li>
+</ul>
 
 ]]></content>
   </entry>
@@ -1105,6 +1144,32 @@ then your code will get pushed into that branch.</p>
 
 <pre>
   $ git reset --hard
+</pre>
+
+
+<p>Careful: <code>git reset &ndash;hard</code> WILL DELETE YOUR WORKING DIRECTORY CHANGES. Be sure to stash any local changes you want to keep before running this command.</p>
+
+<p>Assuming you are sitting on that commit, then this command will wack it&hellip;</p>
+
+<pre>
+  $ git reset --hard HEAD~1
+</pre>
+
+
+<p>The HEAD~1 means the commit before head.</p>
+
+<p>Or, you could look at the output of git log, find the commit id of the commit you want to back up to, and then do this:</p>
+
+<pre>
+  $ git reset --hard <sha1-commit-id>
+</pre>
+
+
+<p>If you REALLY want to rewrite history.  Think very, very carefully about this BEFORE doing it.</p>
+
+<pre>
+  $ git reset --hard <old-commit-id>
+  $ git push -f
 </pre>
 
 

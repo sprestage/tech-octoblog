@@ -269,6 +269,28 @@ Reset the staging area and the working directory to match the most recent commit
   $ git reset --hard
 </pre>
 
+Careful: <code>git reset --hard</code> WILL DELETE YOUR WORKING DIRECTORY CHANGES. Be sure to stash any local changes you want to keep before running this command.
+
+Assuming you are sitting on that commit, then this command will wack it...
+
+<pre>
+  $ git reset --hard HEAD~1
+</pre>
+The HEAD~1 means the commit before head.
+
+Or, you could look at the output of git log, find the commit id of the commit you want to back up to, and then do this:
+
+<pre>
+  $ git reset --hard <sha1-commit-id>
+</pre>
+
+If you REALLY want to rewrite history.  Think very, very carefully about this BEFORE doing it.
+
+<pre>
+  $ git reset --hard <old-commit-id>
+  $ git push -f
+</pre>
+
 ### Merge
 How to merge the master branch into the feature branch? Easy:
 <pre>

@@ -462,6 +462,32 @@ then your code will get pushed into that branch.</p>
 </pre>
 
 
+<p>Careful: <code>git reset &ndash;hard</code> WILL DELETE YOUR WORKING DIRECTORY CHANGES. Be sure to stash any local changes you want to keep before running this command.</p>
+
+<p>Assuming you are sitting on that commit, then this command will wack it&hellip;</p>
+
+<pre>
+  $ git reset --hard HEAD~1
+</pre>
+
+
+<p>The HEAD~1 means the commit before head.</p>
+
+<p>Or, you could look at the output of git log, find the commit id of the commit you want to back up to, and then do this:</p>
+
+<pre>
+  $ git reset --hard <sha1-commit-id>
+</pre>
+
+
+<p>If you REALLY want to rewrite history.  Think very, very carefully about this BEFORE doing it.</p>
+
+<pre>
+  $ git reset --hard <old-commit-id>
+  $ git push -f
+</pre>
+
+
 <h3>Merge</h3>
 
 <p>How to merge the master branch into the feature branch? Easy:</p>
