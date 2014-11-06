@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - My Technical Blog</title>
+  <title>How do I upgade my Ruby again? - My Technical Blog</title>
   <meta name="author" content="Susan Prestage">
 
   
@@ -16,7 +16,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://sprestage-tech-blog.herokuapp.com/blog/archives">
+  <link rel="canonical" href="http://sprestage-tech-blog.herokuapp.com/blog/2014/11/06/how-do-i-upgade-my-ruby-again">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="My Technical Blog" type="application/atom+xml">
 
@@ -61,10 +61,10 @@
                 <li >
                     <a href="/about">About</a>
                 </li>
-                <li >
+                <li class="active">
                     <a href="/">Blog</a>
                 </li>
-                <li class="active">
+                <li >
                     <a href="/blog/archives">Archives</a>
                 </li>
             </ul>
@@ -95,31 +95,12 @@
         <div id="content">
           <div class="row">
   <div class="page-content col-md-9">
-    <article role="article">
+    <article class="hentry" role="article">
       
-        <header class="page-header">
-          
-          
-            <h1 class="entry-title">
-              Blog Archive
-              
-            </h1>
-          
-        </header>
-      
-      <div class="entry-content">
-        <div id="blog-archives">
-
-
-
-  
-  <h2>2014</h2>
-
-<article class="page-header">
-  
-<h1><a href="/blog/2014/11/06/how-do-i-upgade-my-ruby-again/">How do I upgade my Ruby again?</a></h1>
-<p class="meta text-muted">
-  
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
 
 
 
@@ -133,346 +114,145 @@
 
 
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-11-06T08:47:02-08:00" pubdate data-updated="true">Nov 6<span>th</span>, 2014</time>
-  
+        
+      </p>
+    
+    
+    <h1 class="entry-title">
+        How Do I Upgade My Ruby Again?
+        
+    </h1>
+    
+  </header>
 
 
-</p>
+<div class="entry-content clearfix"><p>If you want to use Rbenv on OS X you&rsquo;ll need to install the Xcode command-line tools:</p>
 
-</article>
+<pre>
+  $ xcode-select --install
+</pre>
 
 
+<p>Then install Home Brew:</p>
 
-<article class="page-header">
-  
-<h1><a href="/blog/2014/10/21/mastering-date-and-time-manipulation-in-rails/">Mastering date and time manipulation in rails.</a></h1>
-<p class="meta text-muted">
-  
+<pre>
+  $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+</pre>
 
 
+<p>Complete Home Brew setup:</p>
 
+<pre>
+  $ brew doctor
+  $ brew update
+</pre>
 
 
+<p>At this point you&rsquo;ll be able to install rbenv and ruby-build:</p>
 
+<pre>
+  $ brew install rbenv ruby-build
+</pre>
 
 
+<p>Add the following to your .bash_profile:</p>
 
+<pre>
+  eval "$(rbenv init -)"
+</pre>
 
 
+<p>Reload your bash profile settings:</p>
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-10-21T13:14:02-07:00" pubdate data-updated="true">Oct 21<span>st</span>, 2014</time>
-  
+<pre>
+  $ source ~/.bash_profile
+</pre>
 
 
-</p>
+<p>Then you can install Ruby:</p>
 
-</article>
+<pre>
+  $ rbenv install 2.1.2
+</pre>
 
 
+<p>Thanks to John O. at TeamTreeHouse for giving this well written response to this inquiry.</p>
 
-<article class="page-header">
-  
-<h1><a href="/blog/2014/10/21/binding-pry-and-the-power-of-the-rails-console/">Binding pry and the power of the rails console</a></h1>
-<p class="meta text-muted">
-  
+<p>To set as your current version of Ruby run the following command:</p>
 
+<pre>
+  $ rvm use 2.0.0
+</pre>
 
 
+<p>To make it the default Ruby:</p>
 
+<pre>
+  $ rvm default 2.0.0
+</pre>
 
 
+<p>or</p>
 
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-10-21T13:13:17-07:00" pubdate data-updated="true">Oct 21<span>st</span>, 2014</time>
-  
-
-
-</p>
-
-</article>
-
-
-
-<article class="page-header">
-  
-<h1><a href="/blog/2014/10/13/how-to-do-database-stuff-from-within-rails/">How to do database stuff from within Rails</a></h1>
-<p class="meta text-muted">
-  
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-10-13T11:52:35-07:00" pubdate data-updated="true">Oct 13<span>th</span>, 2014</time>
-  
-
-
-</p>
-
-</article>
-
-
-
-<article class="page-header">
-  
-<h1><a href="/blog/2014/03/21/string-manipulation-in-ruby/">String manipulation in Ruby</a></h1>
-<p class="meta text-muted">
-  
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-03-21T12:12:17-07:00" pubdate data-updated="true">Mar 21<span>st</span>, 2014</time>
-  
-
-<span class="glyphicon glyphicon-tags"></span>&nbsp;
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/ruby/'>Ruby</a>, <a class='category' href='/blog/categories/strings/'>strings</a>
-  
-</span>
-
-
-</p>
-
-</article>
-
-
-
-<article class="page-header">
-  
-<h1><a href="/blog/2014/03/19/what-were-those-octopress-commands-again/">What were those Octopress commands again?</a></h1>
-<p class="meta text-muted">
-  
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-03-19T12:30:59-07:00" pubdate data-updated="true">Mar 19<span>th</span>, 2014</time>
-  
-
-<span class="glyphicon glyphicon-tags"></span>&nbsp;
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/blog/categories/blogging/'>blogging</a>, <a class='category' href='/blog/categories/command-line/'>command line</a>, <a class='category' href='/blog/categories/rake-commands/'>rake commands</a>
-  
-</span>
-
-
-</p>
-
-</article>
-
-
-
-  
-  <h2>2013</h2>
-
-<article class="page-header">
-  
-<h1><a href="/blog/2013/12/07/quickly-create-a-rails-app-with-2-working-resources/">Quickly create a rails app with 2 working resources</a></h1>
-<p class="meta text-muted">
-  
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-07T14:48:17-08:00" pubdate data-updated="true">Dec 7<span>th</span>, 2013</time>
-  
-
-
-</p>
-
-</article>
-
-
-
-<article class="page-header">
-  
-<h1><a href="/blog/2013/12/06/why-i-like-vi/">Why I like VI</a></h1>
-<p class="meta text-muted">
-  
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-06T13:08:54-08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time>
-  
-
-
-</p>
-
-</article>
-
-
-
-<article class="page-header">
-  
-<h1><a href="/blog/2013/12/04/unix-alias-file/">How the unix .alias file can make your command line life better</a></h1>
-<p class="meta text-muted">
-  
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-04T12:50:52-08:00" pubdate data-updated="true">Dec 4<span>th</span>, 2013</time>
-  
-
-
-</p>
-
-</article>
-
-
-
-<article class="page-header">
-  
-<h1><a href="/blog/2013/12/03/my-favorite-unix-commands/">My favorite unix commands</a></h1>
-<p class="meta text-muted">
-  
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-03T16:03:22-08:00" pubdate data-updated="true">Dec 3<span>rd</span>, 2013</time>
-  
-
-
-</p>
-
-</article>
-
-
-
-<article class="page-header">
-  
-<h1><a href="/blog/2013/12/02/my-personal-git-command-reference/">My personal Git command reference</a></h1>
-<p class="meta text-muted">
-  
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-02T18:47:42-08:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2013</time>
-  
-
-<span class="glyphicon glyphicon-tags"></span>&nbsp;
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/branch/'>branch</a>, <a class='category' href='/blog/categories/command-line/'>command line</a>, <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/github/'>github</a>, <a class='category' href='/blog/categories/heroku/'>heroku</a>, <a class='category' href='/blog/categories/prune/'>prune</a>, <a class='category' href='/blog/categories/stash/'>stash</a>
-  
-</span>
-
-
-</p>
-
-</article>
-
-
-
-<article class="page-header">
-  
-<h1><a href="/blog/2013/12/01/overcoming-my-fear-of-git-through-knowledge/">Overcoming my fear of Git through knowledge</a></h1>
-<p class="meta text-muted">
-  
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-01T18:59:42-08:00" pubdate data-updated="true">Dec 1<span>st</span>, 2013</time>
-  
-
-
-</p>
-
-</article>
+<pre>
+  $ rvm use 2.0.0 --default
+</pre>
 
 </div>
 
-      </div>
-      
+
+      <footer>
+        <p class="meta text-muted">
+          
+  
+
+<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard">Posted by <span class="fn">Susan Prestage</span></span>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-11-06T08:47:02-08:00" pubdate data-updated="true">Nov 6<span>th</span>, 2014</time>
+          
+
+
+        </p>
+        
+          <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://sprestage-tech-blog.herokuapp.com/blog/2014/11/06/how-do-i-upgade-my-ruby-again/" data-via="SusanPrestage" data-counturl="http://sprestage-tech-blog.herokuapp.com/blog/2014/11/06/how-do-i-upgade-my-ruby-again/" >Tweet</a>
+  
+  
+  
+</div>
+
+        
+        
+          <ul class="meta text-muted pager">
+            
+            <li class="previous"><a href="/blog/2014/10/21/mastering-date-and-time-manipulation-in-rails/" title="Previous Post: Mastering date and time manipulation in rails.">&laquo; Mastering date and time manipulation in rails.</a></li>
+            
+            
+          </ul>
+        
+      </footer>
     </article>
     
   </div>
 
   
-    <aside class="sidebar col-md-3">
-      
-        <section>
+  <aside class="sidebar col-md-3">
+    
+      <section>
   <CENTER>
     <h2>Share my journey through technology</h2>
     <IMG src="https://s3-us-west-2.amazonaws.com/technicalblog/SusanProfilePhoto2.jpg" alt="picture of Susan Prestage" width="200" height="200">
@@ -490,7 +270,7 @@
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/2014/11/06/how-do-i-upgade-my-ruby-again/">How Do I Upgade My Ruby Again?</a>
+    <a class="list-group-item active" href="/blog/2014/11/06/how-do-i-upgade-my-ruby-again/">How Do I Upgade My Ruby Again?</a>
     
     <a class="list-group-item " href="/blog/2014/10/21/mastering-date-and-time-manipulation-in-rails/">Mastering Date and Time Manipulation in Rails.</a>
     
@@ -541,8 +321,8 @@
 
 
 
-      
-    </aside>
+    
+  </aside>
   
 </div>
 
