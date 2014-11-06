@@ -4,10 +4,10 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: github - My Technical Blog</title>
+  <title>How do I upgrade my Ruby again? - My Technical Blog</title>
   <meta name="author" content="Susan Prestage">
 
-  <meta name="description" content="Category: github">
+  
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -16,7 +16,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://sprestage-tech-blog.herokuapp.comblog/categories/github">
+  <link rel="canonical" href="http://sprestage-tech-blog.herokuapp.com/blog/2014/11/06/how-do-i-upgrade-my-ruby-again">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="My Technical Blog" type="application/atom+xml">
 
@@ -61,10 +61,10 @@
                 <li >
                     <a href="/about">About</a>
                 </li>
-                <li >
+                <li class="active">
                     <a href="/">Blog</a>
                 </li>
-                <li class="active">
+                <li >
                     <a href="/blog/archives">Archives</a>
                 </li>
             </ul>
@@ -95,31 +95,12 @@
         <div id="content">
           <div class="row">
   <div class="page-content col-md-9">
-    <article role="article">
+    <article class="hentry" role="article">
       
-        <header class="page-header">
-          
-          
-            <h1 class="entry-title">
-              Category: Github
-              
-            </h1>
-          
-        </header>
-      
-      <div class="entry-content">
-        <div id="blog-archives" class="category">
-
-
-
-  
-  <h2>2013</h2>
-
-<article class="page-header">
-  
-<h1><a href="/blog/2013/12/02/my-personal-git-command-reference/">My personal Git command reference</a></h1>
-<p class="meta text-muted">
-  
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
 
 
 
@@ -132,33 +113,146 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-02T18:47:42-08:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2013</time>
-  
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-11-06T08:47:02-08:00" pubdate data-updated="true">Nov 6<span>th</span>, 2014</time>
+        
+      </p>
+    
+    
+    <h1 class="entry-title">
+        How Do I Upgrade My Ruby Again?
+        
+    </h1>
+    
+  </header>
 
-<span class="glyphicon glyphicon-tags"></span>&nbsp;
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/branch/'>branch</a>, <a class='category' href='/blog/categories/command-line/'>command line</a>, <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/github/'>github</a>, <a class='category' href='/blog/categories/heroku/'>heroku</a>, <a class='category' href='/blog/categories/prune/'>prune</a>, <a class='category' href='/blog/categories/stash/'>stash</a>
-  
-</span>
+
+<div class="entry-content clearfix"><p>If you want to use Rbenv on OS X you&rsquo;ll need to install the Xcode command-line tools:</p>
+
+<pre>
+  $ xcode-select --install
+</pre>
 
 
-</p>
+<p>Then install Home Brew:</p>
 
-</article>
+<pre>
+  $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+</pre>
+
+
+<p>Complete Home Brew setup:</p>
+
+<pre>
+  $ brew doctor
+  $ brew update
+</pre>
+
+
+<p>At this point you&rsquo;ll be able to install rbenv and ruby-build:</p>
+
+<pre>
+  $ brew install rbenv ruby-build
+</pre>
+
+
+<p>Add the following to your .bash_profile:</p>
+
+<pre>
+  eval "$(rbenv init -)"
+</pre>
+
+
+<p>Reload your bash profile settings:</p>
+
+<pre>
+  $ source ~/.bash_profile
+</pre>
+
+
+<p>Then you can install Ruby:</p>
+
+<pre>
+  $ rbenv install 2.1.2
+</pre>
+
+
+<p>Thanks to John O. at TeamTreeHouse for giving this well written response to this inquiry.</p>
+
+<p>To set as your current version of Ruby run the following command:</p>
+
+<pre>
+  $ rvm use 2.0.0
+</pre>
+
+
+<p>To make it the default Ruby:</p>
+
+<pre>
+  $ rvm default 2.0.0
+</pre>
+
+
+<p>or</p>
+
+<pre>
+  $ rvm use 2.0.0 --default
+</pre>
 
 </div>
 
-      </div>
-      
+
+      <footer>
+        <p class="meta text-muted">
+          
+  
+
+<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard">Posted by <span class="fn">Susan Prestage</span></span>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-11-06T08:47:02-08:00" pubdate data-updated="true">Nov 6<span>th</span>, 2014</time>
+          
+
+
+        </p>
+        
+          <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://sprestage-tech-blog.herokuapp.com/blog/2014/11/06/how-do-i-upgrade-my-ruby-again/" data-via="SusanPrestage" data-counturl="http://sprestage-tech-blog.herokuapp.com/blog/2014/11/06/how-do-i-upgrade-my-ruby-again/" >Tweet</a>
+  
+  
+  
+</div>
+
+        
+        
+          <ul class="meta text-muted pager">
+            
+            <li class="previous"><a href="/blog/2014/10/21/mastering-date-and-time-manipulation-in-rails/" title="Previous Post: Mastering date and time manipulation in rails.">&laquo; Mastering date and time manipulation in rails.</a></li>
+            
+            
+          </ul>
+        
+      </footer>
     </article>
     
   </div>
 
   
-    <aside class="sidebar col-md-3">
-      
-        <section>
+  <aside class="sidebar col-md-3">
+    
+      <section>
   <CENTER>
     <h2>Share my journey through technology</h2>
     <IMG src="https://s3-us-west-2.amazonaws.com/technicalblog/SusanProfilePhoto2.jpg" alt="picture of Susan Prestage" width="200" height="200">
@@ -176,7 +270,7 @@
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/2014/11/06/how-do-i-upgrade-my-ruby-again/">How Do I Upgrade My Ruby Again?</a>
+    <a class="list-group-item active" href="/blog/2014/11/06/how-do-i-upgrade-my-ruby-again/">How Do I Upgrade My Ruby Again?</a>
     
     <a class="list-group-item " href="/blog/2014/10/21/mastering-date-and-time-manipulation-in-rails/">Mastering Date and Time Manipulation in Rails.</a>
     
@@ -227,8 +321,8 @@
 
 
 
-      
-    </aside>
+    
+  </aside>
   
 </div>
 

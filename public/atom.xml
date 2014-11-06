@@ -4,7 +4,7 @@
   <title><![CDATA[My Technical Blog]]></title>
   <link href="http://sprestage-tech-blog.herokuapp.com/atom.xml" rel="self"/>
   <link href="http://sprestage-tech-blog.herokuapp.com/"/>
-  <updated>2014-11-06T09:14:14-08:00</updated>
+  <updated>2014-11-06T14:12:51-08:00</updated>
   <id>http://sprestage-tech-blog.herokuapp.com/</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[How do I upgade my Ruby again?]]></title>
-    <link href="http://sprestage-tech-blog.herokuapp.com/blog/2014/11/06/how-do-i-upgade-my-ruby-again/"/>
+    <title type="html"><![CDATA[How do I upgrade my Ruby again?]]></title>
+    <link href="http://sprestage-tech-blog.herokuapp.com/blog/2014/11/06/how-do-i-upgrade-my-ruby-again/"/>
     <updated>2014-11-06T08:47:02-08:00</updated>
-    <id>http://sprestage-tech-blog.herokuapp.com/blog/2014/11/06/how-do-i-upgade-my-ruby-again</id>
+    <id>http://sprestage-tech-blog.herokuapp.com/blog/2014/11/06/how-do-i-upgrade-my-ruby-again</id>
     <content type="html"><![CDATA[<p>If you want to use Rbenv on OS X you&rsquo;ll need to install the Xcode command-line tools:</p>
 
 <pre>
