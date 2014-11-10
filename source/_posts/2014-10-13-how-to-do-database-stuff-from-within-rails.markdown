@@ -60,3 +60,8 @@ The first command seems to be the one that works
 </pre>
 * -O owner name is the option in the command line.
 
+
+###Queries with date ranges
+<pre>
+  FeedbackRequest.where(created_at: 5.days.ago..4.days.ago)
+</pre>
