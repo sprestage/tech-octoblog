@@ -617,6 +617,18 @@ then your code will get pushed into that branch.</p>
 </pre>
 
 
+<h3>Restore local master</h3>
+
+<p>You&rsquo;ve messed things up on your local master and need to get back.</p>
+
+<p>Setting your branch to exactly match the remote branch can be done in two steps:</p>
+
+<pre>
+  $ git fetch origin
+  $ git reset --hard origin/master
+</pre>
+
+
 <h2>Fini</h2>
 
 <p>Thank you for reading.  I hope you found this useful.  I invite you to read my next post if you are interested in the unix commands that I find most useful.</p>

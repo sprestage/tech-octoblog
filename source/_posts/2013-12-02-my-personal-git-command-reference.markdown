@@ -382,6 +382,15 @@ This will prune All of your old references to already-deleted-on-github branches
   $ git remote prune origin
 </pre>
 
-## Fini
+###Restore local master
+You've messed things up on your local master and need to get back.
 
+Setting your branch to exactly match the remote branch can be done in two steps:
+<pre>
+  $ git fetch origin
+  $ git reset --hard origin/master
+</pre>
+
+
+## Fini
 Thank you for reading.  I hope you found this useful.  I invite you to read my next post if you are interested in the unix commands that I find most useful.
