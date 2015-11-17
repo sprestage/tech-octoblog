@@ -92,15 +92,15 @@ How is git looking (you will find some useful guidance printed out with this com
 Branching
 =======
 
-###New branch exists on remote
-####New branches on github
+### New branch exists on remote
+#### New branches on github
 So, your teammate has been working on a new branch they just created and then commited to github.  You now want to start working locally on that new branch.
 <pre>
   $ git fetch origin bug-request-id
   $ git checkout bug-request-id
 </pre>
 
-####Several new branches on github
+#### Several new branches on github
 You've been heads down on your work on a branch and your team has created several new branches remotely on github and now you need to start contributing to those branches.  To get look at what the remote branches are,
 <pre>
   $ git fetch
@@ -117,28 +117,29 @@ Finally, to bring the remote branch code down to your local, once you fetched:
 </pre>
 
 
-###Create new branch locally
-####Starting the new branch locally
+### Create new branch locally
+#### Starting the new branch locally
 First, create the branch locally.  This automatically changes you to this branch locally.
 <pre>
   $ git checkout -b new_branch_name
 </pre>
+Note, you can do this even if you already have changes made.  They'll simply still be there, unstaged and uncommitted in the new branch.
 
-####Pushing the new branch to github
+#### Pushing the new branch to github
 To check this into github, do this and the new branch will automatically get created on github,
 then your code will get pushed into that branch.
 <pre>
   $ git push origin new_branch_name
 </pre>
 
-###Good git references
+### Good git references
 Also very useful are these links:
 http://www.ndpsoftware.com/git-cheatsheet.html#loc=workspace;
 http://git-scm.com/book
 http://techblog.susanprestage.com/blog/2013/12/02/my-personal-git-command-reference/
 
 
-###Working with a branch
+### Working with a branch
 Use this to confirm WHICH branch you are on.
 <pre>
   $ git branch
@@ -149,7 +150,7 @@ Use this to confirm WHICH branch you are on.
 
 Very important tips for switching between branches.  ALWAYS commit your changes to your current branch before changing branches.  I assumed the files would stay in the old branch as I switched to the new branch, but NO.  The changes will follow you around like a lost puppy until you commit them.
 
-###Merging your branch(es)
+### Merging your branch(es)
 Ok, I've got this branch (or worse, several branches).  I'm done working on them.  They are all checked in, as branches.  But now, I need to get the master branch back up to date.  How do I do this with FIVE branches.  Don't panic, we can do this thing.  First, make sure everything is up to date and checked in.
 <pre>
   $ git status
@@ -214,49 +215,36 @@ Verify we are in the same place:
 </pre>
 
 
-## Whoops!  Now what do I do?
+## Whoops!  Now what do I do?  Gentle commands
+### How to undo my last commit, not yet pushed
+I staged my files `git add .` and then committed them `git commit -m "changes I don't want to make yet"`, but the I realize that I want to undo all that for some reason, like I'm on the wrong branch.
+
+Simple.  Two steps.  First, undo the commit.
+```
+git reset --soft HEAD~
+```
+
+Next, unstage the files.
+```
+git reset HEAD app/helpers/timezone_helper.rb
+```
+
+Do a `git status` before and after each command to better see what is happening.
+
+### Check out a particular commit by SHA
 To check out a particular commit, use
 <pre>
   $ git checkout &ltsha1>
 </pre>
 
-To revert changes made to your working copy, do this
+### Revert changes to local working copy
+To revert changes made to your working copy, restoring your local copy to the most recently checked in remote copy, do this
 <pre>
   $ git checkout .
 </pre>
 
-This will create three separate revert commits:
 
-<pre>
-  $ git revert 0766c053 25eee4ca a867b4af
-</pre>
-
-It also takes ranges. This will revert the last two commits:
-
-<pre>
-  $ git revert HEAD~2..HEAD
-</pre>
-
-To get just one, you could use `rebase -i` to squash them afterwards  Or, you could do it manually (be sure to do this at top level of the repo) get your index and work tree into the desired state, without changing HEAD:
-
-<pre>
-  $ git checkout 0d1d7fc32 .
-</pre>
-
-and then commit
-
-<pre>
-  $ git commit    # be sure and write a good message describing what you just did
-</pre>
-
-I don't like my past several commits.  I want to go back to a particular commit.  Reset may be a BAD, BAD way of doing things, so look out!
-<pre>
-  $ git reset --hard HEAD~5
-</pre>
-
-
-## Powerful commands
-Stuff I'm using regularly these days
+## Powerful commands, use with caution
 
 ### Unstage
 Reset the staging area to match the most recent commit, but leave the working directory unchanged. This unstages all files without overwriting any changes, giving you the opportunity to re-build the staged snapshot from scratch.
@@ -321,7 +309,7 @@ Merge branch back into master
   $ git merge my_branch
 </pre>
 
-###Merge conflict
+### Merge conflict
 When there is a conflict during a merge, you have to finish the merge commit manually. It sounds like you've done the first two steps, to edit the files that conflicted and then run
 <pre>
   $ git add
@@ -334,8 +322,8 @@ Finally, you need to actually commit the merge with
 </pre>
 after which you will be able to switch branches again.
 
-###Have I forgotten to push?
-How do I tell if my commited changes have been pushed to github?
+### Have I forgotten to push?
+How do I tell if my committed changes have been pushed to github?
 <pre>
   $ git log origin/master..HEAD
 </pre>
@@ -352,7 +340,7 @@ Copy old_branch into a new_branch.  (Useful for trying out a merge you are worri
   $ git checkout new_branch
 </pre>
 
-###Destroy local branch
+### Destroy local branch
 Get rid of a branch and everything in it changed or not.  (Useful after you've tried out a merge on a temporary branch.)
 
 First, you have to get rid of the changes:
@@ -371,7 +359,7 @@ Lastly, delete the branch
 </pre>
 you may need to use a -D option to force this.  BE CAREFUL not to delete something you care about.  Really!
 
-###Tidy up leftovers
+### Tidy up leftovers
 Once you delete the branch from the remote, you can prune to get rid of remote tracking branches with:
 <pre>
   $ git branch -r -d origin/newfeaturebranch
@@ -382,7 +370,7 @@ This will prune All of your old references to already-deleted-on-github branches
   $ git remote prune origin
 </pre>
 
-###Restore local master
+### Restore local master
 You've messed things up on your local master and need to get back.
 
 Setting your branch to exactly match the remote branch can be done in two steps:
