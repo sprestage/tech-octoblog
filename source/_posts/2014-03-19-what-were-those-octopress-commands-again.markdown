@@ -10,37 +10,46 @@ categories:
 - blogging
 ---
 Create a new post:
-<pre>
+```
 	$ rake new_post["What were those Octopress commands again?"]
-</pre>
+```
 
 Incorporate that post into your site:
-<pre>
+```
 	$ rake generate
-</pre>
+```
 
 If POW is setup, you can just run:
-<pre>
+```
 	$ rake watch
-</pre>
+```
 
 Load the following in your browser to see how things look.
-<pre>
+```
 http://octopress.dev
-</pre>
+```
+Or possibly
+```
+http://<name_of_blog>.dev
+```
 
 Happy with how everything looks?  Commit your code and push to the livesite.
 
 If you are working on two different blogs, you will need to switch back and forth in POW the directory that is being looked at:
-<pre>
-	$ cd ~/.pow
-	$ ln -s /path/to/octopress octopress
-</pre>
+```
+$ cd ~/.pow
+$ ln -s /path/to/octopress octopress
+```
 
-On that rare occasion that you change your _config.yml, you will need to run a special command, since rake generate doesn't do what is needed.  Look out though, if you've customized your blog such as with Octostrap3, this will undo your changes, so use with caution.
-<pre>
-	$ rake update_source
-</pre>
+On that rare occasion that you change your `_config.yml`, you will need to run a special command, since rake generate doesn't do what is needed.  Look out though, if you've customized your blog such as with Octostrap3, this will undo your changes, so use with caution.
+```
+$ rake update_source
+```
+
+## How to restart the POW server
+```
+$ touch ~/.pow/restart.txt
+```
 
 Thanks
 =======
