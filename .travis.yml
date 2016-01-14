@@ -1,5 +1,6 @@
 language: ruby
 rvm:
+<<<<<<< HEAD
 - 2.1.4
 script: bundle exec rake generate
 deploy:
@@ -9,3 +10,8 @@ deploy:
   app: sprestage-technical-blog
   on:
     repo: sprestage/tech-octoblog
+=======
+  - 2.0.0
+  - 1.9.3
+script: bundle exec rake install; bundle exec rake generate
+>>>>>>> d684a65e4286532789a3f8b160df80ee5801a4a1

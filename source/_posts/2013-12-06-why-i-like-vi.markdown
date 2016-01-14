@@ -9,7 +9,7 @@ categories:
 
 VI is a powerful, but brutal, command line text editor available on all unix-based systems.  
 
-I discovered VI while at university studying for my computer engineering degree.  The joke at the time was that VI is 'user VIolent'.  It is hard to deny this perspective, especially as I share it.  After my first couple of stumblings into inadvertent launchings of vi, my unix mentor sat down with me a first taught me how to get the heck out of there, and then taught me how to leverage it to my own benefit.
+I discovered VI while at university studying for my computer engineering degree.  The joke at the time was that VI is 'user VIolent'.  It is hard to deny this perspective, especially as I share it.  After my first couple of stumblings into inadvertent launchings of vi, my unix mentor sat down with me and first taught me how to get the heck out of there, and then taught me how to leverage it to my own benefit.
 
 The biggest benefits to me are:
 1. The ease with which I can jump around my document by line/word/page.

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: blogging | My Technical Blog]]></title>
-  <link href="http://sprestage-tech-blog.herokuapp.com/blog/categories/blogging/atom.xml" rel="self"/>
-  <link href="http://sprestage-tech-blog.herokuapp.com/"/>
-  <updated>2014-11-11T11:00:11-08:00</updated>
-  <id>http://sprestage-tech-blog.herokuapp.com/</id>
+  <title><![CDATA[Category: Blogging | My Technical Blog]]></title>
+  <link href="http://techblog.susanprestage.com//blog/categories/blogging/atom.xml" rel="self"/>
+  <link href="http://techblog.susanprestage.com//"/>
+  <updated>2016-01-14T10:11:11-08:00</updated>
+  <id>http://techblog.susanprestage.com//</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
     
@@ -14,54 +14,51 @@
 
   
   <entry>
-    <title type="html"><![CDATA[What were those Octopress commands again?]]></title>
-    <link href="http://sprestage-tech-blog.herokuapp.com/blog/2014/03/19/what-were-those-octopress-commands-again/"/>
+    <title type="html"><![CDATA[What Were Those Octopress Commands Again?]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2014/03/19/what-were-those-octopress-commands-again/"/>
     <updated>2014-03-19T12:30:59-07:00</updated>
-    <id>http://sprestage-tech-blog.herokuapp.com/blog/2014/03/19/what-were-those-octopress-commands-again</id>
-    <content type="html"><![CDATA[<p>Create a new post:</p>
-
-<pre>
+    <id>http://techblog.susanprestage.com//blog/2014/03/19/what-were-those-octopress-commands-again</id>
+    <content type="html"><![CDATA[<p>Create a new post:
+<code>
     $ rake new_post["What were those Octopress commands again?"]
-</pre>
+</code></p>
 
-
-<p>Incorporate that post into your site:</p>
-
-<pre>
+<p>Incorporate that post into your site:
+<code>
     $ rake generate
-</pre>
+</code></p>
 
-
-<p>If POW is setup, you can just run:</p>
-
-<pre>
+<p>If POW is setup, you can just run:
+<code>
     $ rake watch
-</pre>
+</code></p>
 
-
-<p>Load the following in your browser to see how things look.</p>
-
-<pre>
+<p>Load the following in your browser to see how things look.
+<code>
 http://octopress.dev
-</pre>
-
+</code>
+Or possibly
+<code>
+http://&lt;name_of_blog&gt;.dev
+</code></p>
 
 <p>Happy with how everything looks?  Commit your code and push to the livesite.</p>
 
-<p>If you are working on two different blogs, you will need to switch back and forth in POW the directory that is being looked at:</p>
+<p>If you are working on two different blogs, you will need to switch back and forth in POW the directory that is being looked at:
+<code>
+$ cd ~/.pow
+$ ln -s /path/to/octopress octopress
+</code></p>
 
-<pre>
-    $ cd ~/.pow
-    $ ln -s /path/to/octopress octopress
-</pre>
+<p>On that rare occasion that you change your <code>_config.yml</code>, you will need to run a special command, since rake generate doesn&rsquo;t do what is needed.  Look out though, if you&rsquo;ve customized your blog such as with Octostrap3, this will undo your changes, so use with caution.
+<code>
+$ rake update_source
+</code></p>
 
+<h2>How to restart the POW server</h2>
 
-<p>On that rare occasion that you change your _config.yml, you will need to run a special command, since rake generate doesn&rsquo;t do what is needed.  Look out though, if you&rsquo;ve customized your blog such as with Octostrap3, this will undo your changes, so use with caution.</p>
-
-<pre>
-    $ rake update_source
-</pre>
-
+<pre><code>$ touch ~/.pow/restart.txt
+</code></pre>
 
 <h1>Thanks</h1>
 

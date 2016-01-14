@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://sprestage-tech-blog.herokuapp.com/sitemap.xml 
+Sitemap: http://techblog.susanprestage.com//sitemap.xml 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: github | My Technical Blog]]></title>
-  <link href="http://sprestage-tech-blog.herokuapp.com/blog/categories/github/atom.xml" rel="self"/>
-  <link href="http://sprestage-tech-blog.herokuapp.com/"/>
-  <updated>2014-11-11T11:00:11-08:00</updated>
-  <id>http://sprestage-tech-blog.herokuapp.com/</id>
+  <title><![CDATA[Category: Github | My Technical Blog]]></title>
+  <link href="http://techblog.susanprestage.com//blog/categories/github/atom.xml" rel="self"/>
+  <link href="http://techblog.susanprestage.com//"/>
+  <updated>2016-01-14T10:11:11-08:00</updated>
+  <id>http://techblog.susanprestage.com//</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
     
@@ -14,113 +14,89 @@
 
   
   <entry>
-    <title type="html"><![CDATA[My personal Git command reference]]></title>
-    <link href="http://sprestage-tech-blog.herokuapp.com/blog/2013/12/02/my-personal-git-command-reference/"/>
+    <title type="html"><![CDATA[My Personal Git Command Reference]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2013/12/02/my-personal-git-command-reference/"/>
     <updated>2013-12-02T18:47:42-08:00</updated>
-    <id>http://sprestage-tech-blog.herokuapp.com/blog/2013/12/02/my-personal-git-command-reference</id>
+    <id>http://techblog.susanprestage.com//blog/2013/12/02/my-personal-git-command-reference</id>
     <content type="html"><![CDATA[<h1>Git Basics</h1>
 
 <h2>Setting up a new project</h2>
 
 <h3>Set up the local repository</h3>
 
-<p>Brand new project.  Start in the project directory.  Then:</p>
-
-<pre>
+<p>Brand new project.  Start in the project directory.  Then:
+<code>
   $ git init
-</pre>
+</code></p>
 
-
-<p>Ready to stage your commits?  Here is the long way:</p>
-
-<pre>
+<p>Ready to stage your commits?  Here is the long way:
+<code>
   $ git add .
   $ git commit -m "Initial commit"
-</pre>
+</code></p>
 
-
-<p>Here is a useful short way to do both of the above commands at once:</p>
-
-<pre>
+<p>Here is a useful short way to do both of the above commands at once:
+<code>
   $ git commit -am "Initial commit"
-</pre>
-
+</code></p>
 
 <h3>Set up remote repository</h3>
 
-<p>Point to a new repo on github.  Note: must create this new repo on github first!</p>
+<p>Point to a new repo on github.  Note: must create this new repo on github first!
+<code>
+  $ git remote add origin https://github.com/&amp;ltusername&gt;/&amp;ltyour_new_app_name&gt;.git
+</code></p>
 
-<pre>
-  $ git remote add origin https://github.com/&ltusername>/&ltyour_new_app_name>.git
-</pre>
-
-
-<p>Show the remote repositories that are being pointed to:</p>
-
-<pre>
+<p>Show the remote repositories that are being pointed to:
+<code>
   $ git remote -v
-</pre>
+</code></p>
 
-
-<p>List remote and local branches:</p>
-
-<pre>
+<p>List remote and local branches:
+<code>
   $ git branch -a
-</pre>
+</code></p>
 
-
-<p>Push to github:</p>
-
-<pre>
+<p>Push to github:
+<code>
   $ git push -u origin master
-</pre>
-
+</code></p>
 
 <h3>Set up Heroku</h3>
 
 <p>First, go to Heroku and create a new repo.
-Next, push to heroku:</p>
-
-<pre>
+Next, push to heroku:
+<code>
   $ heroku create
   $ git push heroku master
   $ heroku run rake db:migrate
-</pre>
+</code></p>
 
-
-<p>Further pushes to heroku</p>
-
-<pre>
+<p>Further pushes to heroku
+<code>
   $ git push heroku master
-</pre>
+</code></p>
 
-
-<p>If you encounter problems, this will show you the logs on Heroku for diagnostics</p>
-
-<pre>
+<p>If you encounter problems, this will show you the logs on Heroku for diagnostics
+<code>
   $ heroku logs
-</pre>
-
+</code></p>
 
 <h2>Frequent staging, commiting, and pushing</h2>
 
-<p>Even better is that if you are working offline, you can keep staging and committing.  Then push all to the remote repository at once when you have internet connectivity again.</p>
-
-<pre>
+<p>Even better is that if you are working offline, you can keep staging and committing.  Then push all to the remote repository at once when you have internet connectivity again.
+<code>
   $ git add .
   $ git commit -m "brief explanation of changes here"
   $ git push
-</pre>
-
+</code></p>
 
 <h3>What is the status of your files</h3>
 
-<p>How is git looking (you will find some useful guidance printed out with this command too):</p>
-
-<pre>
+<p>How is git looking (you will find some useful guidance printed out with this command too):
+<code>
   $ git status
-</pre>
-
+</code></p>
 
 <h1>Branching</h1>
 
@@ -128,57 +104,46 @@ Next, push to heroku:</p>
 
 <h4>New branches on github</h4>
 
-<p>So, your teammate has been working on a new branch they just created and then commited to github.  You now want to start working locally on that new branch.</p>
-
-<pre>
+<p>So, your teammate has been working on a new branch they just created and then commited to github.  You now want to start working locally on that new branch.
+<code>
   $ git fetch origin bug-request-id
   $ git checkout bug-request-id
-</pre>
-
+</code></p>
 
 <h4>Several new branches on github</h4>
 
-<p>You&rsquo;ve been heads down on your work on a branch and your team has created several new branches remotely on github and now you need to start contributing to those branches.  To get look at what the remote branches are,</p>
-
-<pre>
+<p>You&rsquo;ve been heads down on your work on a branch and your team has created several new branches remotely on github and now you need to start contributing to those branches.  To get look at what the remote branches are,
+<code>
   $ git fetch
-</pre>
+</code></p>
 
-
-<p>Now you will see everything on the remote when you want to list your local and remote branches with this command:</p>
-
-<pre>
+<p>Now you will see everything on the remote when you want to list your local and remote branches with this command:
+<code>
   $ git branch -a
-</pre>
+</code></p>
 
-
-<p>Finally, to bring the remote branch code down to your local, once you fetched:</p>
-
-<pre>
+<p>Finally, to bring the remote branch code down to your local, once you fetched:
+<code>
   $ git checkout bug-request-id
-</pre>
-
+</code></p>
 
 <h3>Create new branch locally</h3>
 
 <h4>Starting the new branch locally</h4>
 
-<p>First, create the branch locally.  This automatically changes you to this branch locally.</p>
-
-<pre>
+<p>First, create the branch locally.  This automatically changes you to this branch locally.
+<code>
   $ git checkout -b new_branch_name
-</pre>
-
+</code>
+Note, you can do this even if you already have changes made.  They&rsquo;ll simply still be there, unstaged and uncommitted in the new branch.</p>
 
 <h4>Pushing the new branch to github</h4>
 
 <p>To check this into github, do this and the new branch will automatically get created on github,
-then your code will get pushed into that branch.</p>
-
-<pre>
+then your code will get pushed into that branch.
+<code>
   $ git push origin new_branch_name
-</pre>
-
+</code></p>
 
 <h3>Good git references</h3>
 
@@ -189,196 +154,152 @@ then your code will get pushed into that branch.</p>
 
 <h3>Working with a branch</h3>
 
-<p>Use this to confirm WHICH branch you are on.</p>
-
-<pre>
+<p>Use this to confirm WHICH branch you are on.
+<code>
   $ git branch
   $ git add .
   $ git commit -m "a good commit message"
   $ git push origin new_branch_name
-</pre>
-
+</code></p>
 
 <p>Very important tips for switching between branches.  ALWAYS commit your changes to your current branch before changing branches.  I assumed the files would stay in the old branch as I switched to the new branch, but NO.  The changes will follow you around like a lost puppy until you commit them.</p>
 
 <h3>Merging your branch(es)</h3>
 
-<p>Ok, I&rsquo;ve got this branch (or worse, several branches).  I&rsquo;m done working on them.  They are all checked in, as branches.  But now, I need to get the master branch back up to date.  How do I do this with FIVE branches.  Don&rsquo;t panic, we can do this thing.  First, make sure everything is up to date and checked in.</p>
-
-<pre>
+<p>Ok, I&rsquo;ve got this branch (or worse, several branches).  I&rsquo;m done working on them.  They are all checked in, as branches.  But now, I need to get the master branch back up to date.  How do I do this with FIVE branches.  Don&rsquo;t panic, we can do this thing.  First, make sure everything is up to date and checked in.
+<code>
   $ git status
-</pre>
+</code></p>
 
-
-<p>Then, get onto the master branch.</p>
-
-<pre>
+<p>Then, get onto the master branch.
+<code>
   $ git checkout master
-</pre>
+</code></p>
 
-
-<p>Now we are going to merge each branch in, push it to github, and then delete the branch since we are done with them.  Skip the last step if you aren&rsquo;t quite done with the branch.</p>
-
-<pre>
-  $ git merge chapter_2
-  $ git push origin master    (also can just usually say 'git push' here)
-  $ git branch -d chapter_2
-
-  $ git merge chapter_3
-  $ git push
-  $ git branch -d chapter_3
-</pre>
-
-
-<p>Repeat until you&rsquo;ve merged in each branch.  Yeay!  This worked for me and I saw what I wanted on github.  I have both the branches I expect as well as each branch merge present as a commit on the master.  Excellent!  Git is starting to be a Very useful tool instead of an occasional impediment.  :)</p>
+<p>Now we are going to merge each branch in, push it to github, and then delete the branch since we are done with them.  Skip the last step if you aren&rsquo;t quite done with the branch.
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git merge chapter_2
+</span><span class='line'>  $ git push origin master    (also can just usually say &lsquo;git push&rsquo; here)
+</span><span class='line'>  $ git branch -d chapter_2&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  $ git merge chapter_3
+</span><span class='line'>  $ git push
+</span><span class='line'>  $ git branch -d chapter_3</span></code></pre></td></tr></table></div></figure>
+Repeat until you&rsquo;ve merged in each branch.  Yeay!  This worked for me and I saw what I wanted on github.  I have both the branches I expect as well as each branch merge present as a commit on the master.  Excellent!  Git is starting to be a Very useful tool instead of an occasional impediment.  :)</p>
 
 <h1>Stashing</h1>
 
-<p>In the middle of some work on another branch and have to interrupt and get back to the master for some reason?  Do this.  First see what you are working on</p>
-
-<pre>
+<p>In the middle of some work on another branch and have to interrupt and get back to the master for some reason?  Do this.  First see what you are working on
+<code>
   $ git diff
-</pre>
+</code></p>
 
-
-<p>Save working directory and index state WIP on my_branch and restores last commit.</p>
-
-<pre>
+<p>Save working directory and index state WIP on my_branch and restores last commit.
+<code>
   $ git stash save
-</pre>
+</code></p>
 
-
-<p>Now these return nothing</p>
-
-<pre>
+<p>Now these return nothing
+<code>
   $ git diff
   $ git status
-</pre>
+</code></p>
 
-
-<p>Now get back to master and update:</p>
-
-<pre>
+<p>Now get back to master and update:
+<code>
   $ git checkout master
   $ git pull
-</pre>
+</code></p>
 
-
-<p>When done, get back to our stashed work:</p>
-
-<pre>
+<p>When done, get back to our stashed work:
+<code>
   $ git checkout my_branch
   $ git stash apply
-</pre>
+</code></p>
 
+<p>Verify we are in the same place:
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git diff&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  $ git stash list
+</span><span class='line'>  $ git stash apply stash@{1}
+</span><span class='line'>  $ git stash drop</span></code></pre></td></tr></table></div></figure></p>
 
-<p>Verify we are in the same place:</p>
+<h2>Whoops!  Now what do I do?  Gentle commands</h2>
 
-<pre>
-  $ git diff
+<h3>How to undo my last commit, not yet pushed</h3>
 
-  $ git stash list
-  $ git stash apply stash@{1}
-  $ git stash drop
-</pre>
+<p>I staged my files <code>git add .</code> and then committed them <code>git commit -m "changes I don't want to make yet"</code>, but the I realize that I want to undo all that for some reason, like I&rsquo;m on the wrong branch.</p>
 
+<p>Simple.  Two steps.  First, undo the commit.
+<code>
+git reset --soft HEAD~
+</code></p>
 
-<h2>Whoops!  Now what do I do?</h2>
+<p>Next, unstage the files.
+<code>
+git reset HEAD app/helpers/timezone_helper.rb
+</code></p>
 
-<p>To check out a particular commit, use</p>
+<p>Do a <code>git status</code> before and after each command to better see what is happening.</p>
 
-<pre>
-  $ git checkout &ltsha1>
-</pre>
+<h3>Check out a particular commit by SHA</h3>
 
+<p>To check out a particular commit, use
+<code>
+  $ git checkout &amp;ltsha1&gt;
+</code></p>
 
-<p>To revert changes made to your working copy, do this</p>
+<h3>Revert changes to local working copy</h3>
 
-<pre>
+<p>To revert changes made to your working copy, restoring your local copy to the most recently checked in remote copy, do this
+<code>
   $ git checkout .
-</pre>
+</code></p>
 
-
-<p>This will create three separate revert commits:</p>
-
-<pre>
-  $ git revert 0766c053 25eee4ca a867b4af
-</pre>
-
-
-<p>It also takes ranges. This will revert the last two commits:</p>
-
-<pre>
-  $ git revert HEAD~2..HEAD
-</pre>
-
-
-<p>To get just one, you could use <code>rebase -i</code> to squash them afterwards  Or, you could do it manually (be sure to do this at top level of the repo) get your index and work tree into the desired state, without changing HEAD:</p>
-
-<pre>
-  $ git checkout 0d1d7fc32 .
-</pre>
-
-
-<p>and then commit</p>
-
-<pre>
-  $ git commit    # be sure and write a good message describing what you just did
-</pre>
-
-
-<p>I don&rsquo;t like my past several commits.  I want to go back to a particular commit.  Reset may be a BAD, BAD way of doing things, so look out!</p>
-
-<pre>
-  $ git reset --hard HEAD~5
-</pre>
-
-
-<h2>Powerful commands</h2>
-
-<p>Stuff I&rsquo;m using regularly these days</p>
+<h2>Powerful commands, use with caution</h2>
 
 <h3>Unstage</h3>
 
-<p>Reset the staging area to match the most recent commit, but leave the working directory unchanged. This unstages all files without overwriting any changes, giving you the opportunity to re-build the staged snapshot from scratch.</p>
-
-<pre>
+<p>Reset the staging area to match the most recent commit, but leave the working directory unchanged. This unstages all files without overwriting any changes, giving you the opportunity to re-build the staged snapshot from scratch.
+<code>
   $ git reset
-</pre>
+</code></p>
 
-
-<p>Reset the staging area and the working directory to match the most recent commit. In addition to unstaging changes, the &ndash;hard flag tells Git to overwrite all changes in the working directory, too. Put another way: this obliterates all uncommitted changes, so make sure you really want to throw away your local developments before using it.</p>
-
-<pre>
+<p>Reset the staging area and the working directory to match the most recent commit. In addition to unstaging changes, the &ndash;hard flag tells Git to overwrite all changes in the working directory, too. Put another way: this obliterates all uncommitted changes, so make sure you really want to throw away your local developments before using it.
+<code>
   $ git reset --hard
-</pre>
-
+</code></p>
 
 <p>Careful: <code>git reset &ndash;hard</code> WILL DELETE YOUR WORKING DIRECTORY CHANGES. Be sure to stash any local changes you want to keep before running this command.</p>
 
 <p>Assuming you are sitting on that commit, then this command will wack it&hellip;</p>
 
-<pre>
-  $ git reset --hard HEAD~1
-</pre>
-
+<pre><code>  $ git reset --hard HEAD~1
+</code></pre>
 
 <p>The HEAD~1 means the commit before head.</p>
 
 <p>Or, you could look at the output of git log, find the commit id of the commit you want to back up to, and then do this:</p>
 
-<pre>
-  $ git reset --hard <sha1-commit-id>
-</pre>
-
+<pre><code>  $ git reset --hard &lt;sha1-commit-id&gt;
+</code></pre>
 
 <p>If you REALLY want to rewrite history.  Think very, very carefully about this BEFORE doing it.</p>
 
-<pre>
-  $ git reset --hard <old-commit-id>
+<pre><code>  $ git reset --hard &lt;old-commit-id&gt;
   $ git push -f
-</pre>
-
+</code></pre>
 
 <h3>Switch to specific commit</h3>
 
@@ -386,139 +307,105 @@ then your code will get pushed into that branch.</p>
 
 <p>If you want to temporarily go back to it, fool around, then come back to where you are, all you have to do is check out the desired commit:</p>
 
-<pre>
-  # This will detach your HEAD, that is, leave you with no branch checked out:
+<pre><code>  # This will detach your HEAD, that is, leave you with no branch checked out:
 
   $ git checkout 0d1d7fc32
-</pre>
-
+</code></pre>
 
 <p>Or if you want to make commits while you&rsquo;re there, go ahead and make a new branch while you&rsquo;re at it:</p>
 
-<pre>
-  git checkout -b old-state 0d1d7fc32
-</pre>
-
+<pre><code>  git checkout -b old-state 0d1d7fc32
+</code></pre>
 
 <h3>Merge</h3>
 
-<p>How to merge the master branch into the feature branch? Easy:</p>
-
-<pre>
+<p>How to merge the master branch into the feature branch? Easy:
+<code>
   $ git checkout feature1
   $ git merge master
-</pre>
+</code></p>
 
-
-<p>Merge branch back into master</p>
-
-<pre>
+<p>Merge branch back into master
+<code>
   $ git checkout master
   $ git merge my_branch
-</pre>
-
+</code></p>
 
 <h3>Merge conflict</h3>
 
-<p>When there is a conflict during a merge, you have to finish the merge commit manually. It sounds like you&rsquo;ve done the first two steps, to edit the files that conflicted and then run</p>
-
-<pre>
+<p>When there is a conflict during a merge, you have to finish the merge commit manually. It sounds like you&rsquo;ve done the first two steps, to edit the files that conflicted and then run
+<code>
   $ git add
-</pre>
+</code>
+on them to mark them as resolved.</p>
 
-
-<p>on them to mark them as resolved.</p>
-
-<p>Finally, you need to actually commit the merge with</p>
-
-<pre>
+<p>Finally, you need to actually commit the merge with
+<code>
   $ git commit
-</pre>
-
-
-<p>after which you will be able to switch branches again.</p>
+</code>
+after which you will be able to switch branches again.</p>
 
 <h3>Have I forgotten to push?</h3>
 
-<p>How do I tell if my commited changes have been pushed to github?</p>
-
-<pre>
+<p>How do I tell if my committed changes have been pushed to github?
+<code>
   $ git log origin/master..HEAD
-</pre>
-
-
-<p>You can also view the diff using the same syntax</p>
-
-<pre>
+</code>
+You can also view the diff using the same syntax
+<code>
   $ git diff origin/master..HEAD
-</pre>
-
+</code></p>
 
 <h3>Duplicate a branch</h3>
 
-<p>Copy old_branch into a new_branch.  (Useful for trying out a merge you are worried about.)</p>
-
-<pre>
+<p>Copy old_branch into a new_branch.  (Useful for trying out a merge you are worried about.)
+<code>
   $ git checkout old_branch
   $ git branch new_branch
   $ git checkout new_branch
-</pre>
-
+</code></p>
 
 <h3>Destroy local branch</h3>
 
 <p>Get rid of a branch and everything in it changed or not.  (Useful after you&rsquo;ve tried out a merge on a temporary branch.)</p>
 
-<p>First, you have to get rid of the changes:</p>
-
-<pre>
+<p>First, you have to get rid of the changes:
+<code>
   $ git reset --hard HEAD
-</pre>
+</code></p>
 
-
-<p>Next, change to a different, good branch</p>
-
-<pre>
+<p>Next, change to a different, good branch
+<code>
   $ git checkout master
-</pre>
+</code></p>
 
-
-<p>Lastly, delete the branch</p>
-
-<pre>
+<p>Lastly, delete the branch
+<code>
   $ git branch -d temporary_branch
-</pre>
-
-
-<p>you may need to use a -D option to force this.  BE CAREFUL not to delete something you care about.  Really!</p>
+</code>
+you may need to use a -D option to force this.  BE CAREFUL not to delete something you care about.  Really!</p>
 
 <h3>Tidy up leftovers</h3>
 
-<p>Once you delete the branch from the remote, you can prune to get rid of remote tracking branches with:</p>
-
-<pre>
+<p>Once you delete the branch from the remote, you can prune to get rid of remote tracking branches with:
+<code>
   $ git branch -r -d origin/newfeaturebranch
-</pre>
+</code></p>
 
-
-<p>This will prune All of your old references to already-deleted-on-github branches.</p>
-
-<pre>
+<p>This will prune All of your old references to already-deleted-on-github branches.
+<code>
   $ git remote prune origin
-</pre>
-
+</code></p>
 
 <h3>Restore local master</h3>
 
 <p>You&rsquo;ve messed things up on your local master and need to get back.</p>
 
-<p>Setting your branch to exactly match the remote branch can be done in two steps:</p>
-
-<pre>
+<p>Setting your branch to exactly match the remote branch can be done in two steps:
+<code>
   $ git fetch origin
   $ git reset --hard origin/master
-</pre>
-
+</code></p>
 
 <h2>Fini</h2>
 

@@ -1,7 +1,15 @@
 ---
+<<<<<<< HEAD
 layout: nil
+=======
+layout: null
+>>>>>>> d684a65e4286532789a3f8b160df80ee5801a4a1
 ---
 User-agent: *
 Disallow: 
 
+<<<<<<< HEAD
 Sitemap: {{ site.url }}/sitemap.xml 
+=======
+Sitemap: {{ site.url }}/sitemap.xml 
+>>>>>>> d684a65e4286532789a3f8b160df80ee5801a4a1

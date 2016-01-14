@@ -1,5 +1,9 @@
 ---
+<<<<<<< HEAD
 layout: nil
+=======
+layout: null
+>>>>>>> d684a65e4286532789a3f8b160df80ee5801a4a1
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">

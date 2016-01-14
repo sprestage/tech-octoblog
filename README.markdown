@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [![Dependency Status](https://gemnasium.com/sprestage/tech-octoblog.png)](https://gemnasium.com/sprestage/tech-octoblog)
 
 # Intro
@@ -9,6 +10,11 @@ Hi folks.  There isn't a lot to see here.  I'm storing my blog on github so I ca
 ---
 #Octopress credits
 I'm leaving everything below intact, in order to give Octopress appropriate credit for providing such an awesome free blogging platform to the world.  Thank you Octopress!
+=======
+## Octopress 3.0
+
+Note: Octopress 3.0 is in development at https://github.com/octopress/octopress
+>>>>>>> d684a65e4286532789a3f8b160df80ee5801a4a1
 
 ## What is Octopress?
 
@@ -25,11 +31,21 @@ Octopress is [Jekyll](https://github.com/mojombo/jekyll) blogging at its finest.
 ## Documentation
 
 Check out [Octopress.org](http://octopress.org/docs) for guides and documentation.
+<<<<<<< HEAD
 
 
 ## Contributing
 
 [![Build Status](https://travis-ci.org/imathis/octopress.png?branch=master)](https://travis-ci.org/imathis/octopress)
+=======
+It should all apply to our current stable version (found in the `master`
+branch). If this is not the case, [please submit a
+fix to our docs repo](https://github.com/octopress/docs).
+
+## Contributing
+
+[![Build Status](https://travis-ci.org/imathis/octopress.svg?branch=master)](https://travis-ci.org/imathis/octopress)
+>>>>>>> d684a65e4286532789a3f8b160df80ee5801a4a1
 
 We love to see people contributing to Octopress, whether it's a bug report, feature suggestion or a pull request. At the moment, we try to keep the core slick and lean, focusing on basic blogging needs, so some of your suggestions might not find their way into Octopress. For those ideas, we started a [list of 3rd party plug-ins](https://github.com/imathis/octopress/wiki/3rd-party-plugins), where you can link your own Octopress plug-in repositories. For the future, we're thinking about ways to easier add them into our main releases.
 
@@ -48,4 +64,8 @@ THE SOFTWARE IS PROVIDED ‘AS IS’, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 
 #### If you want to be awesome.
 - Proudly display the 'Powered by Octopress' credit in the footer.
+<<<<<<< HEAD
 - Add your site to the Wiki so we can watch the community grow.
+=======
+- [Add your site to the Wiki](https://github.com/imathis/octopress/wiki/Octopress-Sites/_edit) so we can watch the community grow.
+>>>>>>> d684a65e4286532789a3f8b160df80ee5801a4a1
