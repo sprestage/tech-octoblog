@@ -1,7 +1,6 @@
 source "https://rubygems.org"
-ruby '2.2.1'
+ruby "2.2.1"
 
-group :development do
   gem 'rake', '~> 10.0'
   gem 'jekyll', '~> 2.0'
   gem 'octopress-hooks', '~> 2.2'
@@ -14,6 +13,5 @@ group :development do
   gem 'sass-globbing', '~> 1.0.0'
   gem 'rb-fsevent', '~> 0.9'
   gem 'stringex', '~> 1.4.0'
-end
 
 gem 'sinatra', '~> 1.4.2'

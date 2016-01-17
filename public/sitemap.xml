@@ -49,13 +49,7 @@
     <lastmod>2013-12-01T18:59:42-08:00</lastmod>
   </url>
   <url>
-    <loc>http://techblog.susanprestage.com//about.html</loc>
-  </url>
-  <url>
     <loc>http://techblog.susanprestage.com//blog/archives/</loc>
-  </url>
-  <url>
-    <loc>http://techblog.susanprestage.com//about/</loc>
   </url>
   <url>
     <loc>http://techblog.susanprestage.com//</loc>
@@ -98,5 +92,8 @@
   </url>
   <url>
     <loc>http://techblog.susanprestage.com//blog/categories/strings/</loc>
+  </url>
+  <url>
+    <loc>http://techblog.susanprestage.com//posts/2/</loc>
   </url>
 </urlset>
