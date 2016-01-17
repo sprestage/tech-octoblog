@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails Console | My Technical Blog]]></title>
   <link href="http://techblog.susanprestage.com//blog/categories/rails-console/atom.xml" rel="self"/>
   <link href="http://techblog.susanprestage.com//"/>
-  <updated>2016-01-16T19:38:11-08:00</updated>
+  <updated>2016-01-16T19:41:56-08:00</updated>
   <id>http://techblog.susanprestage.com//</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -104,66 +104,49 @@ end
 
 <h4>Create</h4>
 
-<pre>
-  > u = User.create password: "mypasswd", first_name: "test", last_name: "testovich"
-</pre>
-
+<pre><code>  &gt; u = User.create password: "mypasswd", first_name: "test", last_name: "testovich"
+</code></pre>
 
 <h4>Update</h4>
 
-<pre>
-  > u = User.find(30)
-  > u.update_attributes(roles_mask: 3)
-</pre>
+<pre><code>  &gt; u = User.find(30)
+  &gt; u.update_attributes(roles_mask: 3)
+</code></pre>
 
+<p>If the above doesn&rsquo;t work, this may:
+```</p>
 
-<p>If the above doesn&rsquo;t work, this may:</p>
-
-<pre>
-  > User.where(id: 27)[0].update(age: 42, next_birthday: "2014-10-14")
-</pre>
-
+<blockquote><p>User.where(id: 27)[0].update(age: 42, next_birthday: &ldquo;2014-10-14&rdquo;)
+```</p></blockquote>
 
 <h4>Destroy</h4>
 
-<pre>
-  > User.find(30).destroy
-</pre>
-
+<pre><code>  &gt; User.find(30).destroy
+</code></pre>
 
 <h3>Backup &amp; Restore</h3>
 
-<pre>
-  $ pg_dump -U featherlight featherlight_development -Fc > backup.dump
-</pre>
+<pre><code>  $ pg_dump -U featherlight featherlight_development -Fc &gt; backup.dump
+</code></pre>
 
-
-<p>The first command seems to be the one that works</p>
-
-<pre>
+<p>The first command seems to be the one that works
+<code>
   $ pg_restore -c -C -F c -v -U postgres backup.dump
   $ pg_restore -U featherlight -d featherlight_development backup.dump
-</pre>
-
+</code></p>
 
 <h3>Creating a database and user</h3>
 
-<pre>
-  $ createuser portfolio
+<pre><code>  $ createuser portfolio
   Shall the new role be a superuser? (y/n) n
   Shall the new role be allowed to create databases? (y/n) n
   Shall the new role be allowed to create more new roles? (y/n) n
   CREATE ROLE
   $
-</pre>
+</code></pre>
 
-
-
-
-<pre>
-  $ createdb portfolio_test -O portfolio
-</pre>
-
+<pre><code>  $ createdb portfolio_test -O portfolio
+</code></pre>
 
 <ul>
 <li>-O owner name is the option in the command line.</li>
@@ -172,10 +155,8 @@ end
 
 <h3>Queries with date ranges</h3>
 
-<pre>
-  FeedbackRequest.where(created_at: 5.days.ago..4.days.ago)
-</pre>
-
+<pre><code>  FeedbackRequest.where(created_at: 5.days.ago..4.days.ago)
+</code></pre>
 ]]></content>
   </entry>
   
