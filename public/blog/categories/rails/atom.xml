@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | My Technical Blog]]></title>
   <link href="http://techblog.susanprestage.com//blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://techblog.susanprestage.com//"/>
-  <updated>2016-01-16T19:36:34-08:00</updated>
+  <updated>2016-01-16T19:38:11-08:00</updated>
   <id>http://techblog.susanprestage.com//</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -305,24 +305,17 @@ Add a default route to /config/routes.rb
 <p>I know I should probably create all the tests first, but I feel so lost without the stuff there first, ya know.</p>
 
 <p>Create the tests using generate, then completely replace what is in the files.
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ rails g mini_test:feature DoctorShowIndex&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;  $ rails g mini_test:feature DoctorShow&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;  $ rails g mini_test:feature DoctorCreate&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;  $ rails g mini_test:feature DoctorUpdate&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;  $ rails g mini_test:feature DoctorDelete</span></code></pre></td></tr></table></div></figure></p>
+```
+  $ rails g mini_test:feature DoctorShowIndex</p>
+
+<p>  $ rails g mini_test:feature DoctorShow</p>
+
+<p>  $ rails g mini_test:feature DoctorCreate</p>
+
+<p>  $ rails g mini_test:feature DoctorUpdate</p>
+
+<p>  $ rails g mini_test:feature DoctorDelete
+```</p>
 
 <p>Add /test/ folder.  Add /test/doctors/ folder.  Move doctor tests. Then
 add fixture support to /test/test_helper.rb</p>
@@ -351,24 +344,17 @@ models.</p>
 <h2>Create tests for 2nd resource</h2>
 
 <p>Then create the Patient tests:
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ rails g mini_test:feature PatientShowIndex&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;  $ rails g mini_test:feature PatientShow&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;  $ rails g mini_test:feature PatientCreate&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;  $ rails g mini_test:feature ItemUpdate&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;  $ rails g mini_test:feature ItemDelete</span></code></pre></td></tr></table></div></figure></p>
+```
+  $ rails g mini_test:feature PatientShowIndex</p>
+
+<p>  $ rails g mini_test:feature PatientShow</p>
+
+<p>  $ rails g mini_test:feature PatientCreate</p>
+
+<p>  $ rails g mini_test:feature ItemUpdate</p>
+
+<p>  $ rails g mini_test:feature ItemDelete
+```</p>
 
 <p>Add /test/patients/ folder.  Move patient tests.</p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Command Line | My Technical Blog]]></title>
   <link href="http://techblog.susanprestage.com//blog/categories/command-line/atom.xml" rel="self"/>
   <link href="http://techblog.susanprestage.com//"/>
-  <updated>2016-01-16T19:36:34-08:00</updated>
+  <updated>2016-01-16T19:38:11-08:00</updated>
   <id>http://techblog.susanprestage.com//</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -441,20 +441,15 @@ then your code will get pushed into that branch.
 </code></p>
 
 <p>Now we are going to merge each branch in, push it to github, and then delete the branch since we are done with them.  Skip the last step if you aren&rsquo;t quite done with the branch.
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git merge chapter_2
-</span><span class='line'>  $ git push origin master    (also can just usually say &lsquo;git push&rsquo; here)
-</span><span class='line'>  $ git branch -d chapter_2&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;  $ git merge chapter_3
-</span><span class='line'>  $ git push
-</span><span class='line'>  $ git branch -d chapter_3</span></code></pre></td></tr></table></div></figure>
+```
+  $ git merge chapter_2
+  $ git push origin master    (also can just usually say &lsquo;git push&rsquo; here)
+  $ git branch -d chapter_2</p>
+
+<p>  $ git merge chapter_3
+  $ git push
+  $ git branch -d chapter_3
+```
 Repeat until you&rsquo;ve merged in each branch.  Yeay!  This worked for me and I saw what I wanted on github.  I have both the branches I expect as well as each branch merge present as a commit on the master.  Excellent!  Git is starting to be a Very useful tool instead of an occasional impediment.  :)</p>
 
 <h1>Stashing</h1>
@@ -488,16 +483,13 @@ Repeat until you&rsquo;ve merged in each branch.  Yeay!  This worked for me and 
 </code></p>
 
 <p>Verify we are in the same place:
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git diff&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;  $ git stash list
-</span><span class='line'>  $ git stash apply stash@{1}
-</span><span class='line'>  $ git stash drop</span></code></pre></td></tr></table></div></figure></p>
+```
+  $ git diff</p>
+
+<p>  $ git stash list
+  $ git stash apply stash@{1}
+  $ git stash drop
+```</p>
 
 <h2>Whoops!  Now what do I do?  Gentle commands</h2>
 

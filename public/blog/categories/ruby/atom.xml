@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | My Technical Blog]]></title>
   <link href="http://techblog.susanprestage.com//blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://techblog.susanprestage.com//"/>
-  <updated>2016-01-16T19:36:34-08:00</updated>
+  <updated>2016-01-16T19:38:11-08:00</updated>
   <id>http://techblog.susanprestage.com//</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -98,116 +98,84 @@
     <link href="http://techblog.susanprestage.com//blog/2014/03/21/string-manipulation-in-ruby/"/>
     <updated>2014-03-21T12:12:17-07:00</updated>
     <id>http://techblog.susanprestage.com//blog/2014/03/21/string-manipulation-in-ruby</id>
-    <content type="html"><![CDATA[<h1>Set vs concantenate</h1>
+    <content type="html"><![CDATA[<h1>Set vs concatenate</h1>
 
-<p>Set equal to this string.  No initialization needed.</p>
+<p>Set equal to this string.  No initialization needed.
+```</p>
 
-<pre>
-> farewell = "Good"  
-</pre>
+<blockquote><p>farewell = &ldquo;Good&rdquo;<br/>
+```</p></blockquote>
 
+<pre><code>&gt; puts farewell
+</code></pre>
 
+<p>will return
+<code>
+  =&gt; Good
+</code></p>
 
+<p>Concatenation requires the variable to be initialized.  This only works because the variable was initialized above.
+```</p>
 
-<pre>
-> puts farewell
-</pre>
+<blockquote><p>farewell &lt;&lt; &ldquo;bye!&rdquo;<br/>
+```</p></blockquote>
 
+<pre><code>&gt; puts farewell
+</code></pre>
 
-<p>will return</p>
-
-<pre>
-  => Good
-</pre>
-
-
-<p>Concantenation requires the variable to be initialized.  This only works because the variable was initialized above.</p>
-
-<pre>
-> farewell << "bye!"  
-</pre>
-
-
-
-
-<pre>
-> puts farewell
-</pre>
-
-
-<p></p>
-
-<p>will return</p>
-
-<pre>
-  => Goodbye!
-</pre>
-
+<p>will return
+<code>
+  =&gt; Goodbye!
+</code></p>
 
 <h1>String operations</h1>
 
-<p>Find where a substring is within the source string using index.</p>
+<p>Find where a substring is within the source string using index.
+<code>
+"hello".index('e')             #=&gt; 1
+"hello".index('lo')            #=&gt; 3
+"hello".index('a')             #=&gt; nil
+"hello".index(?e)              #=&gt; 1
+"hello".index(/[aeiou]/, -3)   #=&gt; 4
+</code></p>
 
-<pre>
-"hello".index('e')             #=> 1
-"hello".index('lo')            #=> 3
-"hello".index('a')             #=> nil
-"hello".index(?e)              #=> 1
-"hello".index(/[aeiou]/, -3)   #=> 4
-</pre>
-
-
-<p>Take input from the user:</p>
-
-<pre>
+<p>Take input from the user:
+<code>
 puts "Please input some text: "
 foo = gets.chomp
 puts foo
-</pre>
+</code></p>
 
-
-<p>If you are using ARGV to bring in command line arguments when you launch your app, you will run into conflict when using gets.  You can work around this two ways.  First is to use perform whatever tasks you need to on ARGV, then:</p>
-
-<pre>
+<p>If you are using ARGV to bring in command line arguments when you launch your app, you will run into conflict when using gets.  You can work around this two ways.  First is to use perform whatever tasks you need to on ARGV, then:
+<code>
 ARGV.clear
 foo = gets.chomp
-</pre>
+</code></p>
 
-
-<p>Otherwise, everytime you call gets, you will need to specify that it is from IO, not Kernal:</p>
-
-<pre>
+<p>Otherwise, everytime you call gets, you will need to specify that it is from IO, not Kernal:
+<code>
 foo = $stdin.gets.chomp
-</pre>
+</code></p>
 
-
-<p>Replace the first instance of the sub_string, &ldquo;replace_me&rdquo;, with the contents of foo.</p>
-
-<pre>
+<p>Replace the first instance of the sub_string, &ldquo;replace_me&rdquo;, with the contents of foo.
+<code>
 bar = bar.sub("replace_me", foo)
-</pre>
+</code></p>
 
+<p>Globally replace the sub_string, &ldquo;replace_me&rdquo;, with the contents of foo.
+<code>
+bar = bar.&lt;b&gt;g&lt;/b&gt;sub("replace_me", foo)
+</code></p>
 
-<p>Globally replace the sub_string, &ldquo;replace_me&rdquo;, with the contents of foo.</p>
-
-<pre>
-bar = bar.<b>g</b>sub("replace_me", foo)
-</pre>
-
-
-<p>Find the first example of substring, &ldquo;find_me&rdquo;.  This is most often used with regex in place of the &ldquo;find_me&rdquo; string.  Returns a string.</p>
-
-<pre>
+<p>Find the first example of substring, &ldquo;find_me&rdquo;.  This is most often used with regex in place of the &ldquo;find_me&rdquo; string.  Returns a string.
+<code>
 bing = bar.match("find_me")
-</pre>
+</code></p>
 
-
-<p>Find the every example of substring, &ldquo;find_me&rdquo;.  This is most often used with regex in place of the &ldquo;find_me&rdquo; string.  Returns an array of strings.</p>
-
-<pre>
+<p>Find the every example of substring, &ldquo;find_me&rdquo;.  This is most often used with regex in place of the &ldquo;find_me&rdquo; string.  Returns an array of strings.
+<code>
 bing = bar.scan("find_me")
-</pre>
-
+</code></p>
 ]]></content>
   </entry>
   
