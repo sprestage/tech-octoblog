@@ -5,7 +5,7 @@ date: 2014-10-21 13:14:02 -0700
 comments: true
 categories:
 - rails
-- data and time
+- date and time
 ---
 There are several different ways of manipulating time in rails.  Instead of searching for them every time I need them, I will keep there here in one easy location.
 

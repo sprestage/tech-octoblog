@@ -118,9 +118,12 @@
     <loc>http://techblog.susanprestage.com//blog/categories/binding-pry/</loc>
   </url>
   <url>
-    <loc>http://techblog.susanprestage.com//blog/categories/data-and-time/</loc>
+    <loc>http://techblog.susanprestage.com//blog/categories/date-and-time/</loc>
   </url>
   <url>
     <loc>http://techblog.susanprestage.com//blog/categories/rvm/</loc>
+  </url>
+  <url>
+    <loc>http://techblog.susanprestage.com//posts/2/</loc>
   </url>
 </urlset>
