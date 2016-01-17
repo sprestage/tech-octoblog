@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rvm | My Technical Blog]]></title>
   <link href="http://techblog.susanprestage.com//blog/categories/rvm/atom.xml" rel="self"/>
   <link href="http://techblog.susanprestage.com//"/>
-  <updated>2016-01-16T19:44:38-08:00</updated>
+  <updated>2016-01-16T19:46:09-08:00</updated>
   <id>http://techblog.susanprestage.com//</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -18,78 +18,57 @@
     <link href="http://techblog.susanprestage.com//blog/2014/11/06/how-do-i-upgrade-my-ruby-again/"/>
     <updated>2014-11-06T08:47:02-08:00</updated>
     <id>http://techblog.susanprestage.com//blog/2014/11/06/how-do-i-upgrade-my-ruby-again</id>
-    <content type="html"><![CDATA[<p>If you want to use Rbenv on OS X you&rsquo;ll need to install the Xcode command-line tools:</p>
-
-<pre>
+    <content type="html"><![CDATA[<p>If you want to use Rbenv on OS X you&rsquo;ll need to install the Xcode command-line tools:
+<code>
   $ xcode-select --install
-</pre>
+</code></p>
 
-
-<p>Then install Home Brew:</p>
-
-<pre>
+<p>Then install Home Brew:
+<code>
   $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-</pre>
+</code></p>
 
-
-<p>Complete Home Brew setup:</p>
-
-<pre>
+<p>Complete Home Brew setup:
+<code>
   $ brew doctor
   $ brew update
-</pre>
+</code></p>
 
-
-<p>At this point you&rsquo;ll be able to install rbenv and ruby-build:</p>
-
-<pre>
+<p>At this point you&rsquo;ll be able to install rbenv and ruby-build:
+<code>
   $ brew install rbenv ruby-build
-</pre>
+</code></p>
 
-
-<p>Add the following to your .bash_profile:</p>
-
-<pre>
+<p>Add the following to your .bash_profile:
+<code>
   eval "$(rbenv init -)"
-</pre>
+</code></p>
 
-
-<p>Reload your bash profile settings:</p>
-
-<pre>
+<p>Reload your bash profile settings:
+<code>
   $ source ~/.bash_profile
-</pre>
+</code></p>
 
-
-<p>Then you can install Ruby:</p>
-
-<pre>
+<p>Then you can install Ruby:
+<code>
   $ rbenv install 2.1.2
-</pre>
-
+</code></p>
 
 <p>Thanks to John O. at TeamTreeHouse for giving this well written response to this inquiry.</p>
 
-<p>To set as your current version of Ruby run the following command:</p>
-
-<pre>
+<p>To set as your current version of Ruby run the following command:
+<code>
   $ rvm use 2.0.0
-</pre>
+</code></p>
 
-
-<p>To make it the default Ruby:</p>
-
-<pre>
+<p>To make it the default Ruby:
+<code>
   $ rvm default 2.0.0
-</pre>
-
-
-<p>or</p>
-
-<pre>
+</code>
+or
+<code>
   $ rvm use 2.0.0 --default
-</pre>
-
+</code></p>
 ]]></content>
   </entry>
   
