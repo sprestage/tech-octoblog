@@ -230,71 +230,95 @@
       </p>
     
     
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2014/10/21/mastering-date-and-time-manipulation-in-rails/" itemprop="url">Mastering Date and Time Manipulation in Rails.</a></h2>
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2014/10/21/mastering-date-and-time-manipulation-in-rails/" itemprop="url">Mastering Date and Time Manipulation in Rails</a></h2>
     
   </header>
 
 
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>There are several different ways of manipulating time in rails.  Instead of searching for them everytime I need them, I will keep there here in one easy location.</p>
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>There are several different ways of manipulating time in rails.  Instead of searching for them every time I need them, I will keep there here in one easy location.</p>
 
-<p>Rails gives built-in ways to add days (which will suit for weeks as well) and also to add months.  This means that using rails to add a month (which will suit for years as well) has built into it accomodations for February, leap years, leap centuries, etc.  Use Rails for this magic.  Do Not roll your own dating.</p>
+<p>Rails gives built-in ways to add days (which will suit for weeks as well) and also to add months.  This means that using rails to add a month (which will suit for years as well) has built into it accommodations for February, leap years, leap centuries, etc.  Use Rails for this magic.  Do Not roll your own dating.</p>
 
 <h2>Future and Past</h2>
 
 <h3>By month</h3>
 
-<pre>
-  > DateTime.now
-=> Tue, 21 Oct 2014 13:08:17 -0700
-
-  > DateTime.now >> 1
-=> Fri, 21 Nov 2014 13:08:44 -0700
-
-  > DateTime.now >> -2
-=> Thu, 21 Aug 2014 13:09:23 -0700
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  &gt; DateTime.now
+</span><span class='line'>=&gt; Tue, 21 Oct 2014 13:08:17 -0700
+</span><span class='line'>
+</span><span class='line'>  &gt; DateTime.now &gt;&gt; 1
+</span><span class='line'>=&gt; Fri, 21 Nov 2014 13:08:44 -0700
+</span><span class='line'>
+</span><span class='line'>  &gt; DateTime.now &gt;&gt; -2
+</span><span class='line'>=&gt; Thu, 21 Aug 2014 13:09:23 -0700</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>By week</h3>
 
-<pre>
-  > DateTime.now
-=> Tue, 21 Oct 2014 15:00:17 -0700
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  &gt; DateTime.now
+</span><span class='line'>=&gt; Tue, 21 Oct 2014 15:00:17 -0700
+</span><span class='line'>
+</span><span class='line'>  &gt; DateTime.now + (2 * 7)
+</span><span class='line'>=&gt; Tue, 04 Nov 2014 15:00:52 -0700
+</span><span class='line'>
+</span><span class='line'>  &gt; DateTime.now - (1 * 7)
+</span><span class='line'>=&gt; Tue, 14 Oct 2014 15:04:16 -0700</span></code></pre></td></tr></table></div></figure>
 
-  > DateTime.now + (2 * 7)
-=> Tue, 04 Nov 2014 15:00:52 -0700
 
-  > DateTime.now - (1 * 7)
-=> Tue, 14 Oct 2014 15:04:16 -0700
-</pre>
+<h2>Past only</h2>
 
-
-<h2>Past</h2>
-
-<pre>
-  > 1.week.ago
-=> Tue, 14 Oct 2014 20:20:14 UTC +00:00
-
-  > 2.weeks.ago
-=> Tue, 07 Oct 2014 20:20:27 UTC +00:00
-
-  > 1.month.ago
-=> Sun, 21 Sep 2014 20:20:34 UTC +00:00
-
-  > 2.months.ago
-=> Thu, 21 Aug 2014 20:20:41 UTC +00:00
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  &gt; 1.week.ago
+</span><span class='line'>=&gt; Tue, 14 Oct 2014 20:20:14 UTC +00:00
+</span><span class='line'>
+</span><span class='line'>  &gt; 2.weeks.ago
+</span><span class='line'>=&gt; Tue, 07 Oct 2014 20:20:27 UTC +00:00
+</span><span class='line'>
+</span><span class='line'>  &gt; 1.month.ago
+</span><span class='line'>=&gt; Sun, 21 Sep 2014 20:20:34 UTC +00:00
+</span><span class='line'>
+</span><span class='line'>  &gt; 2.months.ago
+</span><span class='line'>=&gt; Thu, 21 Aug 2014 20:20:41 UTC +00:00</span></code></pre></td></tr></table></div></figure>
 
 
 <h2>Date only</h2>
 
-<pre>
-  > Date.today
-=> Wed, 22 Oct 2014
-
-  > Date.today+2
-=> Fri, 24 Oct 2014
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  &gt; Date.today
+</span><span class='line'>=&gt; Wed, 22 Oct 2014
+</span><span class='line'>
+</span><span class='line'>  &gt; Date.today+2
+</span><span class='line'>=&gt; Fri, 24 Oct 2014</span></code></pre></td></tr></table></div></figure>
 
 </div>
   
@@ -1311,7 +1335,7 @@ vi your_filename
     
     <a class="list-group-item " href="/blog/2014/11/06/how-do-i-upgrade-my-ruby-again/">How Do I Upgrade My Ruby Again?</a>
     
-    <a class="list-group-item " href="/blog/2014/10/21/mastering-date-and-time-manipulation-in-rails/">Mastering Date and Time Manipulation in Rails.</a>
+    <a class="list-group-item " href="/blog/2014/10/21/mastering-date-and-time-manipulation-in-rails/">Mastering Date and Time Manipulation in Rails</a>
     
     <a class="list-group-item " href="/blog/2014/10/21/binding-pry-and-the-power-of-the-rails-console/">Binding Pry and the Power of the Rails Console</a>
     
