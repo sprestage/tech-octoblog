@@ -126,64 +126,74 @@
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody description"><pre>
-type (for when where doesn't tell me what I want)
+<div class="entry-content clearfix" itemprop="articleBody description"><p>Where is the command I&rsquo;m trying to use stored.  This is good for when you are not sure which version of something is being used.  Or which of two different installations of something is being used.</p>
 
-tree
-</pre>
-
-
-<p>erase line</p>
-
-<pre>
-[ctrl] + u
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>type (for when where doesn't tell me what I want)</span></code></pre></td></tr></table></div></figure>
 
 
-<p>stop program</p>
+<p>This gives a nice recursive directory listing in a tree format.</p>
 
-<pre>
-[ctrl] + c
-</pre>
-
-
-<p>no really, stop the danged program</p>
-
-<pre>
-[ctrl] + d
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tree</span></code></pre></td></tr></table></div></figure>
 
 
+<p>Erase this whole line that I am at the end of.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[ctrl] + u</span></code></pre></td></tr></table></div></figure>
 
 
-<pre>
-ps
-ps -ef
-ps -x
-ps -a
-</pre>
+<p>Stop this program I&rsquo;m in.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[ctrl] + c</span></code></pre></td></tr></table></div></figure>
 
 
-<p>different for different systems, I&rsquo;ve found over the years of using different unix systems.</p>
+<p>No really, stop the danged program.</p>
 
-<pre>
-kill _process_id_
-
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[ctrl] + d</span></code></pre></td></tr></table></div></figure>
 
 
-<pre>
-~ for my own directory
-. for here
-.. for one directory above
-</pre>
+<p>Give me various different verbosity levels of a process listing.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ps
+</span><span class='line'>ps -ef
+</span><span class='line'>ps -x
+</span><span class='line'>ps -a</span></code></pre></td></tr></table></div></figure>
 
 
-<p>print working directory</p>
+<p>How to kill a process.  This command can be different for different unix systems.</p>
 
-<pre>
-pwd 
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>kill &lt;process_id&gt;
+</span><span class='line'>kill &lt;process_id&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Path shortcut representations.</p>
+
+<p>For my own (current user) directory, usually something like /Users/susanprestage.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>~</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Where <code>cd ~</code> will change in the the current user&rsquo;s root directory.</p>
+
+<p>The current directory is represented by <code>.</code>.  For example, <code>./my_script</code> would run the copy of my_script that is stored in the current directory.</p>
+
+<p>The parent directory to the current directory is represented by <code>..</code>.  For example, if I were currently in /Users/susanprestage/workspace but wanted to change into /Users/susanprestage/bin, I could use <code>cd ../bin</code> to get there.</p>
+
+<p>Print the full path of the current aka working directory.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>pwd</span></code></pre></td></tr></table></div></figure>
 
 
 <h2>Fini</h2>
