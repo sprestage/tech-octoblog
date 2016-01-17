@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Alias File | My Technical Blog]]></title>
+  <link href="http://techblog.susanprestage.com//blog/categories/alias-file/atom.xml" rel="self"/>
+  <link href="http://techblog.susanprestage.com//"/>
+  <updated>2016-01-16T19:02:54-08:00</updated>
+  <id>http://techblog.susanprestage.com//</id>
+  <author>
+    <name><![CDATA[Susan Prestage]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How the Unix .alias File Can Make Your Command Line Life Better]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2013/12/04/unix-alias-file/"/>
+    <updated>2013-12-04T12:50:52-08:00</updated>
+    <id>http://techblog.susanprestage.com//blog/2013/12/04/unix-alias-file</id>
+    <content type="html"><![CDATA[<h2>Intro to .alias</h2>
+
+<p>Why use command aliases in unix.</p>
+
+<h2>How to implement</h2>
+
+<p>Command aliases in unix.</p>
+
+<h4>location</h4>
+
+<pre><code>- where to location of the alias file
+- what is the alias file called
+</code></pre>
+
+<h4>sourcing</h4>
+
+<pre><code>- how to source it manually and automatically
+</code></pre>
+
+<h2>Favorite shortcuts</h2>
+
+<pre><code>- talk about my 10 favorite shortcuts
+    va
+    sc
+    la
+    l
+    cf
+    h
+    ls
+    a
+    rm -i
+</code></pre>
+
+<h2>Remembering new commands</h2>
+
+<pre><code>- also a good way of noting down commands you just learned and want to use much more, and want to get the syntax down before you forget
+</code></pre>
+
+<h2>Protect from unfortunate commands</h2>
+
+<h2>Fini</h2>
+
+<p>Thank you for reading.  I hope you found this useful.  I invite you to read my next post if you are interested in learning about vi and why I like it so much.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -4,6 +4,9 @@ title: "Binding pry and the power of the rails console"
 date: 2014-10-21 13:13:17 -0700
 comments: true
 categories:
+- rails
+- rails console
+- binding pry
 ---
 The most powerful tool I use on a daily basis is the gem, binding.pry.
 

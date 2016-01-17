@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Unix | My Technical Blog]]></title>
+  <link href="http://techblog.susanprestage.com//blog/categories/unix/atom.xml" rel="self"/>
+  <link href="http://techblog.susanprestage.com//"/>
+  <updated>2016-01-16T19:02:54-08:00</updated>
+  <id>http://techblog.susanprestage.com//</id>
+  <author>
+    <name><![CDATA[Susan Prestage]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Why I Like VI]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2013/12/06/why-i-like-vi/"/>
+    <updated>2013-12-06T13:08:54-08:00</updated>
+    <id>http://techblog.susanprestage.com//blog/2013/12/06/why-i-like-vi</id>
+    <content type="html"><![CDATA[<h2>What is VI</h2>
+
+<p>VI is a powerful, but brutal, command line text editor available on all unix-based systems.</p>
+
+<p>I discovered VI while at university studying for my computer engineering degree.  The joke at the time was that VI is &lsquo;user VIolent&rsquo;.  It is hard to deny this perspective, especially as I share it.  After my first couple of stumblings into inadvertent launchings of vi, my unix mentor sat down with me and first taught me how to get the heck out of there, and then taught me how to leverage it to my own benefit.</p>
+
+<p>The biggest benefits to me are:
+1. The ease with which I can jump around my document by line/word/page.
+2. The ability to copy/paste/delete my chosen number of words or lines.</p>
+
+<p>For any quick little documents I need to write, I am usually happiest in vi.</p>
+
+<h2>Command mode vs Insert mode</h2>
+
+<p>Vi has two modes of operation.  Command mode and Insert mode.  Command mode takes commands which cause action to be taken on the file you are working on.  Insert mode is where entered text is inserted into the file.</p>
+
+<h4>Command mode</h4>
+
+<ul>
+<li>In the command mode, every character typed is a command that does something to the text file being edited; a character typed in the command mode may even cause the vi editor to enter the insert mode.</li>
+</ul>
+
+
+<h4>Insert mode</h4>
+
+<ul>
+<li>In the insert mode, every character typed is added to the text in the   file; pressing the \<Esc> (Escape) key turns off the Insert mode.</li>
+</ul>
+
+
+<h2>Commands</h2>
+
+<h4>Starting/exiting vi</h4>
+
+<p>How to get into vi in the first place.  From your command line:</p>
+
+<pre>
+vi your_filename
+</pre>
+
+
+<p>To exit vi and save changes:</p>
+
+<pre>
+:wq
+</pre>
+
+
+<p>To exit vi without saving changes:</p>
+
+<pre>
+:q!
+</pre>
+
+
+<p>And most importantly, to enter vi command mode:</p>
+
+<pre>
+[esc]
+</pre>
+
+
+<p>The commands can be broken into a several categories.</p>
+
+<h4>Cursor movement</h4>
+
+<h4>Screen movement</h4>
+
+<h4>Alter text</h4>
+
+<h6>Insert or add text</h6>
+
+<h6>Change text</h6>
+
+<h6>Delete text</h6>
+
+<h2>Search</h2>
+
+<h2>File input/output</h2>
+
+<h2>Miscellaneous</h2>
+
+<p><br></p>
+
+<hr />
+
+<h3>NOTE</h3>
+
+<p>Both UNIX and vi are case-sensitive. Be sure not to use a capital letter in place of a lowercase letter; the results will not be what you expect.</p>
+
+<h2>Fini</h2>
+
+<p>Thank you for reading.  I hope you found this useful.  I invite you to read my next post if you are interested in learning how to create a basic rails application with two resources, some minitests, a bit of security lockdown, and some useful views for the app.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How the Unix .alias File Can Make Your Command Line Life Better]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2013/12/04/unix-alias-file/"/>
+    <updated>2013-12-04T12:50:52-08:00</updated>
+    <id>http://techblog.susanprestage.com//blog/2013/12/04/unix-alias-file</id>
+    <content type="html"><![CDATA[<h2>Intro to .alias</h2>
+
+<p>Why use command aliases in unix.</p>
+
+<h2>How to implement</h2>
+
+<p>Command aliases in unix.</p>
+
+<h4>location</h4>
+
+<pre><code>- where to location of the alias file
+- what is the alias file called
+</code></pre>
+
+<h4>sourcing</h4>
+
+<pre><code>- how to source it manually and automatically
+</code></pre>
+
+<h2>Favorite shortcuts</h2>
+
+<pre><code>- talk about my 10 favorite shortcuts
+    va
+    sc
+    la
+    l
+    cf
+    h
+    ls
+    a
+    rm -i
+</code></pre>
+
+<h2>Remembering new commands</h2>
+
+<pre><code>- also a good way of noting down commands you just learned and want to use much more, and want to get the syntax down before you forget
+</code></pre>
+
+<h2>Protect from unfortunate commands</h2>
+
+<h2>Fini</h2>
+
+<p>Thank you for reading.  I hope you found this useful.  I invite you to read my next post if you are interested in learning about vi and why I like it so much.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[My Favorite Unix Commands]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2013/12/03/my-favorite-unix-commands/"/>
+    <updated>2013-12-03T16:03:22-08:00</updated>
+    <id>http://techblog.susanprestage.com//blog/2013/12/03/my-favorite-unix-commands</id>
+    <content type="html"><![CDATA[<p>Where is the command I&rsquo;m trying to use stored.  This is good for when you are not sure which version of something is being used.  Or which of two different installations of something is being used.
+<code>
+type (for when where doesn't tell me what I want)
+</code></p>
+
+<p>This gives a nice recursive directory listing in a tree format.
+<code>
+tree
+</code></p>
+
+<p>Erase this whole line that I am at the end of.
+<code>
+[ctrl] + u
+</code></p>
+
+<p>Stop this program I&rsquo;m in.
+<code>
+[ctrl] + c
+</code></p>
+
+<p>No really, stop the danged program.
+<code>
+[ctrl] + d
+</code></p>
+
+<p>Give me various different verbosity levels of a process listing.
+<code>
+ps
+ps -ef
+ps -x
+ps -a
+</code></p>
+
+<p>How to kill a process.  This command can be different for different unix systems.
+<code>
+kill &lt;process_id&gt;
+kill &lt;process_id&gt;
+</code></p>
+
+<p>Path shortcut representations.</p>
+
+<p>For my own (current user) directory, usually something like /Users/susanprestage.
+<code>
+~
+</code>
+Where <code>cd ~</code> will change in the the current user&rsquo;s root directory.</p>
+
+<p>The current directory is represented by <code>.</code>.  For example, <code>./my_script</code> would run the copy of my_script that is stored in the current directory.</p>
+
+<p>The parent directory to the current directory is represented by <code>..</code>.  For example, if I were currently in /Users/susanprestage/workspace but wanted to change into /Users/susanprestage/bin, I could use <code>cd ../bin</code> to get there.</p>
+
+<p>Print the full path of the current aka working directory.
+<code>
+pwd
+</code></p>
+
+<h2>Fini</h2>
+
+<p>Thank you for reading.  I hope you found this useful.  I invite you to read my next post if you are interested in learning how to use the unix .alias file to make your command line experience more pleasurable.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Rails | My Technical Blog]]></title>
+  <link href="http://techblog.susanprestage.com//blog/categories/rails/atom.xml" rel="self"/>
+  <link href="http://techblog.susanprestage.com//"/>
+  <updated>2016-01-16T19:02:54-08:00</updated>
+  <id>http://techblog.susanprestage.com//</id>
+  <author>
+    <name><![CDATA[Susan Prestage]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Mastering Date and Time Manipulation in Rails]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2014/10/21/mastering-date-and-time-manipulation-in-rails/"/>
+    <updated>2014-10-21T13:14:02-07:00</updated>
+    <id>http://techblog.susanprestage.com//blog/2014/10/21/mastering-date-and-time-manipulation-in-rails</id>
+    <content type="html"><![CDATA[<p>There are several different ways of manipulating time in rails.  Instead of searching for them every time I need them, I will keep there here in one easy location.</p>
+
+<p>Rails gives built-in ways to add days (which will suit for weeks as well) and also to add months.  This means that using rails to add a month (which will suit for years as well) has built into it accommodations for February, leap years, leap centuries, etc.  Use Rails for this magic.  Do Not roll your own dating.</p>
+
+<h2>Future and Past</h2>
+
+<h3>By month</h3>
+
+<pre><code>  &gt; DateTime.now
+=&gt; Tue, 21 Oct 2014 13:08:17 -0700
+
+  &gt; DateTime.now &gt;&gt; 1
+=&gt; Fri, 21 Nov 2014 13:08:44 -0700
+
+  &gt; DateTime.now &gt;&gt; -2
+=&gt; Thu, 21 Aug 2014 13:09:23 -0700
+</code></pre>
+
+<h3>By week</h3>
+
+<pre><code>  &gt; DateTime.now
+=&gt; Tue, 21 Oct 2014 15:00:17 -0700
+
+  &gt; DateTime.now + (2 * 7)
+=&gt; Tue, 04 Nov 2014 15:00:52 -0700
+
+  &gt; DateTime.now - (1 * 7)
+=&gt; Tue, 14 Oct 2014 15:04:16 -0700
+</code></pre>
+
+<h2>Past only</h2>
+
+<pre><code>  &gt; 1.week.ago
+=&gt; Tue, 14 Oct 2014 20:20:14 UTC +00:00
+
+  &gt; 2.weeks.ago
+=&gt; Tue, 07 Oct 2014 20:20:27 UTC +00:00
+
+  &gt; 1.month.ago
+=&gt; Sun, 21 Sep 2014 20:20:34 UTC +00:00
+
+  &gt; 2.months.ago
+=&gt; Thu, 21 Aug 2014 20:20:41 UTC +00:00
+</code></pre>
+
+<h2>Date only</h2>
+
+<pre><code>  &gt; Date.today
+=&gt; Wed, 22 Oct 2014
+
+  &gt; Date.today+2
+=&gt; Fri, 24 Oct 2014
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Binding Pry and the Power of the Rails Console]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2014/10/21/binding-pry-and-the-power-of-the-rails-console/"/>
+    <updated>2014-10-21T13:13:17-07:00</updated>
+    <id>http://techblog.susanprestage.com//blog/2014/10/21/binding-pry-and-the-power-of-the-rails-console</id>
+    <content type="html"><![CDATA[<p>The most powerful tool I use on a daily basis is the gem, binding.pry.</p>
+
+<h2>Setup</h2>
+
+<p>Put the pry-rails gem into your Gemfile for dev and test.</p>
+
+<h6>Gemfile</h6>
+
+<pre>
+group :test, :development do
+  gem 'pry-rails'
+end
+</pre>
+
+
+<p>You will now need to run</p>
+
+<pre>
+  $ bundle install
+</pre>
+
+
+<p>at the command line.</p>
+
+<h2>How to use</h2>
+
+<p>Put the phrase &lsquo;binding.pry&rsquo; without the quotes into a piece of your code that you want to investigate and binding.pry will open up a rails console at your command line.  This even works in test files.  If you need this in the middle of a haml file, be sure to obey the tabbing convention required by haml, and also put a &lsquo;-&rsquo; dash in front of the binding.pry, like so:</p>
+
+<h6>Ruby file syntax</h6>
+
+<pre>
+  binding.pry
+</pre>
+
+
+<h6>Haml file syntax</h6>
+
+<pre>
+  - binding.pry
+</pre>
+
+
+<p>Remember, you will need to type exit out of the rails console and to return your server to  whatever it was doing before it hit the binding.pry.</p>
+
+<p>This is particularly useful to see the current scope of variables and also to look at what is in the database.</p>
+
+<pre>
+  > Company.find(7).users.find(24)
+
+  > Company.find(7).team_memberships
+
+  > Company.find(7).users.find(26)
+
+  > Company.find(7).users
+
+  > Company.all
+
+  > c = Company.find(7)
+
+  > c.users
+
+  > User.where(id: 45)
+
+  > User.where(email: "susan@example.com")
+
+  > User.where(id: 73).pluck(:first_name, :last_name)
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Do Database Stuff From Within Rails]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2014/10/13/how-to-do-database-stuff-from-within-rails/"/>
+    <updated>2014-10-13T11:52:35-07:00</updated>
+    <id>http://techblog.susanprestage.com//blog/2014/10/13/how-to-do-database-stuff-from-within-rails</id>
+    <content type="html"><![CDATA[<h3>Rails Console</h3>
+
+<p>The rails console is one of the most powerful debug and development tools.  Most particularly, for database manipulation.</p>
+
+<p>Here are some of my most frequently used commands:</p>
+
+<p>Here are some of my much less frequently used, but very powerful and sometimes necessary.  As a rule, I try to only examine what is in my database from the console.  Creating and deleting records from the command line really isn&rsquo;t the way you want to manipulate your database.  That said, sometimes to have to:</p>
+
+<h4>Create</h4>
+
+<pre>
+  > u = User.create password: "mypasswd", first_name: "test", last_name: "testovich"
+</pre>
+
+
+<h4>Update</h4>
+
+<pre>
+  > u = User.find(30)
+  > u.update_attributes(roles_mask: 3)
+</pre>
+
+
+<p>If the above doesn&rsquo;t work, this may:</p>
+
+<pre>
+  > User.where(id: 27)[0].update(age: 42, next_birthday: "2014-10-14")
+</pre>
+
+
+<h4>Destroy</h4>
+
+<pre>
+  > User.find(30).destroy
+</pre>
+
+
+<h3>Backup &amp; Restore</h3>
+
+<pre>
+  $ pg_dump -U featherlight featherlight_development -Fc > backup.dump
+</pre>
+
+
+<p>The first command seems to be the one that works</p>
+
+<pre>
+  $ pg_restore -c -C -F c -v -U postgres backup.dump
+  $ pg_restore -U featherlight -d featherlight_development backup.dump
+</pre>
+
+
+<h3>Creating a database and user</h3>
+
+<pre>
+  $ createuser portfolio
+  Shall the new role be a superuser? (y/n) n
+  Shall the new role be allowed to create databases? (y/n) n
+  Shall the new role be allowed to create more new roles? (y/n) n
+  CREATE ROLE
+  $
+</pre>
+
+
+
+
+<pre>
+  $ createdb portfolio_test -O portfolio
+</pre>
+
+
+<ul>
+<li>-O owner name is the option in the command line.</li>
+</ul>
+
+
+<h3>Queries with date ranges</h3>
+
+<pre>
+  FeedbackRequest.where(created_at: 5.days.ago..4.days.ago)
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Quickly Create a Rails App With 2 Working Resources]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2013/12/07/quickly-create-a-rails-app-with-2-working-resources/"/>
+    <updated>2013-12-07T14:48:17-08:00</updated>
+    <id>http://techblog.susanprestage.com//blog/2013/12/07/quickly-create-a-rails-app-with-2-working-resources</id>
+    <content type="html"><![CDATA[<h1>Intro</h1>
+
+<p>I created this rails app in preparation to learn about resource associations.  This was the basic app I created before I implemented anything complicated.  It is a good demonstration of how to generate the rails app, the resoursces, and the tests.  I also go through several steps to get the app ready to be tested using minitest and also how to lock down the app from a security perspective.</p>
+
+<p>This is a simple rails app, with a pair of resources, Doctors and Patients.</p>
+
+<h1>Preparation</h1>
+
+<h2>Generate rails app</h2>
+
+<pre>
+  $ rails _3.2.16_ new DoctorPatientTracker --skip-test-unit
+
+  $ cd DoctorPatientTracker
+</pre>
+
+
+<h2>Prepare for testing</h2>
+
+<p>Edit Gemfile for some useful debugging gems.  Then run bundler</p>
+
+<pre>
+  $ bundle
+</pre>
+
+
+<h2>Secure your app</h2>
+
+<p>Tuck away RAILS_SECRET from /config/initializer/secret_token.rb to /config/application.yml and add /config/application.yml to .gitignore.</p>
+
+<h2>Implement some basics</h2>
+
+<p>Add a home page, /app/views/home/index.html.erb
+Add a home controller, /app/controllers/home_controller.rb
+Add a default route to /config/routes.rb
+  root :to => &lsquo;home#index&rsquo;</p>
+
+<hr />
+
+<h1>You should now have a working rails app</h1>
+
+<h2>Check in frequently</h2>
+
+<p>Check everything into git and git hub so yous have this default rails app set in stone.</p>
+
+<h2>Create 1st resource scaffold</h2>
+
+<p>Create the scaffold for the new resource, Doctor.</p>
+
+<pre>
+  $ rails g scaffold Doctor name:string --no-test-framework --no-assets --no-stylesheets --no-scss
+</pre>
+
+
+<h2>Migrate the DB for 1st resource</h2>
+
+<p>Migrate the database to pick up the changes.</p>
+
+<pre>
+  $ rake db:migrate
+</pre>
+
+
+<h2>Create tests for 1st resource</h2>
+
+<p>I know I should probably create all the tests first, but I feel so lost
+without the stuff there first, ya know.</p>
+
+<p>Create the tests using generate, then completely replace what is in the files.</p>
+
+<pre>
+  $ rails g mini_test:feature DoctorShowIndex
+
+  $ rails g mini_test:feature DoctorShow
+
+  $ rails g mini_test:feature DoctorCreate
+
+  $ rails g mini_test:feature DoctorUpdate
+
+  $ rails g mini_test:feature DoctorDelete
+</pre>
+
+
+<p>Add /test/ folder.  Add /test/doctors/ folder.  Move doctor tests. Then
+add fixture support to /test/test_helper.rb</p>
+
+<h2>Modify views for 1st resource</h2>
+
+<p>Add Doctor name to display on /doctors/new page</p>
+
+<p>Edit all the 5 /views/doctors/*.html.erb to display the fields from the
+models.</p>
+
+<h2>Run the tests for 1st resource</h2>
+
+<p>Make sure all Doctor stuff works.</p>
+
+<pre>
+  $ rake
+</pre>
+
+
+<h2>Create 2nd resource scaffold</h2>
+
+<p>Time to implement Patients:</p>
+
+<pre>
+  $ rails g scaffold Patient name:string --no-test-framework --no-assets --no-stylesheets --no-scss
+</pre>
+
+
+<h2>Create tests for 2nd resource</h2>
+
+<p>Then create the Patient tests:</p>
+
+<pre>
+  $ rails g mini_test:feature PatientShowIndex
+
+  $ rails g mini_test:feature PatientShow
+
+  $ rails g mini_test:feature PatientCreate
+
+  $ rails g mini_test:feature ItemUpdate
+
+  $ rails g mini_test:feature ItemDelete
+</pre>
+
+
+<p>Add /test/patients/ folder.  Move patient tests.</p>
+
+<h2>Migrate DB for 2nd resource</h2>
+
+<p>Add Patients to the DB:</p>
+
+<pre>
+  $ rake db:migrate
+</pre>
+
+
+<h2>Modify views for 2nd resource</h2>
+
+<p>Add Patient name to display on /patients/new page</p>
+
+<p>Edit all the 5 /views/patients/*.html.erb to display the fields from the
+models.</p>
+
+<h2>Run the tests for 2nd resource</h2>
+
+<p>Make sure all Patient stuff works.</p>
+
+<pre>
+  $ rake
+</pre>
+
+
+<h1>Final notes</h1>
+
+<p>You now have a working rails application with two resources, some minitests, a bit of security lockdown, and some useful views for the app.</p>
+
+<p>Thank you for reading.  I hope you found this useful.</p>
+]]></content>
+  </entry>
+  
+</feed>

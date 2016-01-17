@@ -79,6 +79,18 @@
     <loc>http://techblog.susanprestage.com//blog/categories/stash/</loc>
   </url>
   <url>
+    <loc>http://techblog.susanprestage.com//blog/categories/unix/</loc>
+  </url>
+  <url>
+    <loc>http://techblog.susanprestage.com//blog/categories/alias-file/</loc>
+  </url>
+  <url>
+    <loc>http://techblog.susanprestage.com//blog/categories/vi/</loc>
+  </url>
+  <url>
+    <loc>http://techblog.susanprestage.com//blog/categories/rails/</loc>
+  </url>
+  <url>
     <loc>http://techblog.susanprestage.com//blog/categories/octopress/</loc>
   </url>
   <url>
@@ -92,5 +104,26 @@
   </url>
   <url>
     <loc>http://techblog.susanprestage.com//blog/categories/strings/</loc>
+  </url>
+  <url>
+    <loc>http://techblog.susanprestage.com//blog/categories/rails-console/</loc>
+  </url>
+  <url>
+    <loc>http://techblog.susanprestage.com//blog/categories/database/</loc>
+  </url>
+  <url>
+    <loc>http://techblog.susanprestage.com//blog/categories/postgres/</loc>
+  </url>
+  <url>
+    <loc>http://techblog.susanprestage.com//blog/categories/binding-pry/</loc>
+  </url>
+  <url>
+    <loc>http://techblog.susanprestage.com//blog/categories/data-and-time/</loc>
+  </url>
+  <url>
+    <loc>http://techblog.susanprestage.com//blog/categories/rvm/</loc>
+  </url>
+  <url>
+    <loc>http://techblog.susanprestage.com//posts/2/</loc>
   </url>
 </urlset>

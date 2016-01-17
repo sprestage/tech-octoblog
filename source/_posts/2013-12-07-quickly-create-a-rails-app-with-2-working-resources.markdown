@@ -3,7 +3,8 @@ layout: post
 title: "Quickly create a rails app with 2 working resources"
 date: 2013-12-07 14:48:17 -0800
 comments: true
-categories: 
+categories:
+- rails
 ---
 
 Intro
@@ -43,7 +44,7 @@ Add a default route to /config/routes.rb
 
 # You should now have a working rails app
 
-  
+
 ## Check in frequently
 Check everything into git and git hub so yous have this default rails app set in stone.  
 
@@ -52,7 +53,7 @@ Create the scaffold for the new resource, Doctor.
 <pre>
   $ rails g scaffold Doctor name:string --no-test-framework --no-assets --no-stylesheets --no-scss
 </pre>
-  
+
 
 ## Migrate the DB for 1st resource
 Migrate the database to pick up the changes.
@@ -87,7 +88,7 @@ Edit all the 5 /views/doctors/*.html.erb to display the fields from the
 models.
 
 ## Run the tests for 1st resource
-Make sure all Doctor stuff works. 
+Make sure all Doctor stuff works.
 <pre>
   $ rake
 </pre>
@@ -127,7 +128,7 @@ Edit all the 5 /views/patients/*.html.erb to display the fields from the
 models.
 
 ## Run the tests for 2nd resource
-Make sure all Patient stuff works. 
+Make sure all Patient stuff works.
 <pre>
   $ rake
 </pre>
@@ -135,5 +136,4 @@ Make sure all Patient stuff works.
 # Final notes
 You now have a working rails application with two resources, some minitests, a bit of security lockdown, and some useful views for the app.
 
-Thank you for reading.  I hope you found this useful. 
-
+Thank you for reading.  I hope you found this useful.

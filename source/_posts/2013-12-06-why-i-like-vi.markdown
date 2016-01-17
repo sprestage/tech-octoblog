@@ -4,6 +4,9 @@ title: "Why I like VI"
 date: 2013-12-06 13:08:54 -0800
 comments: true
 categories:
+- unix
+- vi
+- command line
 ---
 ## What is VI
 

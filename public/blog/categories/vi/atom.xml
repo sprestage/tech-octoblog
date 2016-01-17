@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Vi | My Technical Blog]]></title>
+  <link href="http://techblog.susanprestage.com//blog/categories/vi/atom.xml" rel="self"/>
+  <link href="http://techblog.susanprestage.com//"/>
+  <updated>2016-01-16T19:02:54-08:00</updated>
+  <id>http://techblog.susanprestage.com//</id>
+  <author>
+    <name><![CDATA[Susan Prestage]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Why I Like VI]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2013/12/06/why-i-like-vi/"/>
+    <updated>2013-12-06T13:08:54-08:00</updated>
+    <id>http://techblog.susanprestage.com//blog/2013/12/06/why-i-like-vi</id>
+    <content type="html"><![CDATA[<h2>What is VI</h2>
+
+<p>VI is a powerful, but brutal, command line text editor available on all unix-based systems.</p>
+
+<p>I discovered VI while at university studying for my computer engineering degree.  The joke at the time was that VI is &lsquo;user VIolent&rsquo;.  It is hard to deny this perspective, especially as I share it.  After my first couple of stumblings into inadvertent launchings of vi, my unix mentor sat down with me and first taught me how to get the heck out of there, and then taught me how to leverage it to my own benefit.</p>
+
+<p>The biggest benefits to me are:
+1. The ease with which I can jump around my document by line/word/page.
+2. The ability to copy/paste/delete my chosen number of words or lines.</p>
+
+<p>For any quick little documents I need to write, I am usually happiest in vi.</p>
+
+<h2>Command mode vs Insert mode</h2>
+
+<p>Vi has two modes of operation.  Command mode and Insert mode.  Command mode takes commands which cause action to be taken on the file you are working on.  Insert mode is where entered text is inserted into the file.</p>
+
+<h4>Command mode</h4>
+
+<ul>
+<li>In the command mode, every character typed is a command that does something to the text file being edited; a character typed in the command mode may even cause the vi editor to enter the insert mode.</li>
+</ul>
+
+
+<h4>Insert mode</h4>
+
+<ul>
+<li>In the insert mode, every character typed is added to the text in the   file; pressing the \<Esc> (Escape) key turns off the Insert mode.</li>
+</ul>
+
+
+<h2>Commands</h2>
+
+<h4>Starting/exiting vi</h4>
+
+<p>How to get into vi in the first place.  From your command line:</p>
+
+<pre>
+vi your_filename
+</pre>
+
+
+<p>To exit vi and save changes:</p>
+
+<pre>
+:wq
+</pre>
+
+
+<p>To exit vi without saving changes:</p>
+
+<pre>
+:q!
+</pre>
+
+
+<p>And most importantly, to enter vi command mode:</p>
+
+<pre>
+[esc]
+</pre>
+
+
+<p>The commands can be broken into a several categories.</p>
+
+<h4>Cursor movement</h4>
+
+<h4>Screen movement</h4>
+
+<h4>Alter text</h4>
+
+<h6>Insert or add text</h6>
+
+<h6>Change text</h6>
+
+<h6>Delete text</h6>
+
+<h2>Search</h2>
+
+<h2>File input/output</h2>
+
+<h2>Miscellaneous</h2>
+
+<p><br></p>
+
+<hr />
+
+<h3>NOTE</h3>
+
+<p>Both UNIX and vi are case-sensitive. Be sure not to use a capital letter in place of a lowercase letter; the results will not be what you expect.</p>
+
+<h2>Fini</h2>
+
+<p>Thank you for reading.  I hope you found this useful.  I invite you to read my next post if you are interested in learning how to create a basic rails application with two resources, some minitests, a bit of security lockdown, and some useful views for the app.</p>
+]]></content>
+  </entry>
+  
+</feed>

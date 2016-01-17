@@ -4,6 +4,8 @@ title: "My favorite unix commands"
 date: 2013-12-03 16:03:22 -0800
 comments: true
 categories:
+- unix
+- command line
 ---
 
 Where is the command I'm trying to use stored.  This is good for when you are not sure which version of something is being used.  Or which of two different installations of something is being used.

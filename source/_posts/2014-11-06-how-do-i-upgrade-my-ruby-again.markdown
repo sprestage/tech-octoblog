@@ -4,6 +4,8 @@ title: "How do I upgrade my Ruby again?"
 date: 2014-11-06 08:47:02 -0800
 comments: true
 categories:
+- ruby
+- rvm
 ---
 If you want to use Rbenv on OS X you'll need to install the Xcode command-line tools:
 <pre>

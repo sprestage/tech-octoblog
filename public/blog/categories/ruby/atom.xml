@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | My Technical Blog]]></title>
   <link href="http://techblog.susanprestage.com//blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://techblog.susanprestage.com//"/>
-  <updated>2016-01-16T18:55:38-08:00</updated>
+  <updated>2016-01-16T19:02:54-08:00</updated>
   <id>http://techblog.susanprestage.com//</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -12,6 +12,86 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How Do I Upgrade My Ruby Again?]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2014/11/06/how-do-i-upgrade-my-ruby-again/"/>
+    <updated>2014-11-06T08:47:02-08:00</updated>
+    <id>http://techblog.susanprestage.com//blog/2014/11/06/how-do-i-upgrade-my-ruby-again</id>
+    <content type="html"><![CDATA[<p>If you want to use Rbenv on OS X you&rsquo;ll need to install the Xcode command-line tools:</p>
+
+<pre>
+  $ xcode-select --install
+</pre>
+
+
+<p>Then install Home Brew:</p>
+
+<pre>
+  $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+</pre>
+
+
+<p>Complete Home Brew setup:</p>
+
+<pre>
+  $ brew doctor
+  $ brew update
+</pre>
+
+
+<p>At this point you&rsquo;ll be able to install rbenv and ruby-build:</p>
+
+<pre>
+  $ brew install rbenv ruby-build
+</pre>
+
+
+<p>Add the following to your .bash_profile:</p>
+
+<pre>
+  eval "$(rbenv init -)"
+</pre>
+
+
+<p>Reload your bash profile settings:</p>
+
+<pre>
+  $ source ~/.bash_profile
+</pre>
+
+
+<p>Then you can install Ruby:</p>
+
+<pre>
+  $ rbenv install 2.1.2
+</pre>
+
+
+<p>Thanks to John O. at TeamTreeHouse for giving this well written response to this inquiry.</p>
+
+<p>To set as your current version of Ruby run the following command:</p>
+
+<pre>
+  $ rvm use 2.0.0
+</pre>
+
+
+<p>To make it the default Ruby:</p>
+
+<pre>
+  $ rvm default 2.0.0
+</pre>
+
+
+<p>or</p>
+
+<pre>
+  $ rvm use 2.0.0 --default
+</pre>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[String Manipulation in Ruby]]></title>

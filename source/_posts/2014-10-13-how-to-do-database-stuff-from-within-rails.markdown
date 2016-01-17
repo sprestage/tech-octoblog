@@ -4,6 +4,10 @@ title: "How to do database stuff from within Rails"
 date: 2014-10-13 11:52:35 -0700
 comments: true
 categories:
+- rails
+- rails console
+- database
+- postgres
 ---
 ### Rails Console
 The rails console is one of the most powerful debug and development tools.  Most particularly, for database manipulation.
