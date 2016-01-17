@@ -4,7 +4,7 @@
   <title><![CDATA[My Technical Blog]]></title>
   <link href="http://techblog.susanprestage.com//atom.xml" rel="self"/>
   <link href="http://techblog.susanprestage.com//"/>
-  <updated>2016-01-16T19:05:21-08:00</updated>
+  <updated>2016-01-16T19:28:54-08:00</updated>
   <id>http://techblog.susanprestage.com//</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -712,13 +712,17 @@ models.</p>
 
 <p>I discovered VI while at university studying for my computer engineering degree.  The joke at the time was that VI is &lsquo;user VIolent&rsquo;.  It is hard to deny this perspective, especially as I share it.  After my first couple of stumblings into inadvertent launchings of vi, my unix mentor sat down with me and first taught me how to get the heck out of there, and then taught me how to leverage it to my own benefit.</p>
 
-<p>The biggest benefits to me are:
-1. The ease with which I can jump around my document by line/word/page.
-2. The ability to copy/paste/delete my chosen number of words or lines.</p>
+<p>The biggest benefits to me are:</p>
+
+<ol>
+<li><p>The ease with which I can jump around my document by line/word/page.</p></li>
+<li><p>The ability to copy/paste/delete my chosen number of words or lines.</p></li>
+</ol>
+
 
 <p>For any quick little documents I need to write, I am usually happiest in vi.</p>
 
-<h2>Command mode vs Insert mode</h2>
+<h2>Understanding Command mode vs Insert mode</h2>
 
 <p>Vi has two modes of operation.  Command mode and Insert mode.  Command mode takes commands which cause action to be taken on the file you are working on.  Insert mode is where entered text is inserted into the file.</p>
 
@@ -732,63 +736,51 @@ models.</p>
 <h4>Insert mode</h4>
 
 <ul>
-<li>In the insert mode, every character typed is added to the text in the   file; pressing the \<Esc> (Escape) key turns off the Insert mode.</li>
+<li>In the insert mode, every character typed is added to the text in the  file; pressing the \<Esc> (Escape) key turns off the Insert mode.</li>
 </ul>
 
 
-<h2>Commands</h2>
+<h2>Using VI Commands</h2>
 
-<h4>Starting/exiting vi</h4>
+<h4>* Starting/exiting vi</h4>
 
 <p>How to get into vi in the first place.  From your command line:</p>
 
-<pre>
-vi your_filename
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>vi your_filename</span></code></pre></td></tr></table></div></figure>
 
 
 <p>To exit vi and save changes:</p>
 
-<pre>
-:wq
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>:wq</span></code></pre></td></tr></table></div></figure>
 
 
 <p>To exit vi without saving changes:</p>
 
-<pre>
-:q!
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>:q!</span></code></pre></td></tr></table></div></figure>
 
 
 <p>And most importantly, to enter vi command mode:</p>
 
-<pre>
-[esc]
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[esc]</span></code></pre></td></tr></table></div></figure>
 
 
-<p>The commands can be broken into a several categories.</p>
+<h4>* Cursor movement (to be written)</h4>
 
-<h4>Cursor movement</h4>
+<h4>* Screen movement (to be written)</h4>
 
-<h4>Screen movement</h4>
+<h4>* Alter text (to be written)</h4>
 
-<h4>Alter text</h4>
+<h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*   Insert or add text (to be written)</h6>
 
-<h6>Insert or add text</h6>
+<h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*   Change text (to be written)</h6>
 
-<h6>Change text</h6>
+<h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*   Delete text (to be written)</h6>
 
-<h6>Delete text</h6>
-
-<h2>Search</h2>
-
-<h2>File input/output</h2>
-
-<h2>Miscellaneous</h2>
-
-<p><br></p>
+<h4>* Search (to be written)</h4>
 
 <hr />
 

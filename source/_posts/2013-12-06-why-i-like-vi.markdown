@@ -15,64 +15,57 @@ VI is a powerful, but brutal, command line text editor available on all unix-bas
 I discovered VI while at university studying for my computer engineering degree.  The joke at the time was that VI is 'user VIolent'.  It is hard to deny this perspective, especially as I share it.  After my first couple of stumblings into inadvertent launchings of vi, my unix mentor sat down with me and first taught me how to get the heck out of there, and then taught me how to leverage it to my own benefit.
 
 The biggest benefits to me are:
+
 1. The ease with which I can jump around my document by line/word/page.
+
 2. The ability to copy/paste/delete my chosen number of words or lines.
 
 For any quick little documents I need to write, I am usually happiest in vi.  
 
 
-## Command mode vs Insert mode
+## Understanding Command mode vs Insert mode
 Vi has two modes of operation.  Command mode and Insert mode.  Command mode takes commands which cause action to be taken on the file you are working on.  Insert mode is where entered text is inserted into the file.
 
 #### Command mode
-
 * In the command mode, every character typed is a command that does something to the text file being edited; a character typed in the command mode may even cause the vi editor to enter the insert mode.
 
 #### Insert mode
+* In the insert mode, every character typed is added to the text in the  file; pressing the \<Esc> (Escape) key turns off the Insert mode.
 
-* In the insert mode, every character typed is added to the text in the   file; pressing the \<Esc> (Escape) key turns off the Insert mode.
 
-## Commands
-#### Starting/exiting vi
+## Using VI Commands
+
+#### * Starting/exiting vi
 How to get into vi in the first place.  From your command line:
-<pre>
+```
 vi your_filename
-</pre>
+```
 
 To exit vi and save changes:
-<pre>
+```
 :wq
-</pre>
+```
 
 To exit vi without saving changes:
-<pre>
+```
 :q!
-</pre>
+```
 
 And most importantly, to enter vi command mode:
-<pre>
+```
 [esc]
-</pre>
+```
 
-The commands can be broken into a several categories.
+#### * Cursor movement (to be written)
 
-#### Cursor movement
+#### * Screen movement (to be written)
 
-#### Screen movement
+#### * Alter text (to be written)
+###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*   Insert or add text (to be written)
+###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*   Change text (to be written)
+###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*   Delete text (to be written)
 
-#### Alter text
-###### Insert or add text
-###### Change text
-###### Delete text
-
-## Search
-
-## File input/output
-
-## Miscellaneous
-
-
-<br>
+#### * Search (to be written)
 
 ---
 ### NOTE
