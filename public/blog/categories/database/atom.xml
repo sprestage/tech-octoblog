@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Database | My Technical Blog]]></title>
+  <link href="http://techblog.susanprestage.com//blog/categories/database/atom.xml" rel="self"/>
+  <link href="http://techblog.susanprestage.com//"/>
+  <updated>2016-01-17T12:06:41-08:00</updated>
+  <id>http://techblog.susanprestage.com//</id>
+  <author>
+    <name><![CDATA[Susan Prestage]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to Do Database Stuff From Within Rails]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2014/10/13/how-to-do-database-stuff-from-within-rails/"/>
+    <updated>2014-10-13T11:52:35-07:00</updated>
+    <id>http://techblog.susanprestage.com//blog/2014/10/13/how-to-do-database-stuff-from-within-rails</id>
+    <content type="html"><![CDATA[<h3>Rails Console</h3>
+
+<p>The rails console is one of the most powerful debug and development tools.  Most particularly, for database manipulation.</p>
+
+<p>Here are some of my most frequently used commands:</p>
+
+<p>Here are some of my much less frequently used, but very powerful and sometimes necessary.  As a rule, I try to only examine what is in my database from the console.  Creating and deleting records from the command line really isn&rsquo;t the way you want to manipulate your database.  That said, sometimes to have to:</p>
+
+<h4>Create</h4>
+
+<pre><code>u = User.create password: "mypasswd", first_name: "test", last_name: "testovich"
+</code></pre>
+
+<h4>Update</h4>
+
+<pre><code>u = User.find(30)
+u.update_attributes(roles_mask: 3)
+</code></pre>
+
+<p>If the above doesn&rsquo;t work, this may:
+<code>
+User.where(id: 27)[0].update(age: 42, next_birthday: "2014-10-14")
+</code></p>
+
+<h4>Destroy</h4>
+
+<pre><code>User.find(30).destroy
+</code></pre>
+
+<h3>Backup &amp; Restore</h3>
+
+<pre><code>$ pg_dump -U featherlight featherlight_development -Fc &gt; backup.dump
+</code></pre>
+
+<p>The first command seems to be the one that works
+<code>
+$ pg_restore -c -C -F c -v -U postgres backup.dump
+$ pg_restore -U featherlight -d featherlight_development backup.dump
+</code></p>
+
+<h3>Creating a database and user</h3>
+
+<pre><code>$ createuser portfolio
+Shall the new role be a superuser? (y/n) n
+Shall the new role be allowed to create databases? (y/n) n
+Shall the new role be allowed to create more new roles? (y/n) n
+CREATE ROLE
+$
+</code></pre>
+
+<pre><code>$ createdb portfolio_test -O portfolio
+</code></pre>
+
+<ul>
+<li>-O owner name is the option in the command line.</li>
+</ul>
+
+
+<h3>Queries with date ranges</h3>
+
+<pre><code>FeedbackRequest.where(created_at: 5.days.ago..4.days.ago)
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>

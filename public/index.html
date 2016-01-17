@@ -216,6 +216,499 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-10-21T13:14:02-07:00"  data-updated="true" itemprop="datePublished dateCreated">Oct 21, 2014</time>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2014/10/21/mastering-date-and-time-manipulation-in-rails/" itemprop="url">Mastering Date and Time Manipulation in Rails</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>There are several different ways of manipulating time in rails.  Instead of searching for them every time I need them, I will keep there here in one easy location.</p>
+
+<p>Rails gives built-in ways to add days (which will suit for weeks as well) and also to add months.  This means that using rails to add a month (which will suit for years as well) has built into it accommodations for February, leap years, leap centuries, etc.  Use Rails for this magic.  Do Not roll your own dating.</p>
+
+<h2>Future and Past</h2>
+
+<h3>By month</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>DateTime.now
+</span><span class='line'>=&gt; Tue, 21 Oct 2014 13:08:17 -0700
+</span><span class='line'>
+</span><span class='line'>DateTime.now &gt;&gt; 1
+</span><span class='line'>=&gt; Fri, 21 Nov 2014 13:08:44 -0700
+</span><span class='line'>
+</span><span class='line'>DateTime.now &gt;&gt; -2
+</span><span class='line'>=&gt; Thu, 21 Aug 2014 13:09:23 -0700</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>By week</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>DateTime.now
+</span><span class='line'>=&gt; Tue, 21 Oct 2014 15:00:17 -0700
+</span><span class='line'>
+</span><span class='line'>DateTime.now + (2 * 7)
+</span><span class='line'>=&gt; Tue, 04 Nov 2014 15:00:52 -0700
+</span><span class='line'>
+</span><span class='line'>DateTime.now - (1 * 7)
+</span><span class='line'>=&gt; Tue, 14 Oct 2014 15:04:16 -0700</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Past only</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>1.week.ago
+</span><span class='line'>=&gt; Tue, 14 Oct 2014 20:20:14 UTC +00:00
+</span><span class='line'>
+</span><span class='line'>2.weeks.ago
+</span><span class='line'>=&gt; Tue, 07 Oct 2014 20:20:27 UTC +00:00
+</span><span class='line'>
+</span><span class='line'>1.month.ago
+</span><span class='line'>=&gt; Sun, 21 Sep 2014 20:20:34 UTC +00:00
+</span><span class='line'>
+</span><span class='line'>2.months.ago
+</span><span class='line'>=&gt; Thu, 21 Aug 2014 20:20:41 UTC +00:00</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Date only</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Date.today
+</span><span class='line'>=&gt; Wed, 22 Oct 2014
+</span><span class='line'>
+</span><span class='line'>Date.today+2
+</span><span class='line'>=&gt; Fri, 24 Oct 2014</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-10-21T13:13:17-07:00"  data-updated="true" itemprop="datePublished dateCreated">Oct 21, 2014</time>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2014/10/21/binding-pry-and-the-power-of-the-rails-console/" itemprop="url">Binding Pry and the Power of the Rails Console</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>The most powerful tool I use on a daily basis is the binding.pry gem.</p>
+
+<h2>Setup</h2>
+
+<p>Put the pry-rails gem into your Gemfile for dev and test.</p>
+
+<h6>Gemfile</h6>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>group :test, :development do
+</span><span class='line'>  gem 'pry-rails'
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You will now need to run</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ bundle install</span></code></pre></td></tr></table></div></figure>
+
+
+<p>at the command line.</p>
+
+<h2>How to use</h2>
+
+<p>Put the phrase &lsquo;binding.pry&rsquo; without the quotes into a piece of your code that you want to investigate and binding.pry will open up a rails console at your command line.  This even works in test files.  If you need this in the middle of a haml file, be sure to obey the tabbing convention required by haml, and also put a &lsquo;-&rsquo; dash in front of the binding.pry, like so:</p>
+
+<h6>Ruby file syntax</h6>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  binding.pry</span></code></pre></td></tr></table></div></figure>
+
+
+<h6>Haml file syntax</h6>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  - binding.pry</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Remember, you will need to type exit out of the rails console and to return your server to  whatever it was doing before it hit the binding.pry.</p>
+
+<p>This is particularly useful to see the current scope of variables and also to look at what is in the database.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Company.find(7).users.find(24)
+</span><span class='line'>
+</span><span class='line'>Company.find(7).team_memberships
+</span><span class='line'>
+</span><span class='line'>Company.find(7).users.find(26)
+</span><span class='line'>
+</span><span class='line'>Company.find(7).users
+</span><span class='line'>
+</span><span class='line'>Company.all
+</span><span class='line'>
+</span><span class='line'>c = Company.find(7)
+</span><span class='line'>
+</span><span class='line'>c.users
+</span><span class='line'>
+</span><span class='line'>User.where(id: 45)
+</span><span class='line'>
+</span><span class='line'>User.where(email: "susan@example.com")
+</span><span class='line'>
+</span><span class='line'>User.where(id: 73).pluck(:first_name, :last_name)</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-10-13T11:52:35-07:00"  data-updated="true" itemprop="datePublished dateCreated">Oct 13, 2014</time>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2014/10/13/how-to-do-database-stuff-from-within-rails/" itemprop="url">How to Do Database Stuff From Within Rails</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><h3>Rails Console</h3>
+
+<p>The rails console is one of the most powerful debug and development tools.  Most particularly, for database manipulation.</p>
+
+<p>Here are some of my most frequently used commands:</p>
+
+<p>Here are some of my much less frequently used, but very powerful and sometimes necessary.  As a rule, I try to only examine what is in my database from the console.  Creating and deleting records from the command line really isn&rsquo;t the way you want to manipulate your database.  That said, sometimes to have to:</p>
+
+<h4>Create</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>u = User.create password: "mypasswd", first_name: "test", last_name: "testovich"</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Update</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>u = User.find(30)
+</span><span class='line'>u.update_attributes(roles_mask: 3)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If the above doesn&rsquo;t work, this may:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>User.where(id: 27)[0].update(age: 42, next_birthday: "2014-10-14")</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Destroy</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>User.find(30).destroy</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Backup &amp; Restore</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ pg_dump -U featherlight featherlight_development -Fc &gt; backup.dump</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The first command seems to be the one that works</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ pg_restore -c -C -F c -v -U postgres backup.dump
+</span><span class='line'>$ pg_restore -U featherlight -d featherlight_development backup.dump</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Creating a database and user</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ createuser portfolio
+</span><span class='line'>Shall the new role be a superuser? (y/n) n
+</span><span class='line'>Shall the new role be allowed to create databases? (y/n) n
+</span><span class='line'>Shall the new role be allowed to create more new roles? (y/n) n
+</span><span class='line'>CREATE ROLE
+</span><span class='line'>$</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ createdb portfolio_test -O portfolio</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>-O owner name is the option in the command line.</li>
+</ul>
+
+
+<h3>Queries with date ranges</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>FeedbackRequest.where(created_at: 5.days.ago..4.days.ago)</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-03-21T12:12:17-07:00"  data-updated="true" itemprop="datePublished dateCreated">Mar 21, 2014</time>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2014/03/21/string-manipulation-in-ruby/" itemprop="url">String Manipulation in Ruby</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><h1>Set vs concatenate</h1>
+
+<p>Set variable equal to this string.  No initialization needed.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>farewell = "Good"  </span></code></pre></td></tr></table></div></figure>
+
+
+<p>Print out that string.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>puts farewell</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will be the output.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  =&gt; Good</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Concatenation requires the variable to be initialized.  This only works because the variable was initialized above.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>farewell &lt;&lt; "bye!"  </span></code></pre></td></tr></table></div></figure>
+
+
+<p>Print out that string.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>puts farewell</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will be the output.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  =&gt; Goodbye!</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>String operations</h1>
+
+<p>Find where a substring is within the source string using index.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"hello".index('e')             #=&gt; 1
+</span><span class='line'>"hello".index('lo')            #=&gt; 3
+</span><span class='line'>"hello".index('a')             #=&gt; nil
+</span><span class='line'>"hello".index(?e)              #=&gt; 1
+</span><span class='line'>"hello".index(/[aeiou]/, -3)   #=&gt; 4</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Take input from the user:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>puts "Please input some text: "
+</span><span class='line'>foo = gets.chomp
+</span><span class='line'>puts foo</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you are using ARGV to bring in command line arguments when you launch your app, you will run into conflict when using gets.  You can work around this two ways.  First is to use perform whatever tasks you need to on ARGV, then:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ARGV.clear
+</span><span class='line'>foo = gets.chomp</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Otherwise, everytime you call gets, you will need to specify that it is from IO, not Kernal:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>foo = $stdin.gets.chomp</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Replace the first instance of the sub_string, &ldquo;replace_me&rdquo;, with the contents of foo.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bar = bar.sub("replace_me", foo)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Globally replace the sub_string, &ldquo;replace_me&rdquo;, with the contents of foo.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bar = bar.&lt;b&gt;g&lt;/b&gt;sub("replace_me", foo)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Find the first example of substring, &ldquo;find_me&rdquo;.  This is most often used with regex in place of the &ldquo;find_me&rdquo; string.  Returns a string.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bing = bar.match("find_me")</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Find the every example of substring, &ldquo;find_me&rdquo;.  This is most often used with regex in place of the &ldquo;find_me&rdquo; string.  Returns an array of strings.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bing = bar.scan("find_me")</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-03-19T12:30:59-07:00"  data-updated="true" itemprop="datePublished dateCreated">Mar 19, 2014</time>
         
       </p>
@@ -804,620 +1297,11 @@ models.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-02T18:47:42-08:00"  data-updated="true" itemprop="datePublished dateCreated">Dec  2, 2013</time>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2013/12/02/my-personal-git-command-reference/" itemprop="url">My Personal Git Command Reference</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><h1>Git Basics</h1>
-
-<h2>Setting up a new project</h2>
-
-<h3>Set up the local repository</h3>
-
-<p>Brand new project.  Start in the project directory.  Then:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git init</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Ready to stage your commits?  Here is the long way:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git add .
-</span><span class='line'>  $ git commit -m "Initial commit"</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Here is a useful short way to do both of the above commands at once:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git commit -am "Initial commit"</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Set up remote repository</h3>
-
-<p>Point to a new repo on github.  Note: must create this new repo on github first!</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git remote add origin https://github.com/&ltusername&gt;/&ltyour_new_app_name&gt;.git</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Show the remote repositories that are being pointed to:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git remote -v</span></code></pre></td></tr></table></div></figure>
-
-
-<p>List remote and local branches:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git branch -a</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Push to github:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git push -u origin master</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Set up Heroku</h3>
-
-<p>First, go to Heroku and create a new repo.
-Next, push to heroku:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ heroku create
-</span><span class='line'>  $ git push heroku master
-</span><span class='line'>  $ heroku run rake db:migrate</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Further pushes to heroku</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git push heroku master</span></code></pre></td></tr></table></div></figure>
-
-
-<p>If you encounter problems, this will show you the logs on Heroku for diagnostics</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ heroku logs</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Frequent staging, commiting, and pushing</h2>
-
-<p>Even better is that if you are working offline, you can keep staging and committing.  Then push all to the remote repository at once when you have internet connectivity again.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git add .
-</span><span class='line'>  $ git commit -m "brief explanation of changes here"
-</span><span class='line'>  $ git push</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>What is the status of your files</h3>
-
-<p>How is git looking (you will find some useful guidance printed out with this command too):</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git status</span></code></pre></td></tr></table></div></figure>
-
-
-<h1>Branching</h1>
-
-<h3>New branch exists on remote</h3>
-
-<h4>New branches on github</h4>
-
-<p>So, your teammate has been working on a new branch they just created and then committed to github.  You now want to start working locally on that new branch.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git fetch origin bug-request-id
-</span><span class='line'>  $ git checkout bug-request-id</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>Several new branches on github</h4>
-
-<p>You&rsquo;ve been heads down on your work on a branch and your team has created several new branches remotely on github and now you need to start contributing to those branches.  To get look at what the remote branches are,</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git fetch</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now you will see everything on the remote when you want to list your local and remote branches with this command:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git branch -a</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Finally, to bring the remote branch code down to your local, once you fetched:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git checkout bug-request-id</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Create new branch locally</h3>
-
-<h4>Starting the new branch locally</h4>
-
-<p>First, create the branch locally.  This automatically changes you to this branch locally.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git checkout -b new_branch_name</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Note, you can do this even if you already have changes made.  They&rsquo;ll simply still be there, unstaged and uncommitted in the new branch.</p>
-
-<h4>Pushing the new branch to github</h4>
-
-<p>To check this into github, do this and the new branch will automatically get created on github,
-then your code will get pushed into that branch.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git push origin new_branch_name</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Good git references</h3>
-
-<p>Also very useful are these links:
-<a href="http://www.ndpsoftware.com/git-cheatsheet.html#loc=workspace;">http://www.ndpsoftware.com/git-cheatsheet.html#loc=workspace;</a>
-<a href="http://git-scm.com/book">http://git-scm.com/book</a>
-<a href="http://techblog.susanprestage.com/blog/2013/12/02/my-personal-git-command-reference/">http://techblog.susanprestage.com/blog/2013/12/02/my-personal-git-command-reference/</a></p>
-
-<h3>Working with a branch</h3>
-
-<p>Use this to confirm WHICH branch you are on.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git branch
-</span><span class='line'>  $ git add .
-</span><span class='line'>  $ git commit -m "a good commit message"
-</span><span class='line'>  $ git push origin new_branch_name</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Very important tips for switching between branches.  ALWAYS commit your changes to your current branch before changing branches.  I assumed the files would stay in the old branch as I switched to the new branch, but NO.  The changes will follow you around like a lost puppy until you commit them.</p>
-
-<h3>Merging your branch(es)</h3>
-
-<p>Ok, I&rsquo;ve got this branch (or worse, several branches).  I&rsquo;m done working on them.  They are all checked in, as branches.  But now, I need to get the master branch back up to date.  How do I do this with FIVE branches.  Don&rsquo;t panic, we can do this thing.  First, make sure everything is up to date and checked in.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git status</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Then, get onto the master branch.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git checkout master</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now we are going to merge each branch in, push it to github, and then delete the branch since we are done with them.  Skip the last step if you aren&rsquo;t quite done with the branch.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git merge chapter_2
-</span><span class='line'>  $ git push origin master    (also can just usually say 'git push' here)
-</span><span class='line'>  $ git branch -d chapter_2
-</span><span class='line'>
-</span><span class='line'>  $ git merge chapter_3
-</span><span class='line'>  $ git push
-</span><span class='line'>  $ git branch -d chapter_3</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Repeat until you&rsquo;ve merged in each branch.  Yeay!  This worked for me and I saw what I wanted on github.  I have both the branches I expect as well as each branch merge present as a commit on the master.  Excellent!  Git is starting to be a Very useful tool instead of an occasional impediment.  :)</p>
-
-<h1>Stashing</h1>
-
-<p>In the middle of some work on another branch and have to interrupt and get back to the master for some reason?  Do this.  First see what you are working on</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git diff</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Save working directory and index state WIP on my_branch and restores last commit.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git stash save</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now these return nothing</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git diff
-</span><span class='line'>  $ git status</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now get back to master and update:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git checkout master
-</span><span class='line'>  $ git pull</span></code></pre></td></tr></table></div></figure>
-
-
-<p>When done, get back to our stashed work:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git checkout my_branch
-</span><span class='line'>  $ git stash apply</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Verify we are in the same place:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git diff
-</span><span class='line'>
-</span><span class='line'>  $ git stash list
-</span><span class='line'>  $ git stash apply stash@{1}
-</span><span class='line'>  $ git stash drop</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Whoops!  Now what do I do?  Gentle commands</h2>
-
-<h3>How to undo my last commit, not yet pushed</h3>
-
-<p>I staged my files <code>git add .</code> and then committed them <code>git commit -m "changes I don't want to make yet"</code>, but the I realize that I want to undo all that for some reason, like I&rsquo;m on the wrong branch.</p>
-
-<p>Simple.  Two steps.  First, undo the commit.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git reset --soft HEAD~</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Next, unstage the files.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git reset HEAD app/helpers/timezone_helper.rb</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Do a <code>git status</code> before and after each command to better see what is happening.</p>
-
-<h3>Check out a particular commit by SHA</h3>
-
-<p>To check out a particular commit, use</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git checkout &ltsha1&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Revert changes to local working copy</h3>
-
-<p>To revert changes made to your working copy, restoring your local copy to the most recently checked in remote copy, do this</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git checkout .</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Powerful commands, use with caution</h2>
-
-<h3>Unstage</h3>
-
-<p>Reset the staging area to match the most recent commit, but leave the working directory unchanged. This unstages all files without overwriting any changes, giving you the opportunity to re-build the staged snapshot from scratch.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git reset</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Reset the staging area and the working directory to match the most recent commit. In addition to unstaging changes, the &ndash;hard flag tells Git to overwrite all changes in the working directory, too. Put another way: this obliterates all uncommitted changes, so make sure you really want to throw away your local developments before using it.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git reset --hard</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Careful: <code>git reset &ndash;hard</code> WILL DELETE YOUR WORKING DIRECTORY CHANGES. Be sure to stash any local changes you want to keep before running this command.</p>
-
-<p>Assuming you are sitting on that commit, then this command will wack it&hellip;</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git reset --hard HEAD~1</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The HEAD~1 means the commit before head.</p>
-
-<p>Or, you could look at the output of git log, find the commit id of the commit you want to back up to, and then do this:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git reset --hard &lt;sha1-commit-id&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>If you REALLY want to rewrite history.  Think very, very carefully about this BEFORE doing it.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git reset --hard &lt;old-commit-id&gt;
-</span><span class='line'>  $ git push -f</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Switch to specific commit</h3>
-
-<p>Temporarily switch to a different commit</p>
-
-<p>If you want to temporarily go back to it, fool around, then come back to where you are, all you have to do is check out the desired commit:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  # This will detach your HEAD, that is, leave you with no branch checked out:
-</span><span class='line'>
-</span><span class='line'>  $ git checkout 0d1d7fc32</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Or if you want to make commits while you&rsquo;re there, go ahead and make a new branch while you&rsquo;re at it:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  git checkout -b old-state 0d1d7fc32</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Merge</h3>
-
-<p>How to merge the master branch into the feature branch? Easy:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git checkout feature1
-</span><span class='line'>  $ git merge master</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Merge branch back into master</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git checkout master
-</span><span class='line'>  $ git merge my_branch</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Merge conflict</h3>
-
-<p>When there is a conflict during a merge, you have to finish the merge commit manually. It sounds like you&rsquo;ve done the first two steps, to edit the files that conflicted and then run</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git add</span></code></pre></td></tr></table></div></figure>
-
-
-<p>on them to mark them as resolved.</p>
-
-<p>Finally, you need to actually commit the merge with</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git commit</span></code></pre></td></tr></table></div></figure>
-
-
-<p>after which you will be able to switch branches again.</p>
-
-<h3>Have I forgotten to push?</h3>
-
-<p>How do I tell if my committed changes have been pushed to github?</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git log origin/master..HEAD</span></code></pre></td></tr></table></div></figure>
-
-
-<p>You can also view the diff using the same syntax</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git diff origin/master..HEAD</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Duplicate a branch</h3>
-
-<p>Copy old_branch into a new_branch.  (Useful for trying out a merge you are worried about.)</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git checkout old_branch
-</span><span class='line'>  $ git branch new_branch
-</span><span class='line'>  $ git checkout new_branch</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Destroy local branch</h3>
-
-<p>Get rid of a branch and everything in it changed or not.  (Useful after you&rsquo;ve tried out a merge on a temporary branch.)</p>
-
-<p>First, you have to get rid of the changes:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git reset --hard HEAD</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Next, change to a different, good branch</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git checkout master</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Lastly, delete the branch</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git branch -d temporary_branch</span></code></pre></td></tr></table></div></figure>
-
-
-<p>you may need to use a -D option to force this.  BE CAREFUL not to delete something you care about.  Really!</p>
-
-<h3>Tidy up leftovers</h3>
-
-<p>Once you delete the branch from the remote, you can prune to get rid of remote tracking branches with:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git branch -r -d origin/newfeaturebranch</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This will prune All of your old references to already-deleted-on-github branches.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git remote prune origin</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Restore local master</h3>
-
-<p>You&rsquo;ve messed things up on your local master and need to get back.</p>
-
-<p>Setting your branch to exactly match the remote branch can be done in two steps:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git fetch origin
-</span><span class='line'>  $ git reset --hard origin/master</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Fini</h2>
-
-<p>Thank you for reading.  I hope you found this useful.  I invite you to read my next post if you are interested in the unix commands that I find most useful.</p>
-</div>
-  
-  
-
-
-        </article>
-      
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-01T18:59:42-08:00"  data-updated="true" itemprop="datePublished dateCreated">Dec  1, 2013</time>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2013/12/01/overcoming-my-fear-of-git-through-knowledge/" itemprop="url">Overcoming My Fear of Git Through Knowledge</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><h2>Getting past my fear of Git</h2>
-
-<p>Git kept scaring me.  Mostly, this fear is based on how wonderfully powerful a tool that Git (and github) can be and my lack of easy comfort with the commands.  So, I&rsquo;ve made a list of my most used commands and any notes I need for use.  This goes a bit long, since as I learned more and more commands, I added more that I was starting to use.  Good luck!</p>
-
-<h2>What is Git</h2>
-
-<h4>Basics</h4>
-
-<p>Git is a version control system, VCS.  Don&rsquo;t think too carefully about the other VCSs you know, like Perforce or Subversion.  Git is much different and trying to compare will likely cause confusion.</p>
-
-<h4>Snapshots, instead of differences</h4>
-
-<p>Most other systems tend to store data as changes to a base version of each file.  Git doesn&rsquo;t think of it&rsquo;s data that way.  Instead, Git thinks of its data more like a set of snapshots of a mini-filesystem.  And, to be efficient, Git only takes a snapshot of the files that have changed, simply linking to all the other files that have not changed.</p>
-
-<h4>Local</h4>
-
-<p>Most operations you perform with Git will be local. The entire history of your repository will be right there on your machine, which means that diffs and browsing the history of your project is very quick.  This also means that working offline is not a problem.  You simply commit all you like while offline, then push your work up to the remote repository server when you get back to a network connection.</p>
-
-<h4>The Three States of Git</h4>
-
-<h6>1. The Working Directory</h6>
-
-<h6>2. The Staging Area</h6>
-
-<h6>3. The Git Repository</h6>
-
-<p><a target="_blank" href="#blog"><img class="img-portfolio img-responsive" src="https://s3-us-west-2.amazonaws.com/technicalblog/three_states_of_git.png" width="340" height="284"></a></p>
-
-<p>Git has three main states that your files can reside in: commited, modified, and staged.  Commited means that the data is safely stored in your local repository.  Modified means that you have changed the file, but not yet commited it to your local repository.  Staged means that you have marked a modified file to go into your next commit snapshot.</p>
-
-<ul>
-<li><p>Check out the project to bring the files from the git repository into your working directory.</p></li>
-<li><p>Stage your files to bring those changes from your working directory to the staging area.</p></li>
-<li><p>Commit your files to bring the changes from the staging area to the git repository.</p></li>
-</ul>
-
-
-<p>Your workflow will be something like this:</p>
-
-<ol>
-<li>Modify files in your working directory.</li>
-<li>Stage the files.  This adds snapshots of them to the staging area.</li>
-<li>Commit your changes.  This takes the files as they are in the staging area and stores that snapshot in your git repository.</li>
-</ol>
-
-
-<h2>Getting started with Git</h2>
-
-<p>To install and setup Git, go here and follow the very good instructions.</p>
-
-<ul>
-<li><a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">http://git-scm.com/book/en/Getting-Started-Installing-Git</a></li>
-<li><a href="http://git-scm.com/book/en/Getting-Started-First-Time-Git-Setup">http://git-scm.com/book/en/Getting-Started-First-Time-Git-Setup</a></li>
-</ul>
-
-
-<p>I highly recommend the entire <a href="http://git-scm.com/documentation">http://git-scm.com/documentation</a> site.  For a more thorough explanation of Git, what it is and how it works, I particularly recommend this chapter <a href="http://git-scm.com/book/en/Getting-Started-Git-Basics.">http://git-scm.com/book/en/Getting-Started-Git-Basics.</a></p>
-
-<h2>Final notes on Git</h2>
-
-<p>I have found that it is important to stage and commit your files often and in small increments.  Any time you have a change that makes sense as its own commit, do so.  If what you are working on is so big that you think you ought to wait to commit, then I strongly recommend branching and then again you should be able to break down your commits within that branch.  You really want to be able to track what you did later, both for yourself and for others trying to maintain your code.</p>
-
-<h2>Fini</h2>
-
-<p>Thank you for reading.  I hope you found this useful.  I invite you to read my next post if you are interested in the Git commands that I find most useful.</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
       
-        <li class="previous disabled"><a href="#">&larr;&nbsp;Older</a></li>
+        <li class="previous"><a href="/posts/2">&larr;&nbsp;Older</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
       
@@ -1449,13 +1333,13 @@ then your code will get pushed into that branch.</p>
     
     <a class="list-group-item " href="/blog/2014/11/06/how-do-i-upgrade-my-ruby-again/">How Do I Upgrade My Ruby Again?</a>
     
-    <a class="list-group-item " href="/blog/2014/03/19/what-were-those-octopress-commands-again/">What Were Those Octopress Commands Again?</a>
+    <a class="list-group-item " href="/blog/2014/10/21/mastering-date-and-time-manipulation-in-rails/">Mastering Date and Time Manipulation in Rails</a>
     
-    <a class="list-group-item " href="/blog/2013/12/07/quickly-create-a-rails-app-with-2-working-resources/">Quickly Create a Rails App With 2 Working Resources</a>
+    <a class="list-group-item " href="/blog/2014/10/21/binding-pry-and-the-power-of-the-rails-console/">Binding Pry and the Power of the Rails Console</a>
     
-    <a class="list-group-item " href="/blog/2013/12/06/why-i-like-vi/">Why I Like VI</a>
+    <a class="list-group-item " href="/blog/2014/10/13/how-to-do-database-stuff-from-within-rails/">How to Do Database Stuff From Within Rails</a>
     
-    <a class="list-group-item " href="/blog/2013/12/04/unix-alias-file/">How the Unix .alias File Can Make Your Command Line Life Better</a>
+    <a class="list-group-item " href="/blog/2014/03/21/string-manipulation-in-ruby/">String Manipulation in Ruby</a>
     
   </div>
 </section>

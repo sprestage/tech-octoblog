@@ -4,7 +4,7 @@
   <title><![CDATA[My Technical Blog]]></title>
   <link href="http://techblog.susanprestage.com//atom.xml" rel="self"/>
   <link href="http://techblog.susanprestage.com//"/>
-  <updated>2016-01-17T11:52:13-08:00</updated>
+  <updated>2016-01-17T12:06:41-08:00</updated>
   <id>http://techblog.susanprestage.com//</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -80,6 +80,387 @@
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>  $ rvm use 2.0.0 --default</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mastering Date and Time Manipulation in Rails]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2014/10/21/mastering-date-and-time-manipulation-in-rails/"/>
+    <updated>2014-10-21T13:14:02-07:00</updated>
+    <id>http://techblog.susanprestage.com//blog/2014/10/21/mastering-date-and-time-manipulation-in-rails</id>
+    <content type="html"><![CDATA[<p>There are several different ways of manipulating time in rails.  Instead of searching for them every time I need them, I will keep there here in one easy location.</p>
+
+<p>Rails gives built-in ways to add days (which will suit for weeks as well) and also to add months.  This means that using rails to add a month (which will suit for years as well) has built into it accommodations for February, leap years, leap centuries, etc.  Use Rails for this magic.  Do Not roll your own dating.</p>
+
+<h2>Future and Past</h2>
+
+<h3>By month</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>DateTime.now
+</span><span class='line'>=&gt; Tue, 21 Oct 2014 13:08:17 -0700
+</span><span class='line'>
+</span><span class='line'>DateTime.now &gt;&gt; 1
+</span><span class='line'>=&gt; Fri, 21 Nov 2014 13:08:44 -0700
+</span><span class='line'>
+</span><span class='line'>DateTime.now &gt;&gt; -2
+</span><span class='line'>=&gt; Thu, 21 Aug 2014 13:09:23 -0700</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>By week</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>DateTime.now
+</span><span class='line'>=&gt; Tue, 21 Oct 2014 15:00:17 -0700
+</span><span class='line'>
+</span><span class='line'>DateTime.now + (2 * 7)
+</span><span class='line'>=&gt; Tue, 04 Nov 2014 15:00:52 -0700
+</span><span class='line'>
+</span><span class='line'>DateTime.now - (1 * 7)
+</span><span class='line'>=&gt; Tue, 14 Oct 2014 15:04:16 -0700</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Past only</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>1.week.ago
+</span><span class='line'>=&gt; Tue, 14 Oct 2014 20:20:14 UTC +00:00
+</span><span class='line'>
+</span><span class='line'>2.weeks.ago
+</span><span class='line'>=&gt; Tue, 07 Oct 2014 20:20:27 UTC +00:00
+</span><span class='line'>
+</span><span class='line'>1.month.ago
+</span><span class='line'>=&gt; Sun, 21 Sep 2014 20:20:34 UTC +00:00
+</span><span class='line'>
+</span><span class='line'>2.months.ago
+</span><span class='line'>=&gt; Thu, 21 Aug 2014 20:20:41 UTC +00:00</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Date only</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Date.today
+</span><span class='line'>=&gt; Wed, 22 Oct 2014
+</span><span class='line'>
+</span><span class='line'>Date.today+2
+</span><span class='line'>=&gt; Fri, 24 Oct 2014</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Binding Pry and the Power of the Rails Console]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2014/10/21/binding-pry-and-the-power-of-the-rails-console/"/>
+    <updated>2014-10-21T13:13:17-07:00</updated>
+    <id>http://techblog.susanprestage.com//blog/2014/10/21/binding-pry-and-the-power-of-the-rails-console</id>
+    <content type="html"><![CDATA[<p>The most powerful tool I use on a daily basis is the binding.pry gem.</p>
+
+<h2>Setup</h2>
+
+<p>Put the pry-rails gem into your Gemfile for dev and test.</p>
+
+<h6>Gemfile</h6>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>group :test, :development do
+</span><span class='line'>  gem 'pry-rails'
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You will now need to run</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ bundle install</span></code></pre></td></tr></table></div></figure>
+
+
+<p>at the command line.</p>
+
+<h2>How to use</h2>
+
+<p>Put the phrase &lsquo;binding.pry&rsquo; without the quotes into a piece of your code that you want to investigate and binding.pry will open up a rails console at your command line.  This even works in test files.  If you need this in the middle of a haml file, be sure to obey the tabbing convention required by haml, and also put a &lsquo;-&rsquo; dash in front of the binding.pry, like so:</p>
+
+<h6>Ruby file syntax</h6>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  binding.pry</span></code></pre></td></tr></table></div></figure>
+
+
+<h6>Haml file syntax</h6>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  - binding.pry</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Remember, you will need to type exit out of the rails console and to return your server to  whatever it was doing before it hit the binding.pry.</p>
+
+<p>This is particularly useful to see the current scope of variables and also to look at what is in the database.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Company.find(7).users.find(24)
+</span><span class='line'>
+</span><span class='line'>Company.find(7).team_memberships
+</span><span class='line'>
+</span><span class='line'>Company.find(7).users.find(26)
+</span><span class='line'>
+</span><span class='line'>Company.find(7).users
+</span><span class='line'>
+</span><span class='line'>Company.all
+</span><span class='line'>
+</span><span class='line'>c = Company.find(7)
+</span><span class='line'>
+</span><span class='line'>c.users
+</span><span class='line'>
+</span><span class='line'>User.where(id: 45)
+</span><span class='line'>
+</span><span class='line'>User.where(email: "susan@example.com")
+</span><span class='line'>
+</span><span class='line'>User.where(id: 73).pluck(:first_name, :last_name)</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Do Database Stuff From Within Rails]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2014/10/13/how-to-do-database-stuff-from-within-rails/"/>
+    <updated>2014-10-13T11:52:35-07:00</updated>
+    <id>http://techblog.susanprestage.com//blog/2014/10/13/how-to-do-database-stuff-from-within-rails</id>
+    <content type="html"><![CDATA[<h3>Rails Console</h3>
+
+<p>The rails console is one of the most powerful debug and development tools.  Most particularly, for database manipulation.</p>
+
+<p>Here are some of my most frequently used commands:</p>
+
+<p>Here are some of my much less frequently used, but very powerful and sometimes necessary.  As a rule, I try to only examine what is in my database from the console.  Creating and deleting records from the command line really isn&rsquo;t the way you want to manipulate your database.  That said, sometimes to have to:</p>
+
+<h4>Create</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>u = User.create password: "mypasswd", first_name: "test", last_name: "testovich"</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Update</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>u = User.find(30)
+</span><span class='line'>u.update_attributes(roles_mask: 3)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If the above doesn&rsquo;t work, this may:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>User.where(id: 27)[0].update(age: 42, next_birthday: "2014-10-14")</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Destroy</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>User.find(30).destroy</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Backup &amp; Restore</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ pg_dump -U featherlight featherlight_development -Fc &gt; backup.dump</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The first command seems to be the one that works</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ pg_restore -c -C -F c -v -U postgres backup.dump
+</span><span class='line'>$ pg_restore -U featherlight -d featherlight_development backup.dump</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Creating a database and user</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ createuser portfolio
+</span><span class='line'>Shall the new role be a superuser? (y/n) n
+</span><span class='line'>Shall the new role be allowed to create databases? (y/n) n
+</span><span class='line'>Shall the new role be allowed to create more new roles? (y/n) n
+</span><span class='line'>CREATE ROLE
+</span><span class='line'>$</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ createdb portfolio_test -O portfolio</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>-O owner name is the option in the command line.</li>
+</ul>
+
+
+<h3>Queries with date ranges</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>FeedbackRequest.where(created_at: 5.days.ago..4.days.ago)</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[String Manipulation in Ruby]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2014/03/21/string-manipulation-in-ruby/"/>
+    <updated>2014-03-21T12:12:17-07:00</updated>
+    <id>http://techblog.susanprestage.com//blog/2014/03/21/string-manipulation-in-ruby</id>
+    <content type="html"><![CDATA[<h1>Set vs concatenate</h1>
+
+<p>Set variable equal to this string.  No initialization needed.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>farewell = "Good"  </span></code></pre></td></tr></table></div></figure>
+
+
+<p>Print out that string.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>puts farewell</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will be the output.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  =&gt; Good</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Concatenation requires the variable to be initialized.  This only works because the variable was initialized above.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>farewell &lt;&lt; "bye!"  </span></code></pre></td></tr></table></div></figure>
+
+
+<p>Print out that string.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>puts farewell</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will be the output.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  =&gt; Goodbye!</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>String operations</h1>
+
+<p>Find where a substring is within the source string using index.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"hello".index('e')             #=&gt; 1
+</span><span class='line'>"hello".index('lo')            #=&gt; 3
+</span><span class='line'>"hello".index('a')             #=&gt; nil
+</span><span class='line'>"hello".index(?e)              #=&gt; 1
+</span><span class='line'>"hello".index(/[aeiou]/, -3)   #=&gt; 4</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Take input from the user:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>puts "Please input some text: "
+</span><span class='line'>foo = gets.chomp
+</span><span class='line'>puts foo</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you are using ARGV to bring in command line arguments when you launch your app, you will run into conflict when using gets.  You can work around this two ways.  First is to use perform whatever tasks you need to on ARGV, then:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ARGV.clear
+</span><span class='line'>foo = gets.chomp</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Otherwise, everytime you call gets, you will need to specify that it is from IO, not Kernal:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>foo = $stdin.gets.chomp</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Replace the first instance of the sub_string, &ldquo;replace_me&rdquo;, with the contents of foo.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bar = bar.sub("replace_me", foo)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Globally replace the sub_string, &ldquo;replace_me&rdquo;, with the contents of foo.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bar = bar.&lt;b&gt;g&lt;/b&gt;sub("replace_me", foo)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Find the first example of substring, &ldquo;find_me&rdquo;.  This is most often used with regex in place of the &ldquo;find_me&rdquo; string.  Returns a string.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bing = bar.match("find_me")</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Find the every example of substring, &ldquo;find_me&rdquo;.  This is most often used with regex in place of the &ldquo;find_me&rdquo; string.  Returns an array of strings.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bing = bar.scan("find_me")</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>

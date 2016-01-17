@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | My Technical Blog]]></title>
   <link href="http://techblog.susanprestage.com//blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://techblog.susanprestage.com//"/>
-  <updated>2016-01-17T11:52:13-08:00</updated>
+  <updated>2016-01-17T12:06:41-08:00</updated>
   <id>http://techblog.susanprestage.com//</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -12,6 +12,220 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mastering Date and Time Manipulation in Rails]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2014/10/21/mastering-date-and-time-manipulation-in-rails/"/>
+    <updated>2014-10-21T13:14:02-07:00</updated>
+    <id>http://techblog.susanprestage.com//blog/2014/10/21/mastering-date-and-time-manipulation-in-rails</id>
+    <content type="html"><![CDATA[<p>There are several different ways of manipulating time in rails.  Instead of searching for them every time I need them, I will keep there here in one easy location.</p>
+
+<p>Rails gives built-in ways to add days (which will suit for weeks as well) and also to add months.  This means that using rails to add a month (which will suit for years as well) has built into it accommodations for February, leap years, leap centuries, etc.  Use Rails for this magic.  Do Not roll your own dating.</p>
+
+<h2>Future and Past</h2>
+
+<h3>By month</h3>
+
+<pre><code>DateTime.now
+=&gt; Tue, 21 Oct 2014 13:08:17 -0700
+
+DateTime.now &gt;&gt; 1
+=&gt; Fri, 21 Nov 2014 13:08:44 -0700
+
+DateTime.now &gt;&gt; -2
+=&gt; Thu, 21 Aug 2014 13:09:23 -0700
+</code></pre>
+
+<h3>By week</h3>
+
+<pre><code>DateTime.now
+=&gt; Tue, 21 Oct 2014 15:00:17 -0700
+
+DateTime.now + (2 * 7)
+=&gt; Tue, 04 Nov 2014 15:00:52 -0700
+
+DateTime.now - (1 * 7)
+=&gt; Tue, 14 Oct 2014 15:04:16 -0700
+</code></pre>
+
+<h2>Past only</h2>
+
+<pre><code>1.week.ago
+=&gt; Tue, 14 Oct 2014 20:20:14 UTC +00:00
+
+2.weeks.ago
+=&gt; Tue, 07 Oct 2014 20:20:27 UTC +00:00
+
+1.month.ago
+=&gt; Sun, 21 Sep 2014 20:20:34 UTC +00:00
+
+2.months.ago
+=&gt; Thu, 21 Aug 2014 20:20:41 UTC +00:00
+</code></pre>
+
+<h2>Date only</h2>
+
+<pre><code>Date.today
+=&gt; Wed, 22 Oct 2014
+
+Date.today+2
+=&gt; Fri, 24 Oct 2014
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Binding Pry and the Power of the Rails Console]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2014/10/21/binding-pry-and-the-power-of-the-rails-console/"/>
+    <updated>2014-10-21T13:13:17-07:00</updated>
+    <id>http://techblog.susanprestage.com//blog/2014/10/21/binding-pry-and-the-power-of-the-rails-console</id>
+    <content type="html"><![CDATA[<p>The most powerful tool I use on a daily basis is the binding.pry gem.</p>
+
+<h2>Setup</h2>
+
+<p>Put the pry-rails gem into your Gemfile for dev and test.</p>
+
+<h6>Gemfile</h6>
+
+<pre><code>group :test, :development do
+  gem 'pry-rails'
+end
+</code></pre>
+
+<p>You will now need to run
+<code>
+  $ bundle install
+</code></p>
+
+<p>at the command line.</p>
+
+<h2>How to use</h2>
+
+<p>Put the phrase &lsquo;binding.pry&rsquo; without the quotes into a piece of your code that you want to investigate and binding.pry will open up a rails console at your command line.  This even works in test files.  If you need this in the middle of a haml file, be sure to obey the tabbing convention required by haml, and also put a &lsquo;-&rsquo; dash in front of the binding.pry, like so:</p>
+
+<h6>Ruby file syntax</h6>
+
+<pre><code>  binding.pry
+</code></pre>
+
+<h6>Haml file syntax</h6>
+
+<pre><code>  - binding.pry
+</code></pre>
+
+<p>Remember, you will need to type exit out of the rails console and to return your server to  whatever it was doing before it hit the binding.pry.</p>
+
+<p>This is particularly useful to see the current scope of variables and also to look at what is in the database.
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Company.find(7).users.find(24)&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;Company.find(7).team_memberships&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;Company.find(7).users.find(26)&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;Company.find(7).users&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;Company.all&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;c = Company.find(7)&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;c.users&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;User.where(id: 45)&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;User.where(email: &ldquo;&lt;a href="&#x6d;&#97;&#x69;&#108;&#x74;&#x6f;&#x3a;&#115;&#x75;&#115;&#x61;&#110;&#64;&#x65;&#x78;&#x61;&#109;&#112;&#x6c;&#x65;&#46;&#x63;&#x6f;&#109;"&gt;&#x73;&#117;&#x73;&#97;&#x6e;&#x40;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#46;&#x63;&#x6f;&#x6d;&lt;/a&gt;&rdquo;)&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;User.where(id: 73).pluck(:first_name, :last_name)</span></code></pre></td></tr></table></div></figure></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Do Database Stuff From Within Rails]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2014/10/13/how-to-do-database-stuff-from-within-rails/"/>
+    <updated>2014-10-13T11:52:35-07:00</updated>
+    <id>http://techblog.susanprestage.com//blog/2014/10/13/how-to-do-database-stuff-from-within-rails</id>
+    <content type="html"><![CDATA[<h3>Rails Console</h3>
+
+<p>The rails console is one of the most powerful debug and development tools.  Most particularly, for database manipulation.</p>
+
+<p>Here are some of my most frequently used commands:</p>
+
+<p>Here are some of my much less frequently used, but very powerful and sometimes necessary.  As a rule, I try to only examine what is in my database from the console.  Creating and deleting records from the command line really isn&rsquo;t the way you want to manipulate your database.  That said, sometimes to have to:</p>
+
+<h4>Create</h4>
+
+<pre><code>u = User.create password: "mypasswd", first_name: "test", last_name: "testovich"
+</code></pre>
+
+<h4>Update</h4>
+
+<pre><code>u = User.find(30)
+u.update_attributes(roles_mask: 3)
+</code></pre>
+
+<p>If the above doesn&rsquo;t work, this may:
+<code>
+User.where(id: 27)[0].update(age: 42, next_birthday: "2014-10-14")
+</code></p>
+
+<h4>Destroy</h4>
+
+<pre><code>User.find(30).destroy
+</code></pre>
+
+<h3>Backup &amp; Restore</h3>
+
+<pre><code>$ pg_dump -U featherlight featherlight_development -Fc &gt; backup.dump
+</code></pre>
+
+<p>The first command seems to be the one that works
+<code>
+$ pg_restore -c -C -F c -v -U postgres backup.dump
+$ pg_restore -U featherlight -d featherlight_development backup.dump
+</code></p>
+
+<h3>Creating a database and user</h3>
+
+<pre><code>$ createuser portfolio
+Shall the new role be a superuser? (y/n) n
+Shall the new role be allowed to create databases? (y/n) n
+Shall the new role be allowed to create more new roles? (y/n) n
+CREATE ROLE
+$
+</code></pre>
+
+<pre><code>$ createdb portfolio_test -O portfolio
+</code></pre>
+
+<ul>
+<li>-O owner name is the option in the command line.</li>
+</ul>
+
+
+<h3>Queries with date ranges</h3>
+
+<pre><code>FeedbackRequest.where(created_at: 5.days.ago..4.days.ago)
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Quickly Create a Rails App With 2 Working Resources]]></title>

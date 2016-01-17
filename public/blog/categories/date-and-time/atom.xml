@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Date and Time | My Technical Blog]]></title>
+  <link href="http://techblog.susanprestage.com//blog/categories/date-and-time/atom.xml" rel="self"/>
+  <link href="http://techblog.susanprestage.com//"/>
+  <updated>2016-01-17T12:06:41-08:00</updated>
+  <id>http://techblog.susanprestage.com//</id>
+  <author>
+    <name><![CDATA[Susan Prestage]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Mastering Date and Time Manipulation in Rails]]></title>
+    <link href="http://techblog.susanprestage.com//blog/2014/10/21/mastering-date-and-time-manipulation-in-rails/"/>
+    <updated>2014-10-21T13:14:02-07:00</updated>
+    <id>http://techblog.susanprestage.com//blog/2014/10/21/mastering-date-and-time-manipulation-in-rails</id>
+    <content type="html"><![CDATA[<p>There are several different ways of manipulating time in rails.  Instead of searching for them every time I need them, I will keep there here in one easy location.</p>
+
+<p>Rails gives built-in ways to add days (which will suit for weeks as well) and also to add months.  This means that using rails to add a month (which will suit for years as well) has built into it accommodations for February, leap years, leap centuries, etc.  Use Rails for this magic.  Do Not roll your own dating.</p>
+
+<h2>Future and Past</h2>
+
+<h3>By month</h3>
+
+<pre><code>DateTime.now
+=&gt; Tue, 21 Oct 2014 13:08:17 -0700
+
+DateTime.now &gt;&gt; 1
+=&gt; Fri, 21 Nov 2014 13:08:44 -0700
+
+DateTime.now &gt;&gt; -2
+=&gt; Thu, 21 Aug 2014 13:09:23 -0700
+</code></pre>
+
+<h3>By week</h3>
+
+<pre><code>DateTime.now
+=&gt; Tue, 21 Oct 2014 15:00:17 -0700
+
+DateTime.now + (2 * 7)
+=&gt; Tue, 04 Nov 2014 15:00:52 -0700
+
+DateTime.now - (1 * 7)
+=&gt; Tue, 14 Oct 2014 15:04:16 -0700
+</code></pre>
+
+<h2>Past only</h2>
+
+<pre><code>1.week.ago
+=&gt; Tue, 14 Oct 2014 20:20:14 UTC +00:00
+
+2.weeks.ago
+=&gt; Tue, 07 Oct 2014 20:20:27 UTC +00:00
+
+1.month.ago
+=&gt; Sun, 21 Sep 2014 20:20:34 UTC +00:00
+
+2.months.ago
+=&gt; Thu, 21 Aug 2014 20:20:41 UTC +00:00
+</code></pre>
+
+<h2>Date only</h2>
+
+<pre><code>Date.today
+=&gt; Wed, 22 Oct 2014
+
+Date.today+2
+=&gt; Fri, 24 Oct 2014
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>
