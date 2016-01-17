@@ -128,7 +128,7 @@
 
 <div class="entry-content clearfix" itemprop="articleBody description"><h1>Intro</h1>
 
-<p>I created this rails app in preparation to learn about resource associations.  This was the basic app I created before I implemented anything complicated.  It is a good demonstration of how to generate the rails app, the resoursces, and the tests.  I also go through several steps to get the app ready to be tested using minitest and also how to lock down the app from a security perspective.</p>
+<p>I created this rails app in preparation to learn about resource associations.  This was the basic app I created before I implemented anything complicated.  It is a good demonstration of how to generate the rails app, the resources, and the tests.  I also go through several steps to get the app ready to be tested using minitest and also how to lock down the app from a security perspective.</p>
 
 <p>This is a simple rails app, with a pair of resources, Doctors and Patients.</p>
 
@@ -136,20 +136,20 @@
 
 <h2>Generate rails app</h2>
 
-<pre>
-  $ rails _3.2.16_ new DoctorPatientTracker --skip-test-unit
-
-  $ cd DoctorPatientTracker
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ rails _3.2.16_ new DoctorPatientTracker --skip-test-unit
+</span><span class='line'>
+</span><span class='line'>  $ cd DoctorPatientTracker</span></code></pre></td></tr></table></div></figure>
 
 
 <h2>Prepare for testing</h2>
 
 <p>Edit Gemfile for some useful debugging gems.  Then run bundler</p>
 
-<pre>
-  $ bundle
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ bundle</span></code></pre></td></tr></table></div></figure>
 
 
 <h2>Secure your app</h2>
@@ -175,38 +175,42 @@ Add a default route to /config/routes.rb
 
 <p>Create the scaffold for the new resource, Doctor.</p>
 
-<pre>
-  $ rails g scaffold Doctor name:string --no-test-framework --no-assets --no-stylesheets --no-scss
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ rails g scaffold Doctor name:string --no-test-framework --no-assets --no-stylesheets --no-scss</span></code></pre></td></tr></table></div></figure>
 
 
 <h2>Migrate the DB for 1st resource</h2>
 
 <p>Migrate the database to pick up the changes.</p>
 
-<pre>
-  $ rake db:migrate
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ rake db:migrate</span></code></pre></td></tr></table></div></figure>
 
 
 <h2>Create tests for 1st resource</h2>
 
-<p>I know I should probably create all the tests first, but I feel so lost
-without the stuff there first, ya know.</p>
+<p>I know I should probably create all the tests first, but I feel so lost without the stuff there first, ya know.</p>
 
 <p>Create the tests using generate, then completely replace what is in the files.</p>
 
-<pre>
-  $ rails g mini_test:feature DoctorShowIndex
-
-  $ rails g mini_test:feature DoctorShow
-
-  $ rails g mini_test:feature DoctorCreate
-
-  $ rails g mini_test:feature DoctorUpdate
-
-  $ rails g mini_test:feature DoctorDelete
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ rails g mini_test:feature DoctorShowIndex
+</span><span class='line'>
+</span><span class='line'>  $ rails g mini_test:feature DoctorShow
+</span><span class='line'>
+</span><span class='line'>  $ rails g mini_test:feature DoctorCreate
+</span><span class='line'>
+</span><span class='line'>  $ rails g mini_test:feature DoctorUpdate
+</span><span class='line'>
+</span><span class='line'>  $ rails g mini_test:feature DoctorDelete</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Add /test/ folder.  Add /test/doctors/ folder.  Move doctor tests. Then
@@ -223,35 +227,40 @@ models.</p>
 
 <p>Make sure all Doctor stuff works.</p>
 
-<pre>
-  $ rake
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ rake</span></code></pre></td></tr></table></div></figure>
 
 
 <h2>Create 2nd resource scaffold</h2>
 
 <p>Time to implement Patients:</p>
 
-<pre>
-  $ rails g scaffold Patient name:string --no-test-framework --no-assets --no-stylesheets --no-scss
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ rails g scaffold Patient name:string --no-test-framework --no-assets --no-stylesheets --no-scss</span></code></pre></td></tr></table></div></figure>
 
 
 <h2>Create tests for 2nd resource</h2>
 
 <p>Then create the Patient tests:</p>
 
-<pre>
-  $ rails g mini_test:feature PatientShowIndex
-
-  $ rails g mini_test:feature PatientShow
-
-  $ rails g mini_test:feature PatientCreate
-
-  $ rails g mini_test:feature ItemUpdate
-
-  $ rails g mini_test:feature ItemDelete
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ rails g mini_test:feature PatientShowIndex
+</span><span class='line'>
+</span><span class='line'>  $ rails g mini_test:feature PatientShow
+</span><span class='line'>
+</span><span class='line'>  $ rails g mini_test:feature PatientCreate
+</span><span class='line'>
+</span><span class='line'>  $ rails g mini_test:feature ItemUpdate
+</span><span class='line'>
+</span><span class='line'>  $ rails g mini_test:feature ItemDelete</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Add /test/patients/ folder.  Move patient tests.</p>
@@ -260,9 +269,8 @@ models.</p>
 
 <p>Add Patients to the DB:</p>
 
-<pre>
-  $ rake db:migrate
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ rake db:migrate</span></code></pre></td></tr></table></div></figure>
 
 
 <h2>Modify views for 2nd resource</h2>
@@ -276,9 +284,8 @@ models.</p>
 
 <p>Make sure all Patient stuff works.</p>
 
-<pre>
-  $ rake
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ rake</span></code></pre></td></tr></table></div></figure>
 
 
 <h1>Final notes</h1>

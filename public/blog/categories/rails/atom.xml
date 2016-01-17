@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | My Technical Blog]]></title>
   <link href="http://techblog.susanprestage.com//blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://techblog.susanprestage.com//"/>
-  <updated>2016-01-16T19:28:54-08:00</updated>
+  <updated>2016-01-16T19:33:44-08:00</updated>
   <id>http://techblog.susanprestage.com//</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -247,7 +247,7 @@ end
     <id>http://techblog.susanprestage.com//blog/2013/12/07/quickly-create-a-rails-app-with-2-working-resources</id>
     <content type="html"><![CDATA[<h1>Intro</h1>
 
-<p>I created this rails app in preparation to learn about resource associations.  This was the basic app I created before I implemented anything complicated.  It is a good demonstration of how to generate the rails app, the resoursces, and the tests.  I also go through several steps to get the app ready to be tested using minitest and also how to lock down the app from a security perspective.</p>
+<p>I created this rails app in preparation to learn about resource associations.  This was the basic app I created before I implemented anything complicated.  It is a good demonstration of how to generate the rails app, the resources, and the tests.  I also go through several steps to get the app ready to be tested using minitest and also how to lock down the app from a security perspective.</p>
 
 <p>This is a simple rails app, with a pair of resources, Doctors and Patients.</p>
 
@@ -255,21 +255,17 @@ end
 
 <h2>Generate rails app</h2>
 
-<pre>
-  $ rails _3.2.16_ new DoctorPatientTracker --skip-test-unit
+<pre><code>  $ rails _3.2.16_ new DoctorPatientTracker --skip-test-unit
 
   $ cd DoctorPatientTracker
-</pre>
-
+</code></pre>
 
 <h2>Prepare for testing</h2>
 
-<p>Edit Gemfile for some useful debugging gems.  Then run bundler</p>
-
-<pre>
+<p>Edit Gemfile for some useful debugging gems.  Then run bundler
+<code>
   $ bundle
-</pre>
-
+</code></p>
 
 <h2>Secure your app</h2>
 
@@ -292,41 +288,41 @@ Add a default route to /config/routes.rb
 
 <h2>Create 1st resource scaffold</h2>
 
-<p>Create the scaffold for the new resource, Doctor.</p>
-
-<pre>
+<p>Create the scaffold for the new resource, Doctor.
+<code>
   $ rails g scaffold Doctor name:string --no-test-framework --no-assets --no-stylesheets --no-scss
-</pre>
-
+</code></p>
 
 <h2>Migrate the DB for 1st resource</h2>
 
-<p>Migrate the database to pick up the changes.</p>
-
-<pre>
+<p>Migrate the database to pick up the changes.
+<code>
   $ rake db:migrate
-</pre>
-
+</code></p>
 
 <h2>Create tests for 1st resource</h2>
 
-<p>I know I should probably create all the tests first, but I feel so lost
-without the stuff there first, ya know.</p>
+<p>I know I should probably create all the tests first, but I feel so lost without the stuff there first, ya know.</p>
 
-<p>Create the tests using generate, then completely replace what is in the files.</p>
-
-<pre>
-  $ rails g mini_test:feature DoctorShowIndex
-
-  $ rails g mini_test:feature DoctorShow
-
-  $ rails g mini_test:feature DoctorCreate
-
-  $ rails g mini_test:feature DoctorUpdate
-
-  $ rails g mini_test:feature DoctorDelete
-</pre>
-
+<p>Create the tests using generate, then completely replace what is in the files.
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ rails g mini_test:feature DoctorShowIndex&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  $ rails g mini_test:feature DoctorShow&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  $ rails g mini_test:feature DoctorCreate&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  $ rails g mini_test:feature DoctorUpdate&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  $ rails g mini_test:feature DoctorDelete</span></code></pre></td></tr></table></div></figure></p>
 
 <p>Add /test/ folder.  Add /test/doctors/ folder.  Move doctor tests. Then
 add fixture support to /test/test_helper.rb</p>
@@ -340,49 +336,48 @@ models.</p>
 
 <h2>Run the tests for 1st resource</h2>
 
-<p>Make sure all Doctor stuff works.</p>
-
-<pre>
+<p>Make sure all Doctor stuff works.
+<code>
   $ rake
-</pre>
-
+</code></p>
 
 <h2>Create 2nd resource scaffold</h2>
 
-<p>Time to implement Patients:</p>
-
-<pre>
+<p>Time to implement Patients:
+<code>
   $ rails g scaffold Patient name:string --no-test-framework --no-assets --no-stylesheets --no-scss
-</pre>
-
+</code></p>
 
 <h2>Create tests for 2nd resource</h2>
 
-<p>Then create the Patient tests:</p>
-
-<pre>
-  $ rails g mini_test:feature PatientShowIndex
-
-  $ rails g mini_test:feature PatientShow
-
-  $ rails g mini_test:feature PatientCreate
-
-  $ rails g mini_test:feature ItemUpdate
-
-  $ rails g mini_test:feature ItemDelete
-</pre>
-
+<p>Then create the Patient tests:
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ rails g mini_test:feature PatientShowIndex&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  $ rails g mini_test:feature PatientShow&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  $ rails g mini_test:feature PatientCreate&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  $ rails g mini_test:feature ItemUpdate&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  $ rails g mini_test:feature ItemDelete</span></code></pre></td></tr></table></div></figure></p>
 
 <p>Add /test/patients/ folder.  Move patient tests.</p>
 
 <h2>Migrate DB for 2nd resource</h2>
 
-<p>Add Patients to the DB:</p>
-
-<pre>
+<p>Add Patients to the DB:
+<code>
   $ rake db:migrate
-</pre>
-
+</code></p>
 
 <h2>Modify views for 2nd resource</h2>
 
@@ -393,12 +388,10 @@ models.</p>
 
 <h2>Run the tests for 2nd resource</h2>
 
-<p>Make sure all Patient stuff works.</p>
-
-<pre>
+<p>Make sure all Patient stuff works.
+<code>
   $ rake
-</pre>
-
+</code></p>
 
 <h1>Final notes</h1>
 
