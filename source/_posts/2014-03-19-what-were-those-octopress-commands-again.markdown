@@ -53,4 +53,4 @@ $ touch ~/.pow/restart.txt
 
 Thanks
 =======
-Thank you to the Octopress docs site for well written and easy to follow documentation.  This is my most frequently refered to page, now that my site is up and running, [http://octopress.org/docs/blogging/](http://octopress.org/docs/blogging/)
+Thank you to the Octopress docs site for well written and easy to follow documentation.  This is my most frequently referred to page, now that my site is up and running, [http://octopress.org/docs/blogging/](http://octopress.org/docs/blogging/)
