@@ -4,7 +4,7 @@
   <title><![CDATA[My Technical Blog]]></title>
   <link href="http://techblog.susanprestage.com//atom.xml" rel="self"/>
   <link href="http://techblog.susanprestage.com//"/>
-  <updated>2016-01-16T19:36:27-08:00</updated>
+  <updated>2016-01-17T11:52:13-08:00</updated>
   <id>http://techblog.susanprestage.com//</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -20,450 +20,66 @@
     <id>http://techblog.susanprestage.com//blog/2014/11/06/how-do-i-upgrade-my-ruby-again</id>
     <content type="html"><![CDATA[<p>If you want to use Rbenv on OS X you&rsquo;ll need to install the Xcode command-line tools:</p>
 
-<pre>
-  $ xcode-select --install
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ xcode-select --install</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Then install Home Brew:</p>
 
-<pre>
-  $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Complete Home Brew setup:</p>
 
-<pre>
-  $ brew doctor
-  $ brew update
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ brew doctor
+</span><span class='line'>  $ brew update</span></code></pre></td></tr></table></div></figure>
 
 
 <p>At this point you&rsquo;ll be able to install rbenv and ruby-build:</p>
 
-<pre>
-  $ brew install rbenv ruby-build
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ brew install rbenv ruby-build</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Add the following to your .bash_profile:</p>
 
-<pre>
-  eval "$(rbenv init -)"
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  eval "$(rbenv init -)"</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Reload your bash profile settings:</p>
 
-<pre>
-  $ source ~/.bash_profile
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ source ~/.bash_profile</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Then you can install Ruby:</p>
 
-<pre>
-  $ rbenv install 2.1.2
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ rbenv install 2.1.2</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Thanks to John O. at TeamTreeHouse for giving this well written response to this inquiry.</p>
 
 <p>To set as your current version of Ruby run the following command:</p>
 
-<pre>
-  $ rvm use 2.0.0
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ rvm use 2.0.0</span></code></pre></td></tr></table></div></figure>
 
 
 <p>To make it the default Ruby:</p>
 
-<pre>
-  $ rvm default 2.0.0
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ rvm default 2.0.0</span></code></pre></td></tr></table></div></figure>
 
 
 <p>or</p>
 
-<pre>
-  $ rvm use 2.0.0 --default
-</pre>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Mastering Date and Time Manipulation in Rails]]></title>
-    <link href="http://techblog.susanprestage.com//blog/2014/10/21/mastering-date-and-time-manipulation-in-rails/"/>
-    <updated>2014-10-21T13:14:02-07:00</updated>
-    <id>http://techblog.susanprestage.com//blog/2014/10/21/mastering-date-and-time-manipulation-in-rails</id>
-    <content type="html"><![CDATA[<p>There are several different ways of manipulating time in rails.  Instead of searching for them every time I need them, I will keep there here in one easy location.</p>
-
-<p>Rails gives built-in ways to add days (which will suit for weeks as well) and also to add months.  This means that using rails to add a month (which will suit for years as well) has built into it accommodations for February, leap years, leap centuries, etc.  Use Rails for this magic.  Do Not roll your own dating.</p>
-
-<h2>Future and Past</h2>
-
-<h3>By month</h3>
-
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  &gt; DateTime.now
-</span><span class='line'>=&gt; Tue, 21 Oct 2014 13:08:17 -0700
-</span><span class='line'>
-</span><span class='line'>  &gt; DateTime.now &gt;&gt; 1
-</span><span class='line'>=&gt; Fri, 21 Nov 2014 13:08:44 -0700
-</span><span class='line'>
-</span><span class='line'>  &gt; DateTime.now &gt;&gt; -2
-</span><span class='line'>=&gt; Thu, 21 Aug 2014 13:09:23 -0700</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>By week</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  &gt; DateTime.now
-</span><span class='line'>=&gt; Tue, 21 Oct 2014 15:00:17 -0700
-</span><span class='line'>
-</span><span class='line'>  &gt; DateTime.now + (2 * 7)
-</span><span class='line'>=&gt; Tue, 04 Nov 2014 15:00:52 -0700
-</span><span class='line'>
-</span><span class='line'>  &gt; DateTime.now - (1 * 7)
-</span><span class='line'>=&gt; Tue, 14 Oct 2014 15:04:16 -0700</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Past only</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  &gt; 1.week.ago
-</span><span class='line'>=&gt; Tue, 14 Oct 2014 20:20:14 UTC +00:00
-</span><span class='line'>
-</span><span class='line'>  &gt; 2.weeks.ago
-</span><span class='line'>=&gt; Tue, 07 Oct 2014 20:20:27 UTC +00:00
-</span><span class='line'>
-</span><span class='line'>  &gt; 1.month.ago
-</span><span class='line'>=&gt; Sun, 21 Sep 2014 20:20:34 UTC +00:00
-</span><span class='line'>
-</span><span class='line'>  &gt; 2.months.ago
-</span><span class='line'>=&gt; Thu, 21 Aug 2014 20:20:41 UTC +00:00</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Date only</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  &gt; Date.today
-</span><span class='line'>=&gt; Wed, 22 Oct 2014
-</span><span class='line'>
-</span><span class='line'>  &gt; Date.today+2
-</span><span class='line'>=&gt; Fri, 24 Oct 2014</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Binding Pry and the Power of the Rails Console]]></title>
-    <link href="http://techblog.susanprestage.com//blog/2014/10/21/binding-pry-and-the-power-of-the-rails-console/"/>
-    <updated>2014-10-21T13:13:17-07:00</updated>
-    <id>http://techblog.susanprestage.com//blog/2014/10/21/binding-pry-and-the-power-of-the-rails-console</id>
-    <content type="html"><![CDATA[<p>The most powerful tool I use on a daily basis is the gem, binding.pry.</p>
-
-<h2>Setup</h2>
-
-<p>Put the pry-rails gem into your Gemfile for dev and test.</p>
-
-<h6>Gemfile</h6>
-
-<pre>
-group :test, :development do
-  gem 'pry-rails'
-end
-</pre>
-
-
-<p>You will now need to run</p>
-
-<pre>
-  $ bundle install
-</pre>
-
-
-<p>at the command line.</p>
-
-<h2>How to use</h2>
-
-<p>Put the phrase &lsquo;binding.pry&rsquo; without the quotes into a piece of your code that you want to investigate and binding.pry will open up a rails console at your command line.  This even works in test files.  If you need this in the middle of a haml file, be sure to obey the tabbing convention required by haml, and also put a &lsquo;-&rsquo; dash in front of the binding.pry, like so:</p>
-
-<h6>Ruby file syntax</h6>
-
-<pre>
-  binding.pry
-</pre>
-
-
-<h6>Haml file syntax</h6>
-
-<pre>
-  - binding.pry
-</pre>
-
-
-<p>Remember, you will need to type exit out of the rails console and to return your server to  whatever it was doing before it hit the binding.pry.</p>
-
-<p>This is particularly useful to see the current scope of variables and also to look at what is in the database.</p>
-
-<pre>
-  > Company.find(7).users.find(24)
-
-  > Company.find(7).team_memberships
-
-  > Company.find(7).users.find(26)
-
-  > Company.find(7).users
-
-  > Company.all
-
-  > c = Company.find(7)
-
-  > c.users
-
-  > User.where(id: 45)
-
-  > User.where(email: "susan@example.com")
-
-  > User.where(id: 73).pluck(:first_name, :last_name)
-</pre>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How to Do Database Stuff From Within Rails]]></title>
-    <link href="http://techblog.susanprestage.com//blog/2014/10/13/how-to-do-database-stuff-from-within-rails/"/>
-    <updated>2014-10-13T11:52:35-07:00</updated>
-    <id>http://techblog.susanprestage.com//blog/2014/10/13/how-to-do-database-stuff-from-within-rails</id>
-    <content type="html"><![CDATA[<h3>Rails Console</h3>
-
-<p>The rails console is one of the most powerful debug and development tools.  Most particularly, for database manipulation.</p>
-
-<p>Here are some of my most frequently used commands:</p>
-
-<p>Here are some of my much less frequently used, but very powerful and sometimes necessary.  As a rule, I try to only examine what is in my database from the console.  Creating and deleting records from the command line really isn&rsquo;t the way you want to manipulate your database.  That said, sometimes to have to:</p>
-
-<h4>Create</h4>
-
-<pre>
-  > u = User.create password: "mypasswd", first_name: "test", last_name: "testovich"
-</pre>
-
-
-<h4>Update</h4>
-
-<pre>
-  > u = User.find(30)
-  > u.update_attributes(roles_mask: 3)
-</pre>
-
-
-<p>If the above doesn&rsquo;t work, this may:</p>
-
-<pre>
-  > User.where(id: 27)[0].update(age: 42, next_birthday: "2014-10-14")
-</pre>
-
-
-<h4>Destroy</h4>
-
-<pre>
-  > User.find(30).destroy
-</pre>
-
-
-<h3>Backup &amp; Restore</h3>
-
-<pre>
-  $ pg_dump -U featherlight featherlight_development -Fc > backup.dump
-</pre>
-
-
-<p>The first command seems to be the one that works</p>
-
-<pre>
-  $ pg_restore -c -C -F c -v -U postgres backup.dump
-  $ pg_restore -U featherlight -d featherlight_development backup.dump
-</pre>
-
-
-<h3>Creating a database and user</h3>
-
-<pre>
-  $ createuser portfolio
-  Shall the new role be a superuser? (y/n) n
-  Shall the new role be allowed to create databases? (y/n) n
-  Shall the new role be allowed to create more new roles? (y/n) n
-  CREATE ROLE
-  $
-</pre>
-
-
-
-
-<pre>
-  $ createdb portfolio_test -O portfolio
-</pre>
-
-
-<ul>
-<li>-O owner name is the option in the command line.</li>
-</ul>
-
-
-<h3>Queries with date ranges</h3>
-
-<pre>
-  FeedbackRequest.where(created_at: 5.days.ago..4.days.ago)
-</pre>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[String Manipulation in Ruby]]></title>
-    <link href="http://techblog.susanprestage.com//blog/2014/03/21/string-manipulation-in-ruby/"/>
-    <updated>2014-03-21T12:12:17-07:00</updated>
-    <id>http://techblog.susanprestage.com//blog/2014/03/21/string-manipulation-in-ruby</id>
-    <content type="html"><![CDATA[<h1>Set vs concatenate</h1>
-
-<p>Set equal to this string.  No initialization needed.</p>
-
-<pre>
-> farewell = "Good"  
-</pre>
-
-
-
-
-<pre>
-> puts farewell
-</pre>
-
-
-<p>will return</p>
-
-<pre>
-  => Good
-</pre>
-
-
-<p>Concatenation requires the variable to be initialized.  This only works because the variable was initialized above.</p>
-
-<pre>
-> farewell << "bye!"  
-</pre>
-
-
-
-
-<pre>
-> puts farewell
-</pre>
-
-
-<p>will return</p>
-
-<pre>
-  => Goodbye!
-</pre>
-
-
-<h1>String operations</h1>
-
-<p>Find where a substring is within the source string using index.</p>
-
-<pre>
-"hello".index('e')             #=> 1
-"hello".index('lo')            #=> 3
-"hello".index('a')             #=> nil
-"hello".index(?e)              #=> 1
-"hello".index(/[aeiou]/, -3)   #=> 4
-</pre>
-
-
-<p>Take input from the user:</p>
-
-<pre>
-puts "Please input some text: "
-foo = gets.chomp
-puts foo
-</pre>
-
-
-<p>If you are using ARGV to bring in command line arguments when you launch your app, you will run into conflict when using gets.  You can work around this two ways.  First is to use perform whatever tasks you need to on ARGV, then:</p>
-
-<pre>
-ARGV.clear
-foo = gets.chomp
-</pre>
-
-
-<p>Otherwise, everytime you call gets, you will need to specify that it is from IO, not Kernal:</p>
-
-<pre>
-foo = $stdin.gets.chomp
-</pre>
-
-
-<p>Replace the first instance of the sub_string, &ldquo;replace_me&rdquo;, with the contents of foo.</p>
-
-<pre>
-bar = bar.sub("replace_me", foo)
-</pre>
-
-
-<p>Globally replace the sub_string, &ldquo;replace_me&rdquo;, with the contents of foo.</p>
-
-<pre>
-bar = bar.<b>g</b>sub("replace_me", foo)
-</pre>
-
-
-<p>Find the first example of substring, &ldquo;find_me&rdquo;.  This is most often used with regex in place of the &ldquo;find_me&rdquo; string.  Returns a string.</p>
-
-<pre>
-bing = bar.match("find_me")
-</pre>
-
-
-<p>Find the every example of substring, &ldquo;find_me&rdquo;.  This is most often used with regex in place of the &ldquo;find_me&rdquo; string.  Returns an array of strings.</p>
-
-<pre>
-bing = bar.scan("find_me")
-</pre>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ rvm use 2.0.0 --default</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>
@@ -1043,7 +659,7 @@ Next, push to heroku:</p>
 
 <h4>New branches on github</h4>
 
-<p>So, your teammate has been working on a new branch they just created and then commited to github.  You now want to start working locally on that new branch.</p>
+<p>So, your teammate has been working on a new branch they just created and then committed to github.  You now want to start working locally on that new branch.</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>

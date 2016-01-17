@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Heroku | My Technical Blog]]></title>
   <link href="http://techblog.susanprestage.com//blog/categories/heroku/atom.xml" rel="self"/>
   <link href="http://techblog.susanprestage.com//"/>
-  <updated>2016-01-16T19:46:09-08:00</updated>
+  <updated>2016-01-17T11:52:13-08:00</updated>
   <id>http://techblog.susanprestage.com//</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -104,7 +104,7 @@ Next, push to heroku:
 
 <h4>New branches on github</h4>
 
-<p>So, your teammate has been working on a new branch they just created and then commited to github.  You now want to start working locally on that new branch.
+<p>So, your teammate has been working on a new branch they just created and then committed to github.  You now want to start working locally on that new branch.
 <code>
   $ git fetch origin bug-request-id
   $ git checkout bug-request-id
@@ -134,8 +134,9 @@ Next, push to heroku:
 <p>First, create the branch locally.  This automatically changes you to this branch locally.
 <code>
   $ git checkout -b new_branch_name
-</code>
-Note, you can do this even if you already have changes made.  They&rsquo;ll simply still be there, unstaged and uncommitted in the new branch.</p>
+</code></p>
+
+<p>Note, you can do this even if you already have changes made.  They&rsquo;ll simply still be there, unstaged and uncommitted in the new branch.</p>
 
 <h4>Pushing the new branch to github</h4>
 
@@ -177,16 +178,22 @@ then your code will get pushed into that branch.
 </code></p>
 
 <p>Now we are going to merge each branch in, push it to github, and then delete the branch since we are done with them.  Skip the last step if you aren&rsquo;t quite done with the branch.
-```
-  $ git merge chapter_2
-  $ git push origin master    (also can just usually say &lsquo;git push&rsquo; here)
-  $ git branch -d chapter_2</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git merge chapter_2
+</span><span class='line'>  $ git push origin master    (also can just usually say &lsquo;git push&rsquo; here)
+</span><span class='line'>  $ git branch -d chapter_2&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  $ git merge chapter_3
+</span><span class='line'>  $ git push
+</span><span class='line'>  $ git branch -d chapter_3</span></code></pre></td></tr></table></div></figure></p>
 
-<p>  $ git merge chapter_3
-  $ git push
-  $ git branch -d chapter_3
-```
-Repeat until you&rsquo;ve merged in each branch.  Yeay!  This worked for me and I saw what I wanted on github.  I have both the branches I expect as well as each branch merge present as a commit on the master.  Excellent!  Git is starting to be a Very useful tool instead of an occasional impediment.  :)</p>
+<p>Repeat until you&rsquo;ve merged in each branch.  Yeay!  This worked for me and I saw what I wanted on github.  I have both the branches I expect as well as each branch merge present as a commit on the master.  Excellent!  Git is starting to be a Very useful tool instead of an occasional impediment.  :)</p>
 
 <h1>Stashing</h1>
 
@@ -219,13 +226,16 @@ Repeat until you&rsquo;ve merged in each branch.  Yeay!  This worked for me and 
 </code></p>
 
 <p>Verify we are in the same place:
-```
-  $ git diff</p>
-
-<p>  $ git stash list
-  $ git stash apply stash@{1}
-  $ git stash drop
-```</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ git diff&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  $ git stash list
+</span><span class='line'>  $ git stash apply stash@{1}
+</span><span class='line'>  $ git stash drop</span></code></pre></td></tr></table></div></figure></p>
 
 <h2>Whoops!  Now what do I do?  Gentle commands</h2>
 
@@ -328,22 +338,25 @@ git reset HEAD app/helpers/timezone_helper.rb
 <p>When there is a conflict during a merge, you have to finish the merge commit manually. It sounds like you&rsquo;ve done the first two steps, to edit the files that conflicted and then run
 <code>
   $ git add
-</code>
-on them to mark them as resolved.</p>
+</code></p>
+
+<p>on them to mark them as resolved.</p>
 
 <p>Finally, you need to actually commit the merge with
 <code>
   $ git commit
-</code>
-after which you will be able to switch branches again.</p>
+</code></p>
+
+<p>after which you will be able to switch branches again.</p>
 
 <h3>Have I forgotten to push?</h3>
 
 <p>How do I tell if my committed changes have been pushed to github?
 <code>
   $ git log origin/master..HEAD
-</code>
-You can also view the diff using the same syntax
+</code></p>
+
+<p>You can also view the diff using the same syntax
 <code>
   $ git diff origin/master..HEAD
 </code></p>
@@ -374,8 +387,9 @@ You can also view the diff using the same syntax
 <p>Lastly, delete the branch
 <code>
   $ git branch -d temporary_branch
-</code>
-you may need to use a -D option to force this.  BE CAREFUL not to delete something you care about.  Really!</p>
+</code></p>
+
+<p>you may need to use a -D option to force this.  BE CAREFUL not to delete something you care about.  Really!</p>
 
 <h3>Tidy up leftovers</h3>
 

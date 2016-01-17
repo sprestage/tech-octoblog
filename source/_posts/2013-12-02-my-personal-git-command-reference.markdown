@@ -94,7 +94,7 @@ Branching
 
 ### New branch exists on remote
 #### New branches on github
-So, your teammate has been working on a new branch they just created and then commited to github.  You now want to start working locally on that new branch.
+So, your teammate has been working on a new branch they just created and then committed to github.  You now want to start working locally on that new branch.
 ```
   $ git fetch origin bug-request-id
   $ git checkout bug-request-id
@@ -123,6 +123,7 @@ First, create the branch locally.  This automatically changes you to this branch
 ```
   $ git checkout -b new_branch_name
 ```
+
 Note, you can do this even if you already have changes made.  They'll simply still be there, unstaged and uncommitted in the new branch.
 
 #### Pushing the new branch to github
@@ -171,6 +172,7 @@ Now we are going to merge each branch in, push it to github, and then delete the
   $ git push
   $ git branch -d chapter_3
 ```
+
 Repeat until you've merged in each branch.  Yeay!  This worked for me and I saw what I wanted on github.  I have both the branches I expect as well as each branch merge present as a commit on the master.  Excellent!  Git is starting to be a Very useful tool instead of an occasional impediment.  :)
 
 
@@ -264,6 +266,7 @@ Assuming you are sitting on that commit, then this command will wack it...
 ```
   $ git reset --hard HEAD~1
 ```
+
 The HEAD~1 means the commit before head.
 
 Or, you could look at the output of git log, find the commit id of the commit you want to back up to, and then do this:
@@ -314,12 +317,14 @@ When there is a conflict during a merge, you have to finish the merge commit man
 ```
   $ git add
 ```
+
 on them to mark them as resolved.
 
 Finally, you need to actually commit the merge with
 ```
   $ git commit
 ```
+
 after which you will be able to switch branches again.
 
 ### Have I forgotten to push?
@@ -327,6 +332,7 @@ How do I tell if my committed changes have been pushed to github?
 ```
   $ git log origin/master..HEAD
 ```
+
 You can also view the diff using the same syntax
 ```
   $ git diff origin/master..HEAD
@@ -357,6 +363,7 @@ Lastly, delete the branch
 ```
   $ git branch -d temporary_branch
 ```
+
 you may need to use a -D option to force this.  BE CAREFUL not to delete something you care about.  Really!
 
 ### Tidy up leftovers

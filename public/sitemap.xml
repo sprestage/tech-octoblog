@@ -5,22 +5,6 @@
     <lastmod>2014-11-06T08:47:02-08:00</lastmod>
   </url>
   <url>
-    <loc>http://techblog.susanprestage.com//blog/2014/10/21/mastering-date-and-time-manipulation-in-rails/</loc>
-    <lastmod>2014-10-21T13:14:02-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://techblog.susanprestage.com//blog/2014/10/21/binding-pry-and-the-power-of-the-rails-console/</loc>
-    <lastmod>2014-10-21T13:13:17-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://techblog.susanprestage.com//blog/2014/10/13/how-to-do-database-stuff-from-within-rails/</loc>
-    <lastmod>2014-10-13T11:52:35-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://techblog.susanprestage.com//blog/2014/03/21/string-manipulation-in-ruby/</loc>
-    <lastmod>2014-03-21T12:12:17-07:00</lastmod>
-  </url>
-  <url>
     <loc>http://techblog.susanprestage.com//blog/2014/03/19/what-were-those-octopress-commands-again/</loc>
     <lastmod>2014-03-19T12:30:59-07:00</lastmod>
   </url>
@@ -101,24 +85,6 @@
   </url>
   <url>
     <loc>http://techblog.susanprestage.com//blog/categories/ruby/</loc>
-  </url>
-  <url>
-    <loc>http://techblog.susanprestage.com//blog/categories/strings/</loc>
-  </url>
-  <url>
-    <loc>http://techblog.susanprestage.com//blog/categories/rails-console/</loc>
-  </url>
-  <url>
-    <loc>http://techblog.susanprestage.com//blog/categories/database/</loc>
-  </url>
-  <url>
-    <loc>http://techblog.susanprestage.com//blog/categories/postgres/</loc>
-  </url>
-  <url>
-    <loc>http://techblog.susanprestage.com//blog/categories/binding-pry/</loc>
-  </url>
-  <url>
-    <loc>http://techblog.susanprestage.com//blog/categories/date-and-time/</loc>
   </url>
   <url>
     <loc>http://techblog.susanprestage.com//blog/categories/rvm/</loc>
