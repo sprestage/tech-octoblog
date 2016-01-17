@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Alias File | My Technical Blog]]></title>
   <link href="http://techblog.susanprestage.com//blog/categories/alias-file/atom.xml" rel="self"/>
   <link href="http://techblog.susanprestage.com//"/>
-  <updated>2016-01-16T19:02:54-08:00</updated>
+  <updated>2016-01-16T19:05:21-08:00</updated>
   <id>http://techblog.susanprestage.com//</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -18,7 +18,11 @@
     <link href="http://techblog.susanprestage.com//blog/2013/12/04/unix-alias-file/"/>
     <updated>2013-12-04T12:50:52-08:00</updated>
     <id>http://techblog.susanprestage.com//blog/2013/12/04/unix-alias-file</id>
-    <content type="html"><![CDATA[<h2>Intro to .alias</h2>
+    <content type="html"><![CDATA[<h1>Incomplete!!!</h1>
+
+<p>This post is only outlined and still needs to be written out.</p>
+
+<h2>Intro to .alias</h2>
 
 <p>Why use command aliases in unix.</p>
 

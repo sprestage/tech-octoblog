@@ -8,6 +8,9 @@ categories:
 - alias file
 - command line
 ---
+# Incomplete!!!
+This post is only outlined and still needs to be written out.
+
 ## Intro to .alias
 Why use command aliases in unix.
 
