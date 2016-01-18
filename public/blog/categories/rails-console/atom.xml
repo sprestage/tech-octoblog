@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails Console | My Technical Blog]]></title>
   <link href="http://techblog.susanprestage.com//blog/categories/rails-console/atom.xml" rel="self"/>
   <link href="http://techblog.susanprestage.com//"/>
-  <updated>2016-01-17T12:06:41-08:00</updated>
+  <updated>2016-01-18T12:48:28-08:00</updated>
   <id>http://techblog.susanprestage.com//</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -90,7 +90,7 @@ end
 </span><span class='line'>
 </span><span class='line'>&lt;p&gt;User.where(id: 45)&lt;/p&gt;
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;User.where(email: &ldquo;&lt;a href="&#109;&#97;&#x69;&#108;&#x74;&#x6f;&#58;&#x73;&#117;&#x73;&#x61;&#110;&#64;&#x65;&#x78;&#x61;&#109;&#x70;&#108;&#x65;&#46;&#x63;&#x6f;&#x6d;"&gt;&#x73;&#117;&#115;&#x61;&#x6e;&#x40;&#101;&#x78;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;&lt;/a&gt;&rdquo;)&lt;/p&gt;
+</span><span class='line'>&lt;p&gt;User.where(email: &ldquo;&lt;a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#115;&#117;&#115;&#x61;&#110;&#x40;&#101;&#120;&#97;&#109;&#x70;&#108;&#101;&#46;&#x63;&#x6f;&#x6d;"&gt;&#x73;&#x75;&#x73;&#97;&#110;&#x40;&#101;&#120;&#97;&#x6d;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#109;&lt;/a&gt;&rdquo;)&lt;/p&gt;
 </span><span class='line'>
 </span><span class='line'>&lt;p&gt;User.where(id: 73).pluck(:first_name, :last_name)</span></code></pre></td></tr></table></div></figure></p>
 ]]></content>
