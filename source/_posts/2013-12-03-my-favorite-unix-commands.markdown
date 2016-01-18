@@ -23,6 +23,16 @@ Erase this whole line that I am at the end of.
 [ctrl] + u
 ```
 
+Jump to the beginning of this line I'm on.
+```
+[ctrl] + a
+```
+
+Jump to the end of this line I'm on.
+```
+[ctrl] + e
+```
+
 Stop this program I'm in.
 ```
 [ctrl] + c

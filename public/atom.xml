@@ -4,7 +4,7 @@
   <title><![CDATA[My Technical Blog]]></title>
   <link href="http://techblog.susanprestage.com//atom.xml" rel="self"/>
   <link href="http://techblog.susanprestage.com//"/>
-  <updated>2016-01-18T12:48:28-08:00</updated>
+  <updated>2016-01-18T12:51:31-08:00</updated>
   <id>http://techblog.susanprestage.com//</id>
   <author>
     <name><![CDATA[Susan Prestage]]></name>
@@ -872,6 +872,18 @@ models.</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>[ctrl] + u</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Jump to the beginning of this line I&rsquo;m on.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[ctrl] + a</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Jump to the end of this line I&rsquo;m on.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[ctrl] + e</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Stop this program I&rsquo;m in.</p>
